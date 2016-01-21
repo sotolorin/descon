@@ -1,0 +1,21 @@
+Initialize engine version: 4.6.1f1 (d1db7a1b5196)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [d3d10warp.dll 6.2.9200.17033]
+    Renderer: Microsoft Basic Render Driver
+    Vendor:   Microsoft
+    VRAM:     256 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=0 NativeShadow=0 DF16=0 INTZ=0 RAWZ=0 NULL=0 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\s.otolorin\Desktop\Descon Sketch\sketch4_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\s.otolorin\Desktop\Descon Sketch\sketch4_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\s.otolorin\Desktop\Descon Sketch\sketch4_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\s.otolorin\Desktop\Descon Sketch\sketch4_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\s.otolorin\Desktop\Descon Sketch\sketch4_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\s.otolorin\Desktop\Descon Sketch\sketch4_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.079 seconds
+<RI> Initializing input.
+XInput1_3.dll not found.
+<RI> Input initialized.
+desktop: 1680x1050 32Hz; virtual: 3360x1050 at 0,0
+Platform assembly: C:\Users\s.otolorin\Desktop\Descon Sketch\sketch4_Data\Managed\System.Core.dll (this message is harmless)

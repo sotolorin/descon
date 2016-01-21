@@ -1,0 +1,19 @@
+Initialize engine version: 4.6.1f1 (d1db7a1b5196)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Microsoft Basic Render Driver (ID=0x8c)
+    Vendor:   Microsoft
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\s.otolorin\Desktop\Descon Sketch\sketch2_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\s.otolorin\Desktop\Descon Sketch\sketch2_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\s.otolorin\Desktop\Descon Sketch\sketch2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\s.otolorin\Desktop\Descon Sketch\sketch2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\s.otolorin\Desktop\Descon Sketch\sketch2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\s.otolorin\Desktop\Descon Sketch\sketch2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.176 seconds
+desktop: 1680x1050 32Hz; virtual: 3360x1050 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found.
+<RI> Input initialized.

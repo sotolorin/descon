@@ -1,0 +1,328 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DesconWeb.SiteMaster" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - Descon Plus</title>
+    <link href="~/Themes/Content/Site.css" rel="stylesheet" />
+    <link href="~/Themes/Metro/default.css" rel="stylesheet" />  
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:PlaceHolder runat="server">        
+        <script src="<%: ResolveUrl("~/Scripts/modernizr-2.6.2.js") %>"></script>       
+        <script src="<%: ResolveUrl("~/Scripts/classie.js") %>"></script>
+    </asp:PlaceHolder>
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body id="Doc">
+    <form runat="server">
+    <asp:ScriptManager runat="server">
+        <Scripts>
+            <asp:ScriptReference Name="jquery" />
+            <asp:ScriptReference Name="jquery.ui.combined" />
+        </Scripts>
+    </asp:ScriptManager>
+    <header style="position: fixed; width: 100%; background: white; z-index: 10; margin: 0 !important">
+        <div id="navbar" class="content-wrapper divShadowBottomOnly" style="overflow:auto;zoom:1;">
+            <div class="float-left">
+                <p class="site-title"><a runat="server" href="../Default.aspx">
+                                          <img src="../Images/DesconLogo300dpi.png" style="height: 40px; margin-left:80px !important; padding:0!important; margin-top: -5px">
+                                      </a></p>
+            </div>
+            <div class="float-right" style="margin-top: -10px;" >
+                <nav >
+                    <ul id="menu">
+                        <li ><a  runat="server" href="~/Product.aspx">Features</a></li>
+                        <li><a runat="server" href="~/Pricing.aspx">Pricing</a></li>
+                        <li><a runat="server" href="http://store.desconplus.com" data-rel="external" target="_blank">Store</a></li>
+                        <li><a runat="server" href="http://support.desconplus.com" data-rel="external" target="_blank">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body" class="content-wrapper" style="padding-top:68px;">
+       <asp:ContentPlaceHolder runat="server" ID="FeaturedContentHead" >       
+       </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" >       
+        </asp:ContentPlaceHolder>
+        <section class="content-wrapper main-content clear-fix" style="padding-left: 0 !important;">
+            <link href="/Themes/Metro/Controls.css" rel="stylesheet" type="text/css" media="screen" runat="server" />
+            <link href="/Themes/Metro/component.css" rel="stylesheet" type="text/css" media="screen" runat="server" />
+            <link href="/Themes/Metro/default.css" rel="stylesheet" type="text/css" media="screen" runat="server" />
+            <asp:ContentPlaceHolder runat="server" ID="MainContent">
+           
+            </asp:ContentPlaceHolder>
+
+            <asp:ContentPlaceHolder runat="server" ID="QuoteContent">
+                <section id="quoteSectionDiv" style="position: absolute;width:100%; margin-top: 0px; padding-bottom: 0px;" >
+                    <div id="quoteSection" style="margin: 0 auto; display: inline-block;  margin-bottom: 10px; text-align: center; position: absolute;width:100%; bottom: 0 ;height: 350px">
+                        <p class="quotedHeader">From the people who've used Descon</p>
+                        <div style="float: left; margin-left: 23%;height: 350px;">
+                            <img src="../Images/DesconOpenQuoteLt.png" style="width: 41px; height:44px; " >
+                        </div>
+                        <div style="overflow: hidden; text-align: center; margin-left: 25%">
+                            <div id="quotes" class="clearAll quoteblock" style="height: 350px;">
+                                <blockquote style="text-align: center">
+                                <p>We have been using DesconWin and DesconBrace for about 8 years. It is very powerful but our main benefit has been speed. We are a design-build firm so we do estimates
+                                with a preliminary structure design. We used to estimate 10% of the total weight for connection material. But with Descon software, we can do preliminary connection design so fast that we get a better estimate. More than once
+                                we won the bid because we could estimate 7% of the total weight for connections instead of 10%. That little difference has been a key factor for being more competitive and winning more bids, mainly after the 2008 crisis that
+                                tightened all budgets.</p>
+                                <p class="quotedBy">Hector Ochoa</p>
+                                </blockquote>
+
+                                <blockquote style="text-align: center">
+                                <p>The calculations were accepted without comment by the connections engineer and the designers.</p>
+                                <p class="quotedBy">Ron Yeager | Steel-Art, Inc.</p>
+                                </blockquote>
+
+                                <blockquote style="text-align: center">
+                                <p>Investment on the software provides good return on investment when factoring in countless hours of review time on other methods.  … (My Annual Maintenance Plan) provides quick responses to our design questions on projects with fast track schedules and on time commitments.</p>
+                                <p class="quotedBy">Eugene Ninnie | CTE-VBMIS Group</p>
+                                </blockquote>
+
+                                <blockquote style="text-align: center">
+                                <p>I used the DesconPlus Win and DesconPlus Brace for a recent FAA project. The generated written report was very easy to follow (and explain to others) and the generated dxf was a great tool between engineer and detailers.</p>
+                                <p class="quotedBy">Rick Koehler</p>
+                                </blockquote>
+
+                                <blockquote style="text-align: center">
+                                <p>Descon Brace has greatly aided in the design of our connections.  The interface is easy to use and the customizability of the connections is supreme.  The reporting portion is easy to follow and presentable for a calculation submission.  Descon Brace provides great value and should be in every structural engineers software library.</p>
+                                <p class="quotedBy">Mark Gardner, P.E., Director of Engineering | bmk Engineering, Inc.</p>
+                                </blockquote>
+                            </div>
+                            <div style="float: right; margin-left: 50%;  position: absolute; height: 350px;">
+                                <img src="../Images/DesconCloseQuoteLt.png" style="width: 41px; height:44px; " >
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </asp:ContentPlaceHolder>
+
+            <asp:ContentPlaceHolder runat="server" ID="OrangeContent">
+                <section>
+                <h2 class="noSize anchor" id="section4"></h2>
+                    <div id="orangeSection" class="orangeDiv divShadow" style="padding: 50px;">
+                    <div style="text-align: center; padding-bottom: 30px">
+                        <a runat="server" class="btn2b btn-2 btn-2a" href="http://web.rexww.com/cn/ademz/desconfreetrial" data-rel="external" target="_blank" style="padding: 25px;"><span>Free Trial</span></a>
+                        <a runat="server" class="btn2b btn-2 btn-2a" href="~/Pricing.aspx" style="padding: 25px;"><span>View Pricing</span></a>  
+                    </div>
+                    </div>
+                </section>                                                   
+            </asp:ContentPlaceHolder>
+
+            <div id="o2wDots" class="" style="text-align: center; margin-top: -60px; margin-bottom: -60px;">
+                <img src="../Images/DesconDotsC3.png" style=""> 
+            </div>
+
+            <asp:ContentPlaceHolder runat="server" ID="ContactContent">
+                <asp:HiddenField Value="" ID="mailMessageHidden" runat="server"/>
+                <section>
+                    <h2 class="noSize anchor" id="section5"></h2>
+                    <div id="whiteSection" class="whiteContactDiv" style="padding: 50px 0">
+                        <ul class="purpleText" style="margin:25px  auto;padding: 0!important">Get in touch</ul>
+                        <ul class="greyText" style="margin: 25px auto;padding: 0!important">Join our newsletter conversation of insider tips</ul>
+
+                        <div style="text-align: center;margin: 0 auto;">
+                <%--            <div style="display: inline-block;">
+                               <asp:TextBox CssClass="contactTextBox lightGreyText" style="width: 300px;"  id="tb1" runat="server" />
+                            </div>--%>
+                            <div style="display: inline-block;">
+                               <a runat="server" class="btn2 btn-2b" href="http://web.rexww.com/cn/ademz/synapsesubscription" target="_blank"><span>Subscribe</span></a>
+                            </div>
+                        </div>
+        
+                        <ul class="greyText" style="margin: 25px auto;padding: 0!important">Have questions?&nbsp;&nbsp;Contact us.</ul>
+                        <div class="" style="text-align: center; margin: 0 auto; margin-left:120px !important">
+                            <div class="msgFloatDiv" style="padding: 0 10px;">
+                                <div>
+                                   <asp:TextBox CssClass="lightGreyText" style="width: 300px"  id="tb2" runat="server" ClientIDMode="Static" /> 
+                                    <asp:RequiredFieldValidator runat="server" style="color:red;" id="RequiredFieldValidator0" controltovalidate="tb2" errormessage="*"  ClientIDMode="Static"/>
+                                </div>
+                                <div>
+                                    <asp:TextBox CssClass="lightGreyText" style="width: 300px; margin-top: 17px;"  id="tb3" runat="server" ClientIDMode="Static" />
+                                    <div style="display: inline-block">
+                                        <asp:RequiredFieldValidator runat="server" style="color:red;position: absolute;" id="RequiredFieldValidator1" controltovalidate="tb3" errormessage="*" ClientIDMode="Static" />
+                                        <asp:RegularExpressionValidator runat="server" style="color:red;" id="EmailValidator" controltovalidate="tb3" errormessage="*" ClientIDMode="Static" ValidationExpression="([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <asp:TextBox CssClass="lightGreyText" style="width: 300px; margin-top: 17px;"  id="tb4" runat="server" ClientIDMode="Static" />
+                                    <asp:RequiredFieldValidator runat="server" style="color:red;" id="RequiredFieldValidator2" controltovalidate="tb4" errormessage="*"  ClientIDMode="Static"/>
+                                </div>
+                            </div>
+                            <div class="msgFloatDiv" style="padding: 0 10px;">
+                                <asp:TextBox style="float: left; width: 300px;height: 130px;" CssClass="lightGreyText" id="tb5" TextMode="MultiLine" runat="server" ClientIDMode="Static" />
+                                <asp:RequiredFieldValidator runat="server" style="color:red;" id="RequiredFieldValidator3" controltovalidate="tb5" errormessage="*"  ClientIDMode="Static"/>
+                            </div>
+                            <asp:Button id="sendbtn" ClientIDMode="Static" runat="server" style="display: inline-block; vertical-align: top; padding-top: -50px !important;margin-top: 4px !important;" CssClass="roundbtn2 roundbtn-2"  OnClick="Submit" Text="Send"></asp:Button>                            
+                        </div>
+                        <div id="disclaimer" style="display: block; text-align: center; display: none"><h style="color:red;font-size:10px;">Please check highlighted fields are valid</h></div>
+                        <div class="purpleText contactFooter" style="padding: 0px 10px; padding-top: 10px; margin-bottom: 0; margin-top: 20px;">
+                            <ul style="display: inline-block; padding: 0 !important; margin: 0 !important">connect@desconplus.com</ul>
+                            <p style="display: inline-block; padding: 0 !important; margin: 0 10px !important"> | </p>
+                            <ul style="display: inline-block; padding: 0 !important; margin: 0 !important" >1-888-8DESCON (833-7266)</ul>
+                            <p style="display: inline-block; padding: 0 !important; margin: 0 10px !important"> | </p>
+                            <ul style="display: inline-block; padding: 0 !important; margin: 0 !important" >312-278-4420</ul>
+                            <ul style="display: block; padding: 0 !important; margin: 0 !important; margin-top: 10px !important">280 Shuman Blvd #270, Naperville, IL 60563</ul>
+                        </div>
+                    </div>
+                </section>                 
+            </asp:ContentPlaceHolder>  
+        </section>
+    </div>
+    </form>
+     <footer id="footer">
+        <div class="content-wrapper footerShadow" style="padding-bottom: 20px;" >
+           <div class="logoMenu" style="display: inline-block; margin: 0; padding-top: 20px;">
+                <a class="logoFooter" runat="server" href="https://www.facebook.com/DesconPlus" target="_blank"><img src="../Images/FacebookLogo2.png"></a>
+                <a class="logoFooter" runat="server" href="http://www.twitter.com" target="_blank"><img src="../Images/TwitterLogo2.png"></a>
+                <a class="logoFooter" runat="server" href="https://www.linkedin.com/company/descon-plus" target="_blank"><img src="../Images/LinkedInLogo2.png"></a>
+            </div>
+                <nav style="margin: 0; padding: 0; ">
+                    <ul id="footermenu" style="color:white !important" >
+                        <li><a runat="server" style="color:white; padding: 0;margin: 0" href="~/Default.aspx">Home</a></li>
+                        <li><p style="margin: 0 10px; color:white">|</p></li>
+                        <li><a runat="server" style="color:white; padding: 0;margin: 0" href="~/Product.aspx">Features</a></li>
+                        <li><p style="margin: 0 10px; color:white">|</p></li>
+                        <li><a runat="server" style="color:white; padding: 0;margin: 0" href="~/Pricing.aspx">Pricing</a></li>
+                        <li><p style="margin: 0 10px; color:white">|</p></li>
+                        <li><a runat="server" style="color:white; padding: 0;margin: 0" href="http://store.desconplus.com" data-rel="external" target="_blank">Store</a></li>
+                        <li><p style="margin: 0 10px; color:white">|</p></li>
+                        <li><a runat="server" style="color:white; padding: 0;margin: 0" href="http://support.desconplus.com" data-rel="external" target="_blank">Support</a></li>
+                    </ul>
+                </nav>
+            <p style="margin: 0; color:#DFE0E1; opacity: .6; font-size: 10px; letter-spacing: 1px;">Descon Plus, Ltd. | 280 Shuman Blvd #270 | Naperville, IL 60563</p>
+            <p style="margin: 0; color:#DFE0E1; opacity: .6; font-size: 10px; letter-spacing: 1px;">Copyright &copy; <%: DateTime.Now.Year %>  Descon Plus. All rights reserved.</p>
+        </div>
+    </footer>   
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.quovolver.js"></script>
+    <script src="../Scripts/jquery.watermark.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function debounce(func, wait, immediate) {
+            var timeout;
+            return function () {
+                var context = this, args = arguments;
+                var later = function () {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        };
+    </script>
+    <script type="text/javascript">
+        function msieversion() {
+
+                var ua = window.navigator.userAgent;
+                var msie = ua.indexOf("MSIE ");
+
+                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))return true;
+                return false;
+            };
+    </script>
+    <script type="text/javascript" language="javascript">
+        function Func() { alert("Thank you for your inquiry. We will respond within 1-2 business days."); }
+        function FuncError() { alert("There was an error sending your message."); }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //var isEd = msieversion();
+            //var homeHeight = $('bluediv').height();
+            //var featHeight = $('#blueXdiv').height();
+            //var pricHeight = $('#bluePdiv').height();
+            //alert(homeHeight);
+            //alert(featHeight);
+            //alert(pricHeight);
+            var lastScrollTop = 0;
+            $(window).scroll(function() {
+                var st = $(this).scrollTop();
+                if (st == lastScrollTop)return;
+                if (st < lastScrollTop || lastScrollTop == 0) $('#navbar').slideDown();
+                else $('#navbar').slideUp();
+                lastScrollTop = st;
+            });
+            //var width = $(window).width();
+            //if (width < 830) {
+            //    var intervals = (830 - width);
+            //    var addHeight = intervals * 1;
+            //    //$('#bluediv').height($('#bluediv').height() + (addHeight*.8));
+            //    //var currentMargin = parseFloat($('#quoteSectionDiv').css("margin-top"));
+            //    //var newMargin = currentMargin + addHeight;
+            //    //$('#quoteSectionDiv').css("margin-top", newMargin);
+            //    //alert($('#quoteSectionDiv').css("margin-top"));
+            //}
+
+            //$(window).bind('resize', function(e) {
+            //    window.resizeEvt;
+            //    $(window).resize(function() {
+            //        clearTimeout(window.resizeEvt);
+            //        window.resizeEvt = setTimeout(function() {
+            //            var width = $(window).width();
+            //            if (width < 830) {
+            //                //var intervals = (830 - width) / 30;
+            //                //var addHeight = intervals * 20;
+            //                //$('#bluediv').height($('#bluediv').height() + addHeight);
+            //                //($('#quoteSectionDiv').css("margin-top", -350 - addHeight));
+            //                //alert($('#quoteSectionDiv').css("margin-top"));
+            //            } else if (width > 830) {
+            //                $('#bluediv').css("height", 1850);
+            //                ($('#quoteSectionDiv').css("margin-top", -350));
+            //            }
+            //            //code to do after window is resized
+            //        }, 250);
+            //    });
+            //});
+        });
+    </script>
+   <script type="text/javascript">
+       $(document).ready(function () {
+           $('#quotes').quovolver({ autoPlaySpeed: 10000 });
+           $(window).on("load", function () {
+               $('#tb2').watermark('Your Name');
+               $('#tb3').watermark('Your Company Email');
+               $('#tb4').watermark('Your Company');
+               $('#tb5').watermark('Message');
+           });
+        });
+    </script>
+    <script type="text/javascript">
+        $('#sendbtn').click(function () {
+               var email = new RegExp('@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"');
+               if ($('tb2').val() == ""
+                    || $('tb3').val() == ""
+                    || email.test($('tb3').val()) == false
+                    || $('tb4').val() == ""
+                    || $('tb5').val() == "") $('#disclaimer').show();
+               else { $('#disclaimer').hide(); }
+           });
+    </script>
+    <script type="text/javascript">
+        var scrolled = 0;
+        $('#arrow').click(function ()
+        {
+            if ($('#blueInfo').hasClass('enlargeDiv'))
+            {
+                $('#blueInfo').removeClass('enlargeDiv');
+                $('#Doc').removeClass('disableScroll');
+            }
+            else
+            {
+                $('#blueInfo').addClass('enlargeDiv');
+                $('#Doc').addClass('disableScroll');
+            }
+        });
+        $('#diffClick').click(function () {
+            $('html, body').animate({
+                scrollTop: $("#section3").offset().top + 600
+            }, 200);
+        });
+    </script>
+</body>
+</html>

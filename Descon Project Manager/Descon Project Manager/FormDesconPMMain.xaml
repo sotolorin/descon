@@ -1,0 +1,223 @@
+﻿<controls:MetroWindow xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					  xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+					  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+					  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+					  xmlns:DataAccess="clr-namespace:DesconPM.DataAccess;assembly=DesconPM.DataAccess"
+					  xmlns:forms="clr-namespace:Descon.Forms;assembly=Descon.Forms"
+					  xmlns:local="clr-namespace:DesconPM.Main"
+					  x:Name="DesconProjectManagerWindow"
+					  mc:Ignorable="d"
+					  x:Class="DesconPM.Main.FormDesconPMMain"
+					  Title="Descon Project Manager"
+					  Height="700"
+					  Width="1000"
+					  d:DataContext="{d:DesignInstance {x:Type DataAccess:CommonDataProjectManager}, IsDesignTimeCreatable=True}"
+					  GlowBrush="{Binding ThemeAccent}"
+					  WindowStartupLocation="CenterScreen"
+					  MinWidth="1000"
+					  MinHeight="700">
+	<controls:MetroWindow.Resources>
+		<Style>
+			<Style.TargetType>
+				<x:Type TypeName="StackPanel" />
+			</Style.TargetType>
+			<Setter Property="forms:MarginSetterPanel.Margin"
+					Value="2" />
+		</Style>
+		<Style>
+			<Style.TargetType>
+				<x:Type TypeName="Label" />
+			</Style.TargetType>
+			<Setter Property="Label.HorizontalAlignment"
+					Value="Right" />
+		</Style>
+		<Style>
+			<Style.TargetType>
+				<x:Type TypeName="Image" />
+			</Style.TargetType>
+			<Setter Property="Image.Stretch"
+					Value="Fill" />
+			<Setter Property="Width"
+					Value="20"/>
+			<Setter Property="Height"
+					Value="20" />
+		</Style>
+		<Style>
+			<Style.TargetType>
+				<x:Type TypeName="Button" />
+			</Style.TargetType>
+			<Setter Property="Button.Width"
+					Value="30" />
+			<Setter Property="Button.Height"
+					Value="30" />
+			<Setter Property="Button.BorderBrush"
+					Value="#FFCCCCCC" />
+			<Setter Property="Button.Background"
+					Value="White" />
+		</Style>
+	</controls:MetroWindow.Resources>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="350*" />
+			<ColumnDefinition Width="471*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<GroupBox Grid.Row="0"
+				  Grid.Column="0"
+				  Header="Project Data">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<StackPanel Grid.Column="0">
+					<Label Content="File Name" />
+					<Label Content="Name" />
+					<Label Content="Date Created" />
+					<Label Content="Date Modified" />
+					<Label Content="Description" />
+				</StackPanel>
+				<StackPanel Grid.Column="1">
+					<TextBox Text="{Binding ProjectStructure.FileNameDisplay, Mode=OneWay}"
+							 IsEnabled="False" />
+					<TextBox Text="{Binding ProjectStructure.Name}"
+							 MaxLength="50" />
+					<TextBox Text="{Binding ProjectStructure.DateCreated, StringFormat=MM/dd/yyyy}"
+							 IsEnabled="False" />
+					<TextBox Text="{Binding ProjectStructure.DateModified, StringFormat=MM/dd/yyyy}"
+							 IsEnabled="False" />
+					<TextBox Height="70"
+							 Text="{Binding ProjectStructure.Description}"
+							   TextWrapping="Wrap"
+							 MaxLength="200" />
+				</StackPanel>
+				<StackPanel Grid.Column="2">
+					<Button ToolTip="Open File..."
+							TabIndex="2"
+							Click="btnOpenProject_Click">
+						<Image Source="/Descon.Forms;component/Images/Icons/descon_ui_icons_file_open.png" />
+					</Button>
+					<Button ToolTip="New File..."
+							TabIndex="2"
+							Click="btnNewProject_Click">
+						<Image Source="/Descon.Forms;component/Images/Icons/descon_ui_icons_file_new.png" />
+					</Button>
+					<Button ToolTip="Save"
+							TabIndex="2"
+							Click="btnSaveProject_Click">
+						<Image Source="/Descon.Forms;component/Images/Icons/descon_ui_icons_file_save.png" />
+					</Button>
+					<Button ToolTip="Save As..."
+							TabIndex="2"
+							Click="btnSaveAsProject_Click">
+						<Image Source="/Descon.Forms;component/Images/Icons/descon_ui_icons_file_saveas.png" />
+					</Button>
+				</StackPanel>
+			</Grid>
+		</GroupBox>
+		<GroupBox Grid.Row="1"
+				  Grid.Column="0"
+				  Header="Select Drawings for Report">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<DataGrid x:Name="dataGrid"
+						  Grid.Column="0"
+						  CanUserReorderColumns="False"
+						  CanUserResizeColumns="False"
+						  CanUserResizeRows="False"
+						  ItemsSource="{Binding ProjectStructure.DrawingItems}"
+						  GridLinesVisibility="All"
+						  AutoGenerateColumns="False"
+						  BorderThickness="1"
+						  Margin="2"
+						  CanUserSortColumns="False"
+						  SelectionMode="Single"
+						  CanUserAddRows="False"
+						  CanUserDeleteRows="False"
+						  SelectionChanged="dataGrid_SelectionChanged">
+					<DataGrid.Columns>
+						<DataGridCheckBoxColumn Binding="{Binding Checked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+							<DataGridCheckBoxColumn.HeaderTemplate>
+								<DataTemplate>
+									<CheckBox IsChecked="{Binding DataContext.ProjectStructure.SelectAllCheckBox, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:FormDesconPMMain}}}" />
+								</DataTemplate>
+							</DataGridCheckBoxColumn.HeaderTemplate>
+						</DataGridCheckBoxColumn>
+						<DataGridTextColumn Binding="{Binding Index}"
+											Header="#"
+											IsReadOnly="True"/>
+						<DataGridTextColumn Binding="{Binding Name}"
+											Header="Name"
+											IsReadOnly="True" />
+						<DataGridTextColumn Binding="{Binding Description, Mode=TwoWay}"
+											Header="Description"
+											Width="*" />
+					</DataGrid.Columns>
+				</DataGrid>
+				<StackPanel Grid.Column="1">
+					<Button BorderThickness="1"
+							Background="White"
+							ToolTip="Add Drawings..."
+							TabIndex="8"
+							Click="btnAddDrawing_Click">
+						<Image Source="/Descon.Forms;component/Images/Icons/descon_ui_icons_file_new.png"/>
+					</Button>
+					<Button BorderThickness="1"
+							Background="White"
+							ToolTip="Remove Checked Drawings"
+							TabIndex="9"
+							Click="btnRemoveDrawing_Click">
+						<Image Source="/Descon.Forms;component/Images/Icons/exit.png" />
+					</Button>
+					<Button BorderThickness="1"
+							Background="White"
+							ToolTip="Refresh Report"
+							TabIndex="9"
+							Click="btnRefreshReport_Click">
+						<Image Source="/Descon.Forms;component/Images/Icons/refresh.png" />
+					</Button>
+					<Button BorderThickness="1"
+							Background="White"
+							ToolTip="Move Up"
+							TabIndex="10"
+							Click="btnMoveDrawingUp_Click">
+						<Image Source="/Descon.Forms;component/Images/Icons/descon_ui_icons_main_arrowup.png">
+						</Image>
+					</Button>
+					<Button BorderThickness="1"
+							Background="White"
+							ToolTip="Move Down"
+							TabIndex="10"
+							Click="btnMoveDrawingDown_Click">
+						<Image Source="/Descon.Forms;component/Images/Icons/descon_ui_icons_main_arrowdown.png" />
+					</Button>
+				</StackPanel>
+			</Grid>
+		</GroupBox>
+		<TabControl Grid.Column="1"
+					Grid.Row="0"
+					Grid.RowSpan="2"
+
+					controls:TabControlHelper.IsUnderlined="True"
+					Margin="0,5,0,0">
+			<TabItem Header="Report View"
+					 controls:ControlsHelper.HeaderFontSize="14"
+					 controls:ControlsHelper.HeaderFontWeight="Bold"
+					 Margin="10,0,-10,0">
+				<GroupBox Header="Combined Report">
+					<forms:ControlReport x:Name="ctrlReport"
+										 DataContext="{Binding DataContext, ElementName=DesconProjectManagerWindow}"
+										 SettingsUpdated="SettingsUpdated"/>
+				</GroupBox>
+			</TabItem>
+		</TabControl>
+	</Grid>
+</controls:MetroWindow>

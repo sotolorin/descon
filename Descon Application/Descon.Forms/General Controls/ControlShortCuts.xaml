@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Descon.Forms.ControlShortCuts"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 Height="278"
+			 Width="360">
+	<Grid>
+		<RichTextBox FontFamily="Segoe UI"
+					 IsReadOnly="True"
+					 IsTabStop="False"
+					 FontSize="13"
+					 Margin="10">
+			<FlowDocument>
+				<Paragraph FontWeight="Bold"
+						   FontFamily="Segoe UI"
+						   Margin="0">
+					<Span Foreground="Black">
+						<Run Text="2D Views in Drawing Panel:" />
+					</Span>
+				</Paragraph>
+				<Paragraph FontFamily="Segoe UI"
+						   Margin="0" />
+				<Paragraph FontFamily="Segoe UI"
+						   Margin="0">
+					<Run Text="[UP], [DOWN], [LEFT], [RIGHT]: Pans the drawing" />
+				</Paragraph>
+				<Paragraph FontFamily="Segoe UI"
+						   Margin="0">
+					<Run Text="[Page Up], [Page Down]: Zooms the drawing in and out" />
+				</Paragraph>
+				<Paragraph FontWeight="Bold"
+						   FontFamily="Segoe UI"
+						   Margin="0" />
+				<Paragraph FontWeight="Bold"
+						   FontFamily="Segoe UI"
+						   Margin="0">
+					<Span Foreground="Black">
+						<Run Text="3D View in Drawing Panel:" />
+					</Span>
+				</Paragraph>
+				<Paragraph FontFamily="Segoe UI"
+						   Margin="0" />
+				<Paragraph FontFamily="Segoe UI"
+						   Margin="0">
+					<Run Text="[UP], [DOWN], [LEFT], [RIGHT]: Rotates the drawing" />
+				</Paragraph>
+				<Paragraph FontFamily="Segoe UI"
+						   Margin="0">
+					<Run FontWeight="Normal"
+						 Text="[ALT] + [UP], [DOWN], [LEFT], [RIGHT]: Pans the drawing" />
+				</Paragraph>
+				<Paragraph FontFamily="Calibri"
+						   Margin="0">
+					<Run FontWeight="Normal"
+						 FontFamily="Segoe UI"
+						 Text="[Page Up], [Page Down]: Zooms the drawing in and out" />
+				</Paragraph>
+			</FlowDocument>
+		</RichTextBox>
+	</Grid>
+</UserControl>

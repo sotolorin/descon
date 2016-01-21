@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:system="clr-namespace:System;assembly=mscorlib">
+	<system:String x:Key="Length">in</system:String>
+	<system:String x:Key="LengthLarge">ft</system:String>
+	<system:String x:Key="LengthSmall">1/16 in</system:String>
+	<system:String x:Key="Area">in²</system:String>
+	<system:String x:Key="Force">kips</system:String>
+	<system:String x:Key="ForcePerUnitLength">k/ft</system:String>
+	<system:String x:Key="Moment">kip-in/in</system:String>
+	<system:String x:Key="MomentPerUnitLengthSmall">k-in</system:String>
+	<system:String x:Key="MomentPerUnitLengthLarge">k-ft</system:String>
+</ResourceDictionary>

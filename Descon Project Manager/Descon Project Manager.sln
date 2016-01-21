@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesconPM.Main", "Descon Project Manager\DesconPM.Main.csproj", "{2C0B7AB1-052C-4CE4-839B-A42985AFAB76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesconPM.DataAccess", "DesconPM.DataAccess\DesconPM.DataAccess.csproj", "{601AF63A-31E8-4168-A627-E8BA49ABBB3D}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://72.22.74.131:8080/tfs/desconplus
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Descon\u0020Project\u0020Manager\\DesconPM.Main.csproj
+		SccProjectName1 = Descon\u0020Project\u0020Manager
+		SccLocalPath1 = Descon\u0020Project\u0020Manager
+		SccProjectUniqueName2 = DesconPM.DataAccess\\DesconPM.DataAccess.csproj
+		SccProjectName2 = DesconPM.DataAccess
+		SccLocalPath2 = DesconPM.DataAccess
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C0B7AB1-052C-4CE4-839B-A42985AFAB76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0B7AB1-052C-4CE4-839B-A42985AFAB76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0B7AB1-052C-4CE4-839B-A42985AFAB76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0B7AB1-052C-4CE4-839B-A42985AFAB76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{601AF63A-31E8-4168-A627-E8BA49ABBB3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{601AF63A-31E8-4168-A627-E8BA49ABBB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{601AF63A-31E8-4168-A627-E8BA49ABBB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{601AF63A-31E8-4168-A627-E8BA49ABBB3D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

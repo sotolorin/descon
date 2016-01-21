@@ -1,0 +1,231 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:Data="clr-namespace:Descon.Data;assembly=Descon.Data"
+			 xmlns:dataAccess="clr-namespace:Descon.UI.DataAccess;assembly=Descon.UI.DataAccess"
+			 xmlns:forms="clr-namespace:Descon.Forms"
+			 mc:Ignorable="d"
+			 x:Class="Descon.Forms.ControlFema"
+			 Height="449"
+			 Width="655"
+			 d:DataContext="{d:DesignInstance {x:Type dataAccess:CommonData}, IsDesignTimeCreatable=True}">
+	<UserControl.Resources>
+		<forms:EnumToBool x:Key="EnumToBool" />
+	</UserControl.Resources>
+	<Canvas>
+		<GroupBox Header="Framing System"
+				  HorizontalAlignment="Left"
+				  VerticalAlignment="Top"
+				  Width="216"
+				  TabIndex="6"
+				  Canvas.Left="431"
+				  Canvas.Top="10"
+				  Margin="0">
+			<StackPanel>
+				<RadioButton IsChecked="{Binding SeismicSettings.FramingType, ConverterParameter={x:Static Data:EFramingSystem.OMF}, Converter={StaticResource EnumToBool}}"
+							 Content="OMF"
+							 TabIndex="9"
+							 Margin="2" />
+				<RadioButton x:Name="rbSMF"
+							 IsChecked="{Binding SeismicSettings.FramingType, ConverterParameter={x:Static Data:EFramingSystem.SMF}, Converter={StaticResource EnumToBool}}"
+							 Content="SMF"
+							 TabIndex="10"
+							 Margin="2" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Beam Parameters"
+				  Canvas.Left="10"
+				  Canvas.Top="251"
+				  Height="192"
+				  Width="416"
+				  Margin="0">
+			<Canvas>
+				<forms:ControlDesconEditBox Canvas.Left="132"
+											Canvas.Top="120"
+											DSCLabel="Gage on Flange"
+											DSCShowComboBox="Collapsed"
+											DSCShowCheckBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.GageOnFlange}" />
+				<forms:ControlDesconEditBox Canvas.Left="31"
+											Canvas.Top="90"
+											DSCLabel="Dist. From TOB to First Bolt in Web"
+											DSCShowComboBox="Collapsed"
+											DSCShowCheckBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Fema.DistanceFromTOB}" />
+				<forms:ControlDesconEditBox Canvas.Left="62"
+											Canvas.Top="60"
+											DSCLabel="Bolt Edge Dist. on Flange (ef)"
+											DSCShowComboBox="Collapsed"
+											DSCShowCheckBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Fema.BoltEdgeDistanceOnFlange}" />
+				<forms:ControlDesconEditBox Canvas.Left="93"
+											Canvas.Top="30"
+											DSCLabel="Bolt Edge Dist. on Web"
+											DSCShowComboBox="Collapsed"
+											DSCShowCheckBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Fema.BoltEdgeDistanceOnWeb}" />
+				<forms:ControlDesconEditBox Canvas.Left="160"
+											DSCLabel="End Offset"
+											DSCShowComboBox="Collapsed"
+											DSCShowCheckBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Fema.EndOffset}" />
+			</Canvas>
+		</GroupBox>
+		<GroupBox Header="Fema Detail"
+				  Canvas.Left="10"
+				  Margin="0"
+				  Canvas.Top="10"
+				  Height="236"
+				  Width="416">
+			<Canvas>
+				<Image x:Name="imageFemaConnectionDetail"
+					   ToolTipService.ShowDuration="30000"
+					   ToolTipService.InitialShowDelay="0"
+					   Source="/Descon.Resources;component/Images/Icons/QuestionMark.png"
+					   Canvas.Left="257"
+					   Canvas.Top="-2" />
+				<ComboBox x:Name="cbxConnectionType"
+						  ItemsSource="{Binding CommonLists.FEMAConnections}"
+						  SelectedValuePath="Key"
+						  DisplayMemberPath="Value"
+						  SelectedValue="{Binding SelectedMember.WinConnect.Fema.Connection}"
+						  HorizontalAlignment="Right"
+						  VerticalAlignment="Top"
+						  Width="321"
+						  Canvas.Left="71"
+						  Canvas.Top="35"
+						  SelectionChanged="cbxConnectionType_SelectionChanged"
+						  TabIndex="1" />
+				<CheckBox IsChecked="{Binding SelectedMember.WinConnect.Fema.UseNearEndDistance}"
+						  Content="Use Near End Hinge Dist. to&#xA;Near End Col. CL for Shf"
+						  Canvas.Left="76"
+						  Canvas.Top="162"
+						  TabIndex="8" />
+				<ComboBox ItemsSource="{Binding MemberList}"
+						  SelectedValue="{Binding MemberType}"
+						  DisplayMemberPath="Value"
+						  SelectedValuePath="Key"
+						  Canvas.Left="72"
+						  Width="176"
+						  Canvas.Top="4" />
+				<Label Content="Component"
+					   Canvas.Top="4"
+					   Canvas.Left="-2" />
+				<Label Content="Connection"
+					   Canvas.Top="35" />
+				<forms:ControlDesconEditBox Canvas.Left="54"
+											Canvas.Top="64"
+											DSCLabel="L"
+											DSCShowComboBox="Collapsed"
+											DSCShowCheckBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCUnit="{Binding ConstUnit.LargeLength, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Fema.L}" />
+				<forms:ControlDesconEditBox Canvas.Left="176"
+											Canvas.Top="123"
+											DSCLabel="Shf"
+											DSCShowComboBox="Collapsed"
+											DSCShowCheckBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Fema.Shf}" />
+				<forms:ControlDesconEditBox Canvas.Left="180"
+											Canvas.Top="95"
+											DSCLabel="Lp"
+											DSCShowComboBox="Collapsed"
+											DSCShowCheckBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCUnit="{Binding ConstUnit.LargeLength, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Fema.Lp}" />
+				<forms:ControlDesconEditBox Canvas.Left="179"
+											Canvas.Top="64"
+											DSCLabel="Pg"
+											DSCShowComboBox="Collapsed"
+											DSCShowCheckBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCUnit="{Binding ConstUnit.Force, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Fema.Pg}" />
+				<forms:ControlDesconEditBox Canvas.Left="42"
+											Canvas.Top="123"
+											DSCLabel="Wg"
+											DSCShowComboBox="Collapsed"
+											DSCShowCheckBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCUnit="{Binding ConstUnit.ForceUniform, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Fema.Wg}" />
+				<forms:ControlDesconEditBox Canvas.Left="51"
+											Canvas.Top="94"
+											DSCLabel="H"
+											DSCShowComboBox="Collapsed"
+											DSCShowCheckBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCUnit="{Binding ConstUnit.LargeLength, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Fema.H}" />
+			</Canvas>
+		</GroupBox>
+		<GroupBox Header="Fema Data"
+				  Height="345"
+				  Canvas.Left="431"
+				  Margin="0"
+				  Canvas.Top="98"
+				  Width="216">
+			<Canvas>
+				<Button x:Name="btnFlangeBolt"
+						Content="{Binding SelectedMember.WinConnect.Fema.FlangeBolt.BoltName}"
+						Click="btnFlangeBolt_Click"
+						Height="20"
+						Canvas.Left="64"
+						Canvas.Top="63"
+						Width="131"
+						TabIndex="13" />
+				<Label Content="Flange Bolt"
+					   HorizontalAlignment="Left"
+					   VerticalAlignment="Top"
+					   Canvas.Top="62"
+					   Canvas.Left="-5" />
+				<Button x:Name="btnWebBolt"
+						Content="{Binding SelectedMember.WinConnect.Fema.WebBolt.BoltName}"
+						Height="20"
+						Canvas.Left="64"
+						Canvas.Top="93"
+						Width="131"
+						Click="btnWebBolt_Click"
+						TabIndex="14" />
+				<forms:ControlDesconEditBox Canvas.Left="26"
+											DSCLabel="Weld"
+											DSCShowCheckBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCShowUnit="Collapsed"
+											DSCShowTextBox="Collapsed"
+											DSCComboBoxSource="{Binding WeldDict}"
+											DSCComboBoxValue="{Binding SelectedMember.WinConnect.Fema.WeldName}" />
+				<forms:ControlDesconEditBox Canvas.Left="10"
+											DSCLabel="Material"
+											DSCShowCheckBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											Canvas.Top="30"
+											DSCShowUnit="Collapsed"
+											DSCShowTextBox="Collapsed"
+											DSCComboBoxSource="{Binding MaterialDict}"
+											DSCComboBoxValue="{Binding SelectedMember.WinConnect.Fema.WeldName}"
+											DSCSelectedValuePath="{Binding SelectedMember.WinConnect.Fema.Material.Name}" />
+				<Label Content="Web Bolt"
+					   HorizontalAlignment="Left"
+					   VerticalAlignment="Top"
+					   Canvas.Left="6"
+					   Canvas.Top="92" />
+			</Canvas>
+		</GroupBox>
+	</Canvas>
+</UserControl>

@@ -1,0 +1,835 @@
+﻿<Controls:MetroWindow xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+					  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+					  xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+					  xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+					  xmlns:DataAccess="clr-namespace:Descon.UI.DataAccess;assembly=Descon.UI.DataAccess"
+					  xmlns:forms="clr-namespace:Descon.Forms"
+					  xmlns:data="clr-namespace:Descon.Data;assembly=Descon.Data"
+					  x:Name="DesconMainWindow"
+					  mc:Ignorable="d"
+					  x:Class="Descon.Forms.FormDesconMain"
+					  WindowStartupLocation="CenterScreen"
+					  Width="1015"
+					  Height="745"
+					  MinWidth="1015"
+					  MinHeight="745"
+					  Loaded="DesconMainWindow_Loaded"
+					  Closing="DesconMainWindow_Closing"
+					  WindowState="{Binding WindowState}"
+					  GlowBrush="{DynamicResource AccentColorBrush}"
+					  d:DataContext="{d:DesignInstance {x:Type DataAccess:CommonData}, IsDesignTimeCreatable=True}"
+					  TitleCaps="False"
+					  WindowTitleBrush="{Binding ThemeAccent}"
+					  NonActiveBorderBrush="{Binding ThemeAccent}"
+					  NonActiveWindowTitleBrush="{Binding ThemeAccent}"
+					  SizeChanged="DesconMainWindow_SizeChanged"
+					  ContentRendered="DesconMainWindow_ContentRendered"
+					  ShowTitleBar="False"
+					  Title="{Binding ApplicationTitle, Mode=OneWay}"
+					  ShowSystemMenuOnRightClick="False">
+	<Controls:MetroWindow.CommandBindings>
+		<CommandBinding Command="Close"
+						Executed="menuExit_Click" />
+	</Controls:MetroWindow.CommandBindings>
+	<Controls:MetroWindow.InputBindings>
+		<KeyBinding Command="New"
+					Key="N"
+					Modifiers="Control" />
+		<KeyBinding Command="Open"
+					Key="O"
+					Modifiers="Control" />
+		<KeyBinding Command="Save"
+					Key="S"
+					Modifiers="Control" />
+		<KeyBinding Command="Cut"
+					Key="X"
+					Modifiers="Control" />
+		<KeyBinding Command="Copy"
+					Key="C"
+					Modifiers="Control" />
+		<KeyBinding Command="Paste"
+					Key="V"
+					Modifiers="Control" />
+		<KeyBinding Command="Close"
+					Key="X"
+					Modifiers="Control" />
+	</Controls:MetroWindow.InputBindings>
+	<Controls:MetroWindow.Resources>
+		<forms:EnumToBool x:Key="EnumToBool" />
+		<forms:BoolToVisibilityCollapsed x:Key="BoolToVisibility" />
+		<forms:BoolToColor x:Key="BoolToColor" />
+		<Style>
+			<Style.TargetType>
+				<x:Type TypeName="Rectangle" />
+			</Style.TargetType>
+			<Setter Property="Shape.Stroke"
+					Value="#FFE1E1E1" />
+			<Setter Property="Width"
+					Value="1" />
+		</Style>
+	</Controls:MetroWindow.Resources>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="300" />
+			<ColumnDefinition />
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<TextBlock Grid.ColumnSpan="3"
+				   Text="{Binding Title, ElementName=DesconMainWindow}"
+				   TextAlignment="Center"
+				   Padding="0,5,0,0" />
+		<StackPanel Grid.Row="0"
+					Grid.Column="0"
+					Grid.ColumnSpan="2"
+					Orientation="Horizontal"
+					Margin="0,0,0,10">
+			<StackPanel.Resources>
+				<Style>
+					<Style.TargetType>
+						<x:Type TypeName="Button" />
+					</Style.TargetType>
+					<Setter Property="FrameworkElement.Width"
+							Value="30" />
+					<Setter Property="FrameworkElement.Height"
+							Value="30" />
+					<Setter Property="Control.BorderThickness"
+							Value="0" />
+					<Setter Property="Control.Background"
+							Value="White" />
+					<Setter Property="Control.BorderBrush"
+							Value="White" />
+				</Style>
+				<Style>
+					<Style.TargetType>
+						<x:Type TypeName="Image" />
+					</Style.TargetType>
+					<Setter Property="Width"
+							Value="20" />
+					<Setter Property="Height"
+							Value="20" />
+					<Setter Property="Stretch"
+							Value="Fill" />
+				</Style>
+			</StackPanel.Resources>
+			<Button Click="menuNew_Click"
+					ToolTip="New File"
+					IsTabStop="False"
+					IsEnabled="{Binding IsNotDemo, Mode=OneWay}">
+				<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_File_New.png" />
+			</Button>
+			<Button Click="menuOpen_Click"
+					ToolTip="Open File... (Right click for recent files)"
+					IsTabStop="False"
+					IsEnabled="{Binding IsNotDemo, Mode=OneWay}">
+				<Button.ContextMenu>
+					<ContextMenu ItemsSource="{Binding ContextMenuRecentFiles}">
+						<ContextMenu.ItemTemplate>
+							<DataTemplate>
+								<TextBlock Text="{Binding Key}"
+										  MouseUp="menuOpenRightClickSelect_Click" />
+							</DataTemplate>
+						</ContextMenu.ItemTemplate>
+					</ContextMenu>
+				</Button.ContextMenu>
+				<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_File_Open.png" />
+			</Button>
+			<Button Click="menuSave_Click"
+					ToolTip="Save"
+					IsTabStop="False"
+					IsEnabled="{Binding IsNotDemo, Mode=OneWay}">
+				<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_File_Save.png" />
+			</Button>
+			<Button Click="menuSaveAs_Click"
+					ToolTip="Save As..."
+					IsTabStop="False"
+					IsEnabled="{Binding IsNotDemo, Mode=OneWay}">
+				<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_File_SaveAs.png" />
+			</Button>
+			<Button Click="menuBatchReports_Click"
+					ToolTip="Run Batch Reports"
+					IsTabStop="False"
+					Visibility="{Binding LicenseMinimumDeveloper, Converter={StaticResource BoolToVisibility}}">
+				<Image Source="/Descon.Resources;component/Images/Icons/Expander.png"
+					   Stretch="None" />
+			</Button>
+			<ComboBox x:Name="cbxLicenseType"
+					  ItemsSource="{Binding CommonLists.LicenseTypes}"
+					  Width="100"
+					  TabIndex="5"
+					  VerticalAlignment="Center"
+					  IsTabStop="False"
+					  SelectedValue="{Binding LicenseType}"
+					  DisplayMemberPath="Value"
+					  SelectedValuePath="Key" />
+		</StackPanel>
+		<TabControl Grid.Row="1"
+					Grid.Column="0"
+					Grid.ColumnSpan="2"
+					SelectionChanged="tabControl_SelectionChanged"
+					Padding="2">
+			<TabControl.Resources>
+				<Style>
+					<Style.TargetType>
+						<x:Type TypeName="StackPanel" />
+					</Style.TargetType>
+					<Setter Property="forms:MarginSetterPanel.Margin"
+							Value="2" />
+				</Style>
+				<Style>
+					<Style.TargetType>
+						<x:Type TypeName="Image" />
+					</Style.TargetType>
+					<Setter Property="Image.Stretch"
+							Value="Fill" />
+					<Setter Property="Image.Width"
+							Value="32" />
+					<Setter Property="Image.Height"
+							Value="32" />
+				</Style>
+				<Style>
+					<Style.TargetType>
+						<x:Type TypeName="TextBlock" />
+					</Style.TargetType>
+					<Setter Property="TextBlock.TextAlignment"
+							Value="Center" />
+					<Setter Property="TextBlock.TextWrapping"
+							Value="Wrap" />
+					<Setter Property="TextBlock.FontSize"
+							Value="11" />
+				</Style>
+				<Style>
+					<Style.TargetType>
+						<x:Type TypeName="Label" />
+					</Style.TargetType>
+					<Setter Property="Control.Padding"
+							Value="0" />
+					<Setter Property="Control.FontSize"
+							Value="14" />
+				</Style>
+				<Style>
+					<Style.TargetType>
+						<x:Type TypeName="Button" />
+					</Style.TargetType>
+					<Setter Property="FrameworkElement.Width"
+							Value="66" />
+					<Setter Property="FrameworkElement.Height"
+							Value="76" />
+					<Setter Property="Control.BorderThickness"
+							Value="0" />
+					<Setter Property="Control.Background"
+							Value="White" />
+					<Setter Property="Control.BorderBrush"
+							Value="White" />
+				</Style>
+			</TabControl.Resources>
+			<TabItem BorderThickness="0,0,0,1"
+					 Width="10"
+					 IsEnabled="False" />
+			<TabItem x:Name="tabDesignHeader"
+					 Controls:ControlsHelper.HeaderFontSize="14"
+					 BorderThickness="1,1,1,0"
+					 Width="65">
+				<TabItem.Header>
+					<Label Content="DESIGN" />
+				</TabItem.Header>
+				<Grid Height="80">
+					<StackPanel Orientation="Horizontal">
+						<StackPanel Orientation="Horizontal">
+							<Button VerticalContentAlignment="Top"
+									Click="menuSeismicSettings_Click"
+									IsTabStop="False"
+									Visibility="{Binding LicenseMinimumNext, Converter={StaticResource BoolToVisibility}}"
+									Width="73">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Design_Seismic.png" />
+									<TextBlock Text="Seismic Specs" />
+								</StackPanel>
+							</Button>
+						</StackPanel>
+						<StackPanel Orientation="Vertical"
+									Visibility="{Binding LicenseMinimumNext, Converter={StaticResource BoolToVisibility}}">
+							<RadioButton Content="Seismic"
+										 IsChecked="{Binding Preferences.Seismic, ConverterParameter={x:Static data:ESeismic.Seismic}, Converter={StaticResource EnumToBool}}"
+										 IsEnabled="{Binding LicenseMinimumNext, Mode=OneWay}"
+										 Checked="ApplyChangesToDrawing"
+										 IsTabStop="False" />
+							<RadioButton Content="Non-Seismic"
+										 IsChecked="{Binding Preferences.Seismic, ConverterParameter={x:Static data:ESeismic.NonSeismic}, Converter={StaticResource EnumToBool}}"
+										 Checked="ApplyChangesToDrawing"
+										 IsTabStop="False" />
+						</StackPanel>
+						<Rectangle Visibility="{Binding LicenseMinimumNext, Converter={StaticResource BoolToVisibility}}" />
+						<StackPanel Orientation="Vertical"
+									Visibility="{Binding LicenseMinimumNext, Converter={StaticResource BoolToVisibility}}">
+							<RadioButton Content="SCBF"
+										 IsChecked="{Binding Preferences.BracingType, ConverterParameter={x:Static data:EBracingType.SCBF}, Converter={StaticResource EnumToBool}}"
+										 Checked="ApplyChangesToDrawing"
+										 IsTabStop="False" />
+							<RadioButton Content="EBF"
+										 IsChecked="{Binding Preferences.BracingType, ConverterParameter={x:Static data:EBracingType.EBF}, Converter={StaticResource EnumToBool}}"
+										 Checked="ApplyChangesToDrawing"
+										 IsTabStop="False" />
+							<RadioButton Content="OCBF"
+										 IsChecked="{Binding Preferences.BracingType, ConverterParameter={x:Static data:EBracingType.OCBF}, Converter={StaticResource EnumToBool}}"
+										 Checked="ApplyChangesToDrawing"
+										 IsTabStop="False" />
+						</StackPanel>
+						<Rectangle Visibility="{Binding LicenseMinimumNext, Converter={StaticResource BoolToVisibility}}"/>
+						<StackPanel Orientation="Vertical">
+							<RadioButton Content="AISC13"
+										 IsChecked="{Binding Preferences.SteelCode, ConverterParameter={x:Static data:ESteelCode.AISC13}, Converter={StaticResource EnumToBool}}"
+										 Checked="ApplyChangesToDrawing"
+										 IsTabStop="False" />
+							<RadioButton Content="AISC14"
+										 IsChecked="{Binding Preferences.SteelCode, ConverterParameter={x:Static data:ESteelCode.AISC14}, Converter={StaticResource EnumToBool}}"
+										 Checked="ApplyChangesToDrawing"
+										 IsTabStop="False" />
+						</StackPanel>
+						<Rectangle />
+						<StackPanel Orientation="Vertical">
+							<RadioButton Content="ASD"
+										 IsChecked="{Binding Preferences.CalcMode, ConverterParameter={x:Static data:ECalcMode.ASD}, Converter={StaticResource EnumToBool}}"
+										 Checked="ApplyChangesToDrawing"
+										 IsTabStop="False" />
+							<RadioButton Content="LRFD"
+										 IsChecked="{Binding Preferences.CalcMode, ConverterParameter={x:Static data:ECalcMode.LRFD}, Converter={StaticResource EnumToBool}}"
+										 Checked="ApplyChangesToDrawing"
+										 IsTabStop="False" />
+						</StackPanel>
+						<Rectangle />
+						<StackPanel Orientation="Vertical"
+									IsEnabled="{Binding LicenseMinimumStandard, Mode=OneWay}">
+							<RadioButton Content="Imperial"
+										 IsChecked="{Binding Units, ConverterParameter={x:Static data:EUnit.US}, Converter={StaticResource EnumToBool}}"
+										 Checked="ApplyChangesToDrawing"
+										 IsTabStop="False" />
+							<RadioButton Content="Metric"
+										 IsChecked="{Binding Units, ConverterParameter={x:Static data:EUnit.Metric}, Converter={StaticResource EnumToBool}}"
+										 Checked="ApplyChangesToDrawing"
+										 IsTabStop="False" />
+						</StackPanel>
+					</StackPanel>
+				</Grid>
+			</TabItem>
+			<TabItem x:Name="tabToolsHeader"
+					 Controls:ControlsHelper.HeaderFontSize="14"
+					 BorderThickness="0,0,0,1"
+					 HorizontalAlignment="Left"
+					 Width="60">
+				<TabItem.Header>
+					<Label Content="TOOLS" />
+				</TabItem.Header>
+				<Grid>
+					<StackPanel Orientation="Horizontal"
+								Height="80">
+						<StackPanel Orientation="Horizontal">
+							<Button VerticalContentAlignment="Top"
+									Click="menuMaterialsAndWelds_Click"
+									IsTabStop="False">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Tools_MaterialsAndWelds.png" />
+									<TextBlock Text="Materials and Welds" />
+								</StackPanel>
+							</Button>
+							<Button VerticalContentAlignment="Top"
+									Click="menuUserShapes_Click"
+									IsTabStop="False"
+									Visibility="{Binding LicenseMinimumNext, Converter={StaticResource BoolToVisibility}}">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Tools_UserShape.png" />
+									<TextBlock Text="User Shapes" />
+								</StackPanel>
+							</Button>
+							<Rectangle />
+							<Button VerticalContentAlignment="Top"
+									Click="menuPreferences_Click"
+									IsTabStop="False">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Tools_Settings.png" />
+									<TextBlock Text="Settings" />
+								</StackPanel>
+							</Button>
+							<Button VerticalContentAlignment="Top"
+									Click="menuReportSettings_Click"
+									IsTabStop="False">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Tools_ReportSettings.png" />
+									<TextBlock Text="Report Settings" />
+								</StackPanel>
+							</Button>
+						</StackPanel>
+						<Rectangle />
+						<StackPanel Orientation="Horizontal">
+							<Button VerticalContentAlignment="Top"
+									Click="menuScreenshot_Click"
+									Margin="0,2,0,3"
+									IsTabStop="False">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Tools_Screenshot.png" />
+									<TextBlock Text="Screen Shot" />
+								</StackPanel>
+							</Button>
+							<Button VerticalContentAlignment="Top"
+									Click="menuShortCuts_Click"
+									IsTabStop="False">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Tools_HotKeys.png" />
+									<TextBlock Text="Shorcuts" />
+								</StackPanel>
+							</Button>
+							<Button VerticalContentAlignment="Top"
+									IsTabStop="False"
+									Click="menuQuickStart_Click">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Support_OverlayToggle.png" />
+									<TextBlock Text="Quick Start" />
+								</StackPanel>
+							</Button>
+							<Button VerticalContentAlignment="Top"
+									Click="menuCalculator_Click"
+									IsTabStop="False">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Tools_Calculator.png" />
+									<TextBlock Text="Calculator" />
+								</StackPanel>
+							</Button>
+						</StackPanel>
+					</StackPanel>
+				</Grid>
+			</TabItem>
+			<TabItem x:Name="tabSupportHeader"
+					 Controls:ControlsHelper.HeaderFontSize="14"
+					 BorderThickness="0,0,0,1"
+					 Width="75"
+					 IsTabStop="False">
+				<TabItem.Header>
+					<Label Content="SUPPORT" />
+				</TabItem.Header>
+				<Grid>
+					<StackPanel Orientation="Horizontal"
+								Height="80">
+						<StackPanel Orientation="Horizontal">
+							<Button VerticalContentAlignment="Top"
+									Click="menuSupport_Click"
+									IsTabStop="False">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Support_Support.png" />
+									<TextBlock Text="Support" />
+								</StackPanel>
+							</Button>
+							<Button VerticalContentAlignment="Top"
+									Click="menuReferenceManual_Click"
+									IsTabStop="False"
+									Visibility="Collapsed">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Support_Manual.png" />
+									<TextBlock Text="Manual" />
+								</StackPanel>
+							</Button>
+							<Button VerticalContentAlignment="Top"
+									Click="menuSendFeedback_Click"
+									IsTabStop="False">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Support_Feedback.png" />
+									<TextBlock Text="Feedback" />
+								</StackPanel>
+							</Button>
+						</StackPanel>
+						<Rectangle />
+						<StackPanel Orientation="Horizontal">
+							<Button VerticalContentAlignment="Top"
+									Click="menuOpenDesconDocs_Click"
+									IsTabStop="False">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Support_Resources.png" />
+									<TextBlock Text="Resources" />
+								</StackPanel>
+							</Button>
+							<Button VerticalContentAlignment="Top"
+									Click="menuCheckForUpdate_Click"
+									IsTabStop="False">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Support_Update_1.png" />
+									<TextBlock Text="Update" />
+								</StackPanel>
+							</Button>
+							<Button VerticalContentAlignment="Top"
+									Click="menuChangeLog_Click"
+									IsTabStop="False">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Support_UpdateLog.png" />
+									<TextBlock Text="Update Log" />
+								</StackPanel>
+							</Button>
+						</StackPanel>
+						<Rectangle />
+						<StackPanel Orientation="Horizontal">
+							<Button VerticalContentAlignment="Top"
+									Click="menuLicense_Click"
+									IsTabStop="False">
+								<StackPanel>
+									<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Support_About.png" />
+									<TextBlock Text="About" />
+								</StackPanel>
+							</Button>
+						</StackPanel>
+					</StackPanel>
+				</Grid>
+			</TabItem>
+			<TabItem BorderThickness="0,0,0,1"
+					 Width="600"
+					 IsTabStop="False"
+					 IsEnabled="False">
+				<TabItem.BorderBrush>
+					<LinearGradientBrush EndPoint="0,1"
+										 StartPoint="0,0">
+						<LinearGradientBrush.RelativeTransform>
+							<TransformGroup>
+								<ScaleTransform CenterY="0.5"
+												CenterX="0.5" />
+								<SkewTransform CenterY="0.5"
+											   CenterX="0.5" />
+								<RotateTransform Angle="270"
+												 CenterY="0.5"
+												 CenterX="0.5" />
+								<TranslateTransform />
+							</TransformGroup>
+						</LinearGradientBrush.RelativeTransform>
+						<GradientStop Color="{Binding ThemeAccentColor}"
+									  Offset="0" />
+						<GradientStop Color="White"
+									  Offset="1" />
+					</LinearGradientBrush>
+				</TabItem.BorderBrush>
+			</TabItem>
+		</TabControl>
+		<forms:GaugePlotter Grid.Row="1"
+							Grid.Column="2"
+							GaugeCapacity="{Binding GaugeMainCapacity}"
+							GaugeCapacityText="Overall Capacity"
+							Visibility="{Binding Preferences.EnableGauges, Converter={StaticResource BoolToVisibility}}"
+							MaxHeight="110"
+							Margin="0,16,0,0"
+							ToolTip="Overall Capacity"
+							Width="90"
+							MouseDown="GaugePlotter_MouseUp" />
+		<Canvas Grid.Row="2"
+				Grid.Column="0"
+				Height="40"
+				Background="{Binding ThemeAccent}">
+			<Label Content="Config"
+				   FontWeight="Bold"
+				   HorizontalContentAlignment="Right"
+				   VerticalAlignment="Center"
+				   Foreground="White"
+				   Canvas.Left="31"
+				   Canvas.Top="7" />
+			<ComboBox ItemsSource="{Binding CommonLists.JointConfigListForMenu}"
+					  SelectedValue="{Binding JointConfig}"
+					  DisplayMemberPath="Value"
+					  SelectedValuePath="Key"
+					  FontWeight="Bold"
+					  Width="210"
+					  TabIndex="5"
+					  VerticalAlignment="Center"
+					  IsTabStop="False"
+					  Canvas.Left="79"
+					  Canvas.Top="7"
+					  DropDownOpened="ComboBox_DropDownOpened"
+					  DropDownClosed="ComboBox_DropDownClosed" />
+		</Canvas>
+		<Grid Grid.Row="2"
+			  Grid.Column="1"
+			  Grid.ColumnSpan="2"
+			  Background="{Binding ThemeAccent}">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<Grid.Resources>
+				<Style>
+					<Style.TargetType>
+						<x:Type TypeName="Button" />
+					</Style.TargetType>
+					<Setter Property="Width"
+							Value="30" />
+					<Setter Property="Height"
+							Value="30" />
+					<Setter Property="BorderThickness"
+							Value="0" />
+					<Setter Property="Background"
+							Value="{x:Null}" />
+					<Setter Property="Control.BorderBrush"
+							Value="White" />
+				</Style>
+				<Style>
+					<Style.TargetType>
+						<x:Type TypeName="Image" />
+					</Style.TargetType>
+					<Setter Property="Image.Width"
+							Value="20" />
+					<Setter Property="Image.Height"
+							Value="20" />
+					<Setter Property="Image.Stretch"
+							Value="Fill" />
+				</Style>
+			</Grid.Resources>
+			<StackPanel x:Name="stackPanelDrawingTab"
+						Orientation="Horizontal"
+						Background="White"
+						Margin="0,7,0,0">
+				<Button Click="btnDrawing_Click"
+						ToolTip="Switch to Design"
+						IsTabStop="False"
+						Width="Auto">
+					<TextBlock Text="DRAWING"
+							   FontSize="14"
+							   VerticalAlignment="Center"
+							   Padding="0"
+							   Margin="10,0" />
+				</Button>
+				<StackPanel x:Name="stackPanelDesignButtons"
+							Orientation="Horizontal">
+					<Button Click="btnZoomToFit_Click"
+							ToolTip="Fit All"
+							IsTabStop="False">
+						<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_View_FitAll.png" />
+					</Button>
+					<Button Click="btnZoomToFitSelected_Click"
+							ToolTip="Fit Selected"
+							IsTabStop="False">
+						<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_View_FitSelected.png" />
+					</Button>
+					<Rectangle Margin="2,0" />
+					<Button Click="btnToggleView_Click"
+							ToolTip="Toggle Left View"
+							IsTabStop="False"
+							Background="{Binding Preferences.ViewSettings.ShowLeft, Converter={StaticResource BoolToColor}}"
+							Uid="btnShowLeft"
+							MouseRightButtonDown="btnToggleView_MouseRightButtonUp">
+						<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_View_Left.png" />
+					</Button>
+					<Button Click="btnToggleView_Click"
+							ToolTip="Toggle Right View"
+							IsTabStop="False"
+							Background="{Binding Preferences.ViewSettings.ShowRight, Converter={StaticResource BoolToColor}}"
+							Uid="btnShowRight"
+							MouseRightButtonDown="btnToggleView_MouseRightButtonUp">
+						<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_View_Right.png" />
+					</Button>
+					<Button Click="btnToggleView_Click"
+							ToolTip="Toggle Top View"
+							IsTabStop="False"
+							Background="{Binding Preferences.ViewSettings.ShowTop, Converter={StaticResource BoolToColor}}"
+							Uid="btnShowTop"
+							MouseRightButtonDown="btnToggleView_MouseRightButtonUp">
+						<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_View_Top.png" />
+					</Button>
+					<Button Click="btnToggleView_Click"
+							ToolTip="Toggle Front View"
+							IsTabStop="False"
+							Background="{Binding Preferences.ViewSettings.ShowFront, Converter={StaticResource BoolToColor}}"
+							Uid="btnShowFront"
+							MouseRightButtonDown="btnToggleView_MouseRightButtonUp">
+						<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_View_Front.png" />
+					</Button>
+					<Button Click="btnToggleView_Click"
+							ToolTip="Toggle 3D View"
+							IsTabStop="False"
+							Background="{Binding Preferences.ViewSettings.Show3D, Converter={StaticResource BoolToColor}}"
+							Margin="0,0,10,0"
+							Uid="btnShow3D"
+							MouseRightButtonDown="btnToggleView_MouseRightButtonUp">
+						<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_View_3D.png" />
+					</Button>
+				</StackPanel>
+			</StackPanel>
+			<StackPanel x:Name="stackPanelReportTab"
+						Grid.Column="1"
+						Orientation="Horizontal"
+						Margin="1,7,0,1"
+						Background="White">
+				<Button Click="btnReport_Click"
+						ToolTip="Switch to Report"
+						IsTabStop="False"
+						Width="Auto">
+					<TextBlock Text="{Binding NumberOfNoGoods, StringFormat=REPORT (NG: \{0\})}"
+							   FontSize="14"
+							   Foreground="{Binding NumberOfNoGoodsColor}"
+							   VerticalAlignment="Center"
+							   Margin="10,0" />
+				</Button>
+				<StackPanel Orientation="Horizontal"
+							x:Name="stackPanelReportButtons">
+					<Button ToolTip="Toggle report drawing"
+							IsTabStop="False"
+							Background="{Binding Preferences.ReportSettings.ShowDrawing, Converter={StaticResource BoolToColor}}"
+							Click="btnShowDrawing_Click">
+						<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_ReportTab_AddViews.png" />
+					</Button>
+					<Button ToolTip="Toggle report calculations"
+							IsTabStop="False"
+							Background="{Binding Preferences.ReportSettings.ShowCalculations, Converter={StaticResource BoolToColor}}"
+							Click="btnShowCalculations_Click">
+						<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_ReportTab_Calculations.png" />
+					</Button>
+					<StackPanel Orientation="Horizontal"
+								Visibility="{Binding Preferences.ReportSettings.ShowDrawing, Converter={StaticResource BoolToVisibility}}"> 
+					<Rectangle Margin="2,0" />
+						<Button Click="btnReportTopOfPage_Click"
+								ToolTip="Show Drawing at top of report"
+								IsTabStop="False"
+								Background="{Binding Preferences.ReportSettings.ShowDrawingAtTop, Converter={StaticResource BoolToColor}}">
+							<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_MainTab_TopOfPage.png" />
+						</Button>
+						<Button Click="btnReportBottomOfPage_Click"
+								ToolTip="Show drawing at bottom of report"
+								IsTabStop="False"
+								Background="{Binding Preferences.ReportSettings.ShowDrawingAtBottom, Converter={StaticResource BoolToColor}}">
+							<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_MainTab_BottomOfPage.png" />
+						</Button>
+						<Button Click="btnToggleView_Click"
+								ToolTip="Toggle Left View"
+								IsTabStop="False"
+								Background="{Binding Preferences.ReportSettings.ShowLeftSideView, Converter={StaticResource BoolToColor}}"
+								MouseRightButtonDown="btnToggleView_MouseRightButtonUp"
+								Uid="btnShowLeftReport">
+							<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_ReportTab_Left.png" />
+						</Button>
+						<Button Click="btnToggleView_Click"
+								ToolTip="Toggle Right View"
+								IsTabStop="False"
+								Background="{Binding Preferences.ReportSettings.ShowRightSideView, Converter={StaticResource BoolToColor}}"
+								MouseRightButtonDown="btnToggleView_MouseRightButtonUp"
+								Uid="btnShowRightReport">
+							<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_ReportTab_Right.png" />
+						</Button>
+						<Button Click="btnToggleView_Click"
+								ToolTip="Toggle Top View"
+								IsTabStop="False"
+								Background="{Binding Preferences.ReportSettings.ShowTopView, Converter={StaticResource BoolToColor}}"
+								MouseRightButtonDown="btnToggleView_MouseRightButtonUp"
+								Uid="btnShowTopReport">
+							<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_ReportTab_Top.png" />
+						</Button>
+						<Button Click="btnToggleView_Click"
+								ToolTip="Toggle Front View"
+								IsTabStop="False"
+								Background="{Binding Preferences.ReportSettings.ShowFrontView, Converter={StaticResource BoolToColor}}"
+								MouseRightButtonDown="btnToggleView_MouseRightButtonUp"
+								Uid="btnShowFrontReport">
+							<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_ReportTab_Front.png" />
+						</Button>
+						<Button Click="btnToggleView_Click"
+								ToolTip="Toggle 3D View"
+								IsTabStop="False"
+								Background="{Binding Preferences.ReportSettings.Show3DView, Converter={StaticResource BoolToColor}}"
+								MouseRightButtonDown="btnToggleView_MouseRightButtonUp"
+								Uid="btnShow3DReport">
+							<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_ReportTab_3D.png" />
+						</Button>
+					</StackPanel>
+				</StackPanel>
+			</StackPanel>
+		</Grid>
+		<Border Grid.Row="3"
+				Grid.Column="0"
+				BorderBrush="{Binding ThemeAccent}"
+				BorderThickness="1,1,1,0">
+			<forms:ControlDetailData x:Name="controlDetailData"
+									 ApplyChanges="ApplyChangesToDrawing"
+									 Width="Auto" />
+		</Border>
+		<Grid Grid.ColumnSpan="2"
+			  Grid.Column="1"
+			  Margin="0,0,3,0"
+			  Grid.Row="3">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<TabControl>
+				<TabItem x:Name="tabItemDrawing"
+						 Visibility="Collapsed">
+					<Grid>
+						<WindowsFormsHost x:Name="windowsFormHostUnity"
+										  SizeChanged="DesconMainWindow_SizeChanged">
+							<wf:Panel AutoSizeMode="GrowAndShrink" />
+						</WindowsFormsHost>
+					</Grid>
+				</TabItem>
+				<TabItem x:Name="tabItemReport"
+						 Visibility="Collapsed">
+					<forms:ControlReport x:Name="controlReport"
+										 DataContext="{Binding DataContext, ElementName=DesconMainWindow}" />
+				</TabItem>
+			</TabControl>
+			<Border Grid.Row="0"
+					Grid.Column="1"
+					Margin="0,3,-3,3"
+					BorderThickness="1,1,0,1"
+					BorderBrush="{Binding ThemeAccent}">
+				<StackPanel Visibility="{Binding Preferences.EnableGauges, Converter={StaticResource BoolToVisibility}}"
+							Background="#CCFFFFFF"
+							Orientation="Horizontal">
+					<StackPanel Width="35">
+						<Button Click="btnGauges_Click"
+								ToolTip="Toggle Gauge Panel"
+								IsTabStop="False"
+								Controls:ButtonHelper.CornerRadius="0"
+								Background="White"
+								Height="30"
+								Width="30"
+								BorderThickness="0">
+							<Image x:Name="btnArrowGauges"
+								   Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_MainTab_ArrowLeft.png" />
+						</Button>
+						<TextBlock Text="RATIOS"
+								   RenderTransformOrigin="0.5,0.5"
+								   FontSize="14"
+								   Margin="-25,0,0,0">
+							<TextBlock.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform />
+									<SkewTransform />
+									<RotateTransform Angle="90" />
+									<TranslateTransform Y="25"
+														X="13" />
+								</TransformGroup>
+							</TextBlock.RenderTransform>
+						</TextBlock>
+					</StackPanel>
+					<ScrollViewer VerticalScrollBarVisibility="Auto">
+						<WrapPanel x:Name="wrapPanelGauges"
+								   Width="140" />
+					</ScrollViewer>
+				</StackPanel>
+			</Border>
+		</Grid>
+		<Grid Grid.Row="4"
+			  Grid.Column="0"
+			  Background="{Binding ThemeAccent}"
+			  Grid.ColumnSpan="3">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<Label Content="{Binding CurrentFileName}"
+				   Foreground="White"
+				   ToolTip="{Binding CurrentFilePath}" />
+			<Label Content="{Binding UpdateDownloadStatus}"
+				   Grid.Column="2"
+				   Foreground="White" />
+		</Grid>
+	</Grid>
+</Controls:MetroWindow>

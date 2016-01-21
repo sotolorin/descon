@@ -1,0 +1,97 @@
+System:
+  OS: Windows 8  (6.2.9200) 64bit
+  CPU: Intel(R) Xeon(R) CPU E5520 @ 2.27GHz, count: 2
+  Physical RAM: 9792 MB
+  Addressable RAM: 2048 MB
+
+D3D9:
+  no D3D hardware acceleration
+
+OpenGL:
+  Version: 1.1.0
+  Vendor: Microsoft Corporation
+  Renderer: GDI Generic
+  VRAM: 256 (via DXGI)
+  Extensions: GL_WIN_swap_hint GL_EXT_bgra GL_EXT_paletted_texture
+
+User locale: en-US
+System locale: en-US
+
+Running processes:
+lync.exe (3504)
+    path: C:\Program Files (x86)\Microsoft Office\Office15\lync.exe
+    company:  Microsoft Corporation
+    product:  Microsoft Office 2013
+    filedesc: Microsoft Lync
+    filever:  15.0.4675.1000
+    prodver:  15.0.4675.0
+devenv.exe (3780)
+    path: C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe
+    company:  Microsoft Corporation
+    product:  Microsoft® Visual Studio® 2013
+    filedesc: Microsoft Visual Studio 2013
+    filever:  12.0.21005.1
+    prodver:  12.0.21005.1
+UcMapi.exe (1176)
+    path: C:\Program Files (x86)\Microsoft Office\Office15\UcMapi.exe
+    company:  Microsoft Corporation
+    product:  Microsoft Office 2013
+    filedesc: Microsoft Lync
+    filever:  15.0.4675.1000
+    prodver:  15.0.4675.0
+lynchtmlconv.exe (2552)
+    path: C:\Program Files (x86)\Microsoft Office\Office15\lynchtmlconv.exe
+    company:  
+    product:  
+    filedesc: 
+    filever:  15.0.4675.1000
+    prodver:  15.0.4675.0
+OUTLOOK.EXE (5400)
+    path: C:\Program Files (x86)\Microsoft Office\Office15\OUTLOOK.EXE
+    company:  Microsoft Corporation
+    product:  Microsoft Outlook
+    filedesc: Microsoft Outlook
+    filever:  15.0.4667.1000
+    prodver:  15.0.4667.0
+IEXPLORE.EXE (5204)
+    path: C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE
+    company:  Microsoft Corporation
+    product:  Windows® Internet Explorer
+    filedesc: Internet Explorer
+    filever:  10.0.9200.17183
+    prodver:  10.0.9200.17183
+EXCEL.EXE (6744)
+    path: C:\Program Files (x86)\Microsoft Office\Office15\EXCEL.EXE
+    company:  Microsoft Corporation
+    product:  Microsoft Office 2013
+    filedesc: Microsoft Excel
+    filever:  15.0.4675.1000
+    prodver:  15.0.4675.0
+devenv.exe (7308)
+    path: C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe
+    company:  Microsoft Corporation
+    product:  Microsoft® Visual Studio® 2013
+    filedesc: Microsoft Visual Studio 2013
+    filever:  12.0.21005.1
+    prodver:  12.0.21005.1
+Descon.Unity.View.exe (7672)
+    path: C:\Code\Phase 1\Descon.Main\bin\Debug\Unity View\Descon.Unity.View.exe
+    company:  
+    product:  
+    filedesc: 
+    filever:  4.6.0.47091
+    prodver:  4.6.0.47091
+Descon8.vshost.exe (5512)
+    path: C:\Code\Phase 1\Descon.Main\bin\Debug\Descon8.vshost.exe
+    company:  Microsoft Corporation
+    product:  Microsoft® Visual Studio® 2013
+    filedesc: vshost32.exe
+    filever:  12.0.21005.1
+    prodver:  12.0.21005.1
+UnityBugReporter.exe (7900)
+    path: C:\Program Files (x86)\Unity\Editor\UnityBugReporter.exe
+    company:  Unity Technologies ApS
+    product:  Unity Bug Reporter
+    filedesc: Unity Bug Reporter
+    filever:  4.6.0.47091
+    prodver:  4.6.0.47091

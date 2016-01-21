@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A6D14F46-FEF6-48A7-8A41-A6DFABB60688}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Descon.Resources</RootNamespace>
+    <AssemblyName>Descon.Resources</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Descon.Main\Versioning.cs">
+      <Link>Versioning.cs</Link>
+      <DependentUpon>Versioning.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Documents\ChangeLog.rtf" />
+    <EmbeddedResource Include="Documents\DataFileVersion.dat" />
+    <EmbeddedResource Include="Documents\Descon EULA.rtf" />
+    <EmbeddedResource Include="Documents\PreferencesVersion.dat" />
+    <Resource Include="ManifoldCF_Regular_Font.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Drawing_Examples\AnglesAndPlates.BasePlate.png" />
+    <Resource Include="Images\Drawing_Examples\AnglesAndPlates.FabricatedTee.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Beam.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.FlangePlate.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Seat.Bolted.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Seat.BoltedStiffened.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Seat.Welded.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Seat.WeldedStiffened.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.SinglePlate.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Tee.16.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Tee.4.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Tee.8.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Tee.Side.2.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Tee.Side.4.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Web.DW1.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Web.DW2.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Web.DW3.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Web.DW4.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Web.DW5.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Web.F1.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Web.F2.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Web.F3.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Web.F4.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Web.F5.png" />
+    <Resource Include="Images\Drawing_Examples\Attachments.Web.F6.png" />
+    <Resource Include="Images\Graphics\Loading_Screen.png" />
+    <Resource Include="Images\Icons\Columns.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Design_Seismic.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_File_New.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_File_Open.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_File_Save.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_File_SaveAs.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_MainTab_ArrowLeft.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_MainTab_ArrowRight.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_MainTab_BottomOfPage.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_MainTab_TopOfPage.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Main_ArrowDown.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Main_ArrowLeft.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Main_ArrowRight.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Main_ArrowUp.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Main_MoreData.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Main_Search.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Report2_BookmarkLeft.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Report2_BookmarkRight.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Report2_NGLeft.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Report2_NGRight.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Report2_PageSetup.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Report2_PageUp.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Report2_Print.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Report2_PrintPreview.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Report2_QuestionHover.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Report2_ReportSettings.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Report2_Save.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Report2_Search.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_ReportTab_3D.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_ReportTab_AddViews.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_ReportTab_Calculations.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_ReportTab_Front.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_ReportTab_Left.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_ReportTab_Mesh.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_ReportTab_Right.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_ReportTab_Top.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Support_About.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Support_Feedback.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Support_Manual.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Support_OverlayToggle.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Support_Resources.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Support_Support.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Support_UpdateLog.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Support_Update_1.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Support_Update_2.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Tools_Calculator.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Tools_HotKeys.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Tools_MaterialsAndWelds.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Tools_ReportSettings.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Tools_Screenshot.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Tools_Settings.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_Tools_UserShape.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_View.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_View_3D.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_View_FitAll.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_View_FitSelected.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_View_Front.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_View_Left.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_View_Mesh.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_View_Right.png" />
+    <Resource Include="Images\Icons\Descon_UI_Icons_View_Top.png" />
+    <Resource Include="Images\Icons\Edit.png" />
+    <Resource Include="Images\Icons\Exit.png" />
+    <Resource Include="Images\Icons\Expander.png" />
+    <Resource Include="Images\Icons\Paperclip Small.png" />
+    <Resource Include="Images\Icons\QuestionMark.png" />
+    <Resource Include="Images\Icons\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Documents\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Documents\bookmark.png" />
+    <EmbeddedResource Include="Documents\edit_text.png" />
+    <EmbeddedResource Include="Documents\Materials.xml" />
+    <EmbeddedResource Include="Documents\Shapes.xml" />
+    <EmbeddedResource Include="Documents\Welds.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Descon.Main\Versioning.tt">
+      <Link>Versioning.tt</Link>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Versioning.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Documents\EccentricWeldCoefficients.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)..\Unity View\Descon Unity\Build\$(TargetFileName)" /Y
+copy "$(TargetPath)" "$(SolutionDir)..\Unity View\Descon Unity\Assets\Plugins\$(TargetFileName)" /Y 
+copy "$(TargetPath)" "$(SolutionDir)..\Unity View\Descon Unity\Build\Descon.Unity.View_Data\Managed\$(TargetFileName)" /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

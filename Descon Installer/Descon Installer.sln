@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "Installer", "Installer\Installer.isproj", "{BE68BC0A-2E78-4C4F-A62A-43CF05051D85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Default = CD_ROM|Default
+		DVD-5|Default = DVD-5|Default
+		SingleImage|Default = SingleImage|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE68BC0A-2E78-4C4F-A62A-43CF05051D85}.CD_ROM|Default.ActiveCfg = CD_ROM
+		{BE68BC0A-2E78-4C4F-A62A-43CF05051D85}.CD_ROM|Default.Build.0 = CD_ROM
+		{BE68BC0A-2E78-4C4F-A62A-43CF05051D85}.DVD-5|Default.ActiveCfg = DVD-5
+		{BE68BC0A-2E78-4C4F-A62A-43CF05051D85}.DVD-5|Default.Build.0 = DVD-5
+		{BE68BC0A-2E78-4C4F-A62A-43CF05051D85}.SingleImage|Default.ActiveCfg = SingleImage
+		{BE68BC0A-2E78-4C4F-A62A-43CF05051D85}.SingleImage|Default.Build.0 = SingleImage
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

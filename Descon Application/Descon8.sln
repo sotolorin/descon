@@ -1,0 +1,95 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Descon.Calculations", "Descon.Calculations\Descon.Calculations.csproj", "{DA76B009-96E9-4B3F-A96E-FDA63FF59AF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Descon.Data", "Descon.Data\Descon.Data.csproj", "{7E9C85C4-DCA0-4240-8C3C-2952C154F4E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Descon.Forms", "Descon.Forms\Descon.Forms.csproj", "{B593B06B-E3BA-4CE7-A925-576C2D23B625}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Descon.Main", "Descon.Main\Descon.Main.csproj", "{AD7F213F-A5D3-4BA8-81E5-520124F3745C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DA76B009-96E9-4B3F-A96E-FDA63FF59AF5} = {DA76B009-96E9-4B3F-A96E-FDA63FF59AF5}
+		{B593B06B-E3BA-4CE7-A925-576C2D23B625} = {B593B06B-E3BA-4CE7-A925-576C2D23B625}
+		{7E9C85C4-DCA0-4240-8C3C-2952C154F4E7} = {7E9C85C4-DCA0-4240-8C3C-2952C154F4E7}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Descon.UI.DataAccess", "Descon.UI.DataAccess\Descon.UI.DataAccess.csproj", "{384F4187-6F3B-4ED8-BAA0-4609C50BCD1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C00E7003-622F-4FBC-8420-4010A9E358FC}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Descon.WebAccess", "Descon.WebAccess\Descon.WebAccess.csproj", "{5A79C074-100E-4751-9D12-AB9C47B0001A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Descon.Resources", "Descon.Resources\Descon.Resources.csproj", "{A6D14F46-FEF6-48A7-8A41-A6DFABB60688}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://50.207.156.72:8080/tfs/desconplus
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Descon.Calculations\\Descon.Calculations.csproj
+		SccProjectName1 = Descon.Calculations
+		SccLocalPath1 = Descon.Calculations
+		SccProjectUniqueName2 = Descon.Data\\Descon.Data.csproj
+		SccProjectName2 = Descon.Data
+		SccLocalPath2 = Descon.Data
+		SccProjectUniqueName3 = Descon.Forms\\Descon.Forms.csproj
+		SccProjectName3 = Descon.Forms
+		SccLocalPath3 = Descon.Forms
+		SccProjectUniqueName4 = Descon.Main\\Descon.Main.csproj
+		SccProjectName4 = Descon.Main
+		SccLocalPath4 = Descon.Main
+		SccProjectUniqueName5 = Descon.UI.DataAccess\\Descon.UI.DataAccess.csproj
+		SccProjectName5 = Descon.UI.DataAccess
+		SccLocalPath5 = Descon.UI.DataAccess
+		SccProjectUniqueName6 = Descon.WebAccess\\Descon.WebAccess.csproj
+		SccProjectName6 = Descon.WebAccess
+		SccLocalPath6 = Descon.WebAccess
+		SccProjectUniqueName7 = Descon.Resources\\Descon.Resources.csproj
+		SccProjectName7 = Descon.Resources
+		SccLocalPath7 = Descon.Resources
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA76B009-96E9-4B3F-A96E-FDA63FF59AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA76B009-96E9-4B3F-A96E-FDA63FF59AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA76B009-96E9-4B3F-A96E-FDA63FF59AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA76B009-96E9-4B3F-A96E-FDA63FF59AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E9C85C4-DCA0-4240-8C3C-2952C154F4E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E9C85C4-DCA0-4240-8C3C-2952C154F4E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E9C85C4-DCA0-4240-8C3C-2952C154F4E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E9C85C4-DCA0-4240-8C3C-2952C154F4E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B593B06B-E3BA-4CE7-A925-576C2D23B625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B593B06B-E3BA-4CE7-A925-576C2D23B625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B593B06B-E3BA-4CE7-A925-576C2D23B625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B593B06B-E3BA-4CE7-A925-576C2D23B625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD7F213F-A5D3-4BA8-81E5-520124F3745C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD7F213F-A5D3-4BA8-81E5-520124F3745C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD7F213F-A5D3-4BA8-81E5-520124F3745C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD7F213F-A5D3-4BA8-81E5-520124F3745C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{384F4187-6F3B-4ED8-BAA0-4609C50BCD1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{384F4187-6F3B-4ED8-BAA0-4609C50BCD1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{384F4187-6F3B-4ED8-BAA0-4609C50BCD1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{384F4187-6F3B-4ED8-BAA0-4609C50BCD1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A79C074-100E-4751-9D12-AB9C47B0001A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A79C074-100E-4751-9D12-AB9C47B0001A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A79C074-100E-4751-9D12-AB9C47B0001A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A79C074-100E-4751-9D12-AB9C47B0001A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6D14F46-FEF6-48A7-8A41-A6DFABB60688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6D14F46-FEF6-48A7-8A41-A6DFABB60688}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6D14F46-FEF6-48A7-8A41-A6DFABB60688}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6D14F46-FEF6-48A7-8A41-A6DFABB60688}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

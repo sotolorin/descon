@@ -1,0 +1,141 @@
+﻿<controls:MetroWindow xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+					  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+					  xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+					  xmlns:Data="clr-namespace:Descon.Data;assembly=Descon.Data"
+					  mc:Ignorable="d"
+					  x:Class="Descon.Forms.FormLicense"
+					  Width="507"
+					  Loaded="formLicense_Loaded"
+					  WindowStartupLocation="CenterOwner"
+					  GlowBrush="{DynamicResource AccentColorBrush}"
+					  ResizeMode="NoResize"
+					  ShowMinButton="False"
+					  ShowMaxRestoreButton="False"
+					  ShowCloseButton="True"
+					  d:DataContext="{d:DesignInstance {x:Type Data:LicensingData}, IsDesignTimeCreatable=True}"
+					  ShowTitleBar="False"
+					  ShowIconOnTitleBar="False"
+					  Height="589">
+	<StackPanel>
+		<Canvas Height="29"
+				Margin="5,5,0,0">
+			<Label x:Name="lblTitle"
+				   Content="License and Application Information"
+				   HorizontalAlignment="Left"
+				   VerticalAlignment="Top"
+				   FontSize="14"
+				   FontWeight="Bold"
+				   Foreground="{DynamicResource AccentColorBrush}" />
+		</Canvas>
+		<GroupBox x:Name="gbxTrial"
+				  Header="If you are not a registered Descon user, please enjoy a free 7 day trial:">
+			<Button x:Name="btnDemo"
+					Content="Trial"
+					Width="75"
+					Click="btnDemo_Click"
+					IsTabStop="False" />
+		</GroupBox>
+		<GroupBox x:Name="gbxLogin"
+				  Header="Registered Descon users login:">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="0.3*" />
+					<ColumnDefinition Width="0.7*" />
+				</Grid.ColumnDefinitions>
+				<StackPanel>
+					<Label Content="Company Name"
+						   FlowDirection="RightToLeft"
+						   Margin="2" />
+					<Label Content="User E-mail Address"
+						   FlowDirection="RightToLeft"
+						   Margin="2" />
+					<Label Content="User Password"
+						   FlowDirection="RightToLeft"
+						   Margin="2" />
+					<Label Content="Re-Enter Password"
+						   FlowDirection="RightToLeft"
+						   Margin="2" />
+					<Label Content="Server IP"
+						   FlowDirection="RightToLeft"
+						   Margin="2,24,2,2"
+						   Visibility="Collapsed" />
+					<Label Content="Server Port"
+						   FlowDirection="RightToLeft"
+						   Margin="2"
+						   Visibility="Collapsed" />
+				</StackPanel>
+				<StackPanel Grid.Column="1"
+							Grid.Row="0">
+					<TextBox x:Name="tbxCompanyName"
+							 Margin="2"
+							 Text="{Binding CompanyName}"
+							 TabIndex="1" />
+					<TextBox Margin="2,2,2,1"
+							 Text="{Binding UserEmail}"
+							 TabIndex="2" />
+					<PasswordBox x:Name="tbxPassword1"
+								 Margin="2"
+								 TabIndex="3" />
+					<PasswordBox x:Name="tbxPassword2"
+								 Margin="2"
+								 TabIndex="4" />
+					<CheckBox Content="Retrieve license from server"
+							  HorizontalAlignment="Left"
+							  VerticalAlignment="Top"
+							  Margin="2,2,0,2"
+							  IsChecked="{Binding UseLicenseProxy}"
+							  Visibility="Collapsed" />
+					<TextBox Margin="2,2,2,1"
+							 Text="{Binding ServerAddress}"
+							 IsEnabled="{Binding UseLicenseProxy}"
+							 MaxLength="100"
+							 Visibility="Collapsed" />
+					<TextBox Margin="2,2,2,1"
+							 Text="{Binding Port}"
+							 IsEnabled="{Binding UseLicenseProxy}"
+							 MaxLength="6"
+							 Visibility="Collapsed" />
+					<TextBlock x:Name="lblInformation"
+							   Text="(Information)"
+							   Foreground="Red"
+							   FontWeight="SemiBold"
+							   Height="47"
+							   TextWrapping="Wrap" />
+					<Button Content="Login"
+							IsDefault="True"
+							Width="75"
+							Click="btnLogin_Click"
+							HorizontalAlignment="Right"
+							Margin="2"
+							TabIndex="5"
+							MouseDown="btnLogin_MouseDown" />
+				</StackPanel>
+			</Grid>
+		</GroupBox>
+		<GroupBox Header="Information">
+			<StackPanel Orientation="Vertical">
+				<RichTextBox FontFamily="Segoe UI"
+							 IsReadOnly="True"
+							 IsTabStop="False"
+							 FontSize="13"
+							 BorderThickness="0">
+					<FlowDocument>
+						<Paragraph>
+							<Run Text="This computer program is designed to be used by competent and licensed engineers only. The user must verify the design and calculations produced by this program. The indications (OK) and (NG) shown in the calculation report are for information only and do not replace the need for user verification of the design." />
+						</Paragraph>
+						<Paragraph>
+							<Run Text="Third party licenses for components used in this software can be found in the local My Documents/Descon/ folder." />
+						</Paragraph>
+					</FlowDocument>
+				</RichTextBox>
+				<Button Content="View EULA"
+						Width="75"
+						Click="btnEULA_Click"
+						HorizontalAlignment="Right"
+						Margin="0,10,2,0" />
+			</StackPanel>
+		</GroupBox>
+	</StackPanel>
+</controls:MetroWindow>

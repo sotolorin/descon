@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA76B009-96E9-4B3F-A96E-FDA63FF59AF5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Descon.Calculations</RootNamespace>
+    <AssemblyName>Descon.Calculations</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\Descon.Main\Versioning.tt">
+      <Link>Versioning.tt</Link>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Versioning.cs</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Descon.Main\Versioning.cs">
+      <Link>Versioning.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Versioning.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Brace Calculations\Beam.cs" />
+    <Compile Include="Brace Calculations\BeamToColumnConnection.cs" />
+    <Compile Include="BoltsForTension.cs" />
+    <Compile Include="Brace Calculations\BraceCheck.cs" />
+    <Compile Include="Brace Calculations\BraceToGussetConnection.cs" />
+    <Compile Include="Brace Calculations\ClipAnglesBrace.cs" />
+    <Compile Include="Brace Calculations\CWBending.cs" />
+    <Compile Include="Brace Calculations\DesignChannelToGusset.cs" />
+    <Compile Include="Brace Calculations\DesignClawAngles.cs" />
+    <Compile Include="Brace Calculations\DesignEndPlate.cs" />
+    <Compile Include="Brace Calculations\DesignFabricatedTee.cs" />
+    <Compile Include="Brace Calculations\DesignHSSBraceBoltedToGusset.cs" />
+    <Compile Include="Brace Calculations\DesignHSSBraceToGusset.cs" />
+    <Compile Include="Brace Calculations\DesignSingleAngleToGusset.cs" />
+    <Compile Include="Brace Calculations\DesignSinglePlate.cs" />
+    <Compile Include="Brace Calculations\DesignSplicePlate.cs" />
+    <Compile Include="Brace Calculations\DesignWTBraceToGusset.cs" />
+    <Compile Include="Brace Calculations\GussetSize.cs" />
+    <Compile Include="Brace Calculations\GussetThickness.cs" />
+    <Compile Include="Brace Calculations\GussetToColumn.cs" />
+    <Compile Include="Brace Calculations\InitialCalcBrace.cs" />
+    <Compile Include="Brace Calculations\KBraceAdditionalChecks.cs" />
+    <Compile Include="Brace Calculations\SmallMethodsDesign.cs" />
+    <Compile Include="EccentricWeld.cs" />
+    <Compile Include="PostCalcStuff.cs" />
+    <Compile Include="PreCalcStuff.cs" />
+    <Compile Include="SeismicForceCalc.cs" />
+    <Compile Include="SeismicCalc.cs" />
+    <Compile Include="SeismicEndPlateCalc.cs" />
+    <Compile Include="Calculations.cs" />
+    <Compile Include="CommonCalculations.cs" />
+    <Compile Include="Win Calculations\ColumnSpliceDirectWeld.cs" />
+    <Compile Include="Win Calculations\ColumnSpliceCapacity.cs" />
+    <Compile Include="Win Calculations\ColumnSpliceMisc.cs" />
+    <Compile Include="Win Calculations\ColumnSpliceWebPlate.cs" />
+    <Compile Include="Win Calculations\ColumnSplice.cs" />
+    <Compile Include="Win Calculations\Cope.cs" />
+    <Compile Include="Win Calculations\Design.cs" />
+    <Compile Include="Win Calculations\ClipAngle.cs" />
+    <Compile Include="Win Calculations\DirectlyWelded.cs" />
+    <Compile Include="Win Calculations\FlangeAngles.cs" />
+    <Compile Include="Win Calculations\FlangePlatesToWeb.cs" />
+    <Compile Include="Win Calculations\FlangePlates.cs" />
+    <Compile Include="Win Calculations\FlangeSplicePlate.cs" />
+    <Compile Include="Win Calculations\EndPlateMoment.cs" />
+    <Compile Include="Win Calculations\TeeMoment.cs" />
+    <Compile Include="Win Calculations\Seat.cs" />
+    <Compile Include="Win Calculations\EndPlateShear.cs" />
+    <Compile Include="Win Calculations\SinglePlateMoment.cs" />
+    <Compile Include="Win Calculations\SinglePlateShear.cs" />
+    <Compile Include="Win Calculations\TeeShear.cs" />
+    <Compile Include="Win Calculations\Fema.cs" />
+    <Compile Include="Win Calculations\FemaReporting.cs" />
+    <Compile Include="Win Calculations\ReducedWSF.cs" />
+    <Compile Include="MiscCalculationsWithReporting.cs" />
+    <Compile Include="Win Calculations\Stiff.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Descon.Data\Descon.Data.csproj">
+      <Project>{7e9c85c4-dca0-4240-8c3c-2952c154f4e7}</Project>
+      <Name>Descon.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Descon.UI.DataAccess\Descon.UI.DataAccess.csproj">
+      <Project>{384F4187-6F3B-4ED8-BAA0-4609C50BCD1A}</Project>
+      <Name>Descon.UI.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

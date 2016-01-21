@@ -1,0 +1,230 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:data="clr-namespace:Descon.Data;assembly=Descon.Data"
+			 xmlns:dataAccess="clr-namespace:Descon.UI.DataAccess;assembly=Descon.UI.DataAccess"
+			 xmlns:forms="clr-namespace:Descon.Forms"
+			 x:Name="controlBeamConnection"
+			 x:Class="Descon.Forms.ControlWCBeam"
+			 mc:Ignorable="d"
+			 Width="600"
+			 Height="418">
+	<UserControl.Resources>
+		<forms:EnumToBool x:Key="EnumToBool" />
+		<forms:InvertBool x:Key="InvertBool" />
+	</UserControl.Resources>
+	<StackPanel d:DataContext="{d:DesignInstance {x:Type dataAccess:CommonData}, IsDesignTimeCreatable=True}">
+		<GroupBox Header="Beam Data"
+				  Height="269">
+			<Canvas>
+				<Border BorderBrush="Black"
+						BorderThickness="1"
+						Canvas.Left="392"
+						Canvas.Top="95">
+					<Image Source="/Descon.Resources;component/Images/Drawing_Examples/Attachments.Beam.png"
+						   Stretch="None" />
+				</Border>
+				<forms:ControlDesconEditBox Canvas.Top="99"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.BoltEdgeDistanceOnFlange}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.Beam.BoltEdgeDistanceOnFlange_User}"
+											DSCLabel="Bolt Edge Distance (ef)"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Four_Digits"
+											Canvas.Left="-5"
+											DSCTabIndex="7" />
+				<forms:ControlDesconEditBox Canvas.Left="32"
+											Canvas.Top="69"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.GageOnFlange}"
+											DSCCheckBoxValue="{Binding SelectedMember.GageOnFlange_User}"
+											DSCLabel="Gage on Flange"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Four_Digits"
+											DSCTabIndex="6" />
+				<forms:ControlDesconEditBox Canvas.Left="108"
+											Canvas.Top="39"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.EndSetback}"
+											DSCCheckBoxValue="{Binding SelectedMember.EndSetback_User}"
+											DSCLabel="C"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Four_Digits"
+											DSCAllowNegatives="True"
+											DSCTabIndex="5" />
+				<forms:ControlDesconEditBox Canvas.Left="103"
+											Canvas.Top="137"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.TCopeL}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.Beam.TCope_User}"
+											DSCLabel="LT"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Four_Digits"
+											DSCTabIndex="8" />
+				<forms:ControlDesconEditBox Canvas.Left="250"
+											Canvas.Top="197"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.Lh}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.Beam.Lh_User}"
+											DSCLabel="Lh"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Four_Digits"
+											DSCTabIndex="13" />
+				<forms:ControlDesconEditBox Canvas.Left="247"
+											Canvas.Top="167"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.BCopeD}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.Beam.BCope_User}"
+											DSCLabel="DB"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Four_Digits"
+											DSCTabIndex="12" />
+				<forms:ControlDesconEditBox Canvas.Left="248"
+											Canvas.Top="137"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.TCopeD}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.Beam.TCope_User}"
+											DSCLabel="DT"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Four_Digits"
+											DSCTabIndex="11" />
+				<forms:ControlDesconEditBox Canvas.Left="103"
+											Canvas.Top="197"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.DistanceToFirstBoltDisplay}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.DistanceToFirstBolt_User}"
+											DSCLabel="Lv"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Four_Digits"
+											DSCTabIndex="10" />
+				<forms:ControlDesconEditBox Canvas.Left="101"
+											Canvas.Top="167"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.BCopeL}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.Beam.BCope_User}"
+											DSCLabel="LB"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Four_Digits"
+											DSCTabIndex="9" />
+				<StackPanel Canvas.Left="15"
+							Orientation="Horizontal"
+							Canvas.Top="1"
+							IsEnabled="{Binding IsBeamSpliceConfig, Converter={StaticResource InvertBool}}">
+					<forms:ControlDesconEditBox x:Name="ctrlTopEl"
+												DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.TopElFeet}"
+												DSCCheckBoxValue="{Binding SelectedMember.WinConnect.Beam.TopElMain_User}"
+												DSCLabel="Top El."
+												DSCShowComboBox="Collapsed"
+												DSCShowUnit="Collapsed"
+												Width="194"
+												HorizontalContentAlignment="Right"
+												DSCTabIndex="1" />
+					<StackPanel x:Name="stackPanelTopEl"
+								Height="30"
+								Orientation="Horizontal">
+						<forms:ControlDesconEditBox DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.TopElInches}"
+													DSCCheckBoxValue="{Binding DSCCheckBoxValue, ElementName=ctrlTopEl}"
+													DSCShowComboBox="Collapsed"
+													DSCShowUnit="Collapsed"
+													DSCShowCheckBox="Collapsed"
+													Height="30"
+													DSCShowLabel="Collapsed"
+													Margin="3,0,0,0"
+													VerticalAlignment="Top"
+													DSCTabIndex="2" />
+						<forms:ControlDesconEditBox DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+													DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.TopElNumerator}"
+													DSCCheckBoxValue="{Binding DSCCheckBoxValue, ElementName=ctrlTopEl}"
+													DSCShowComboBox="Collapsed"
+													DSCShowCheckBox="Collapsed"
+													DSCShowUnit="Collapsed"
+													DSCShowLabel="Collapsed"
+													Height="Auto"
+													Margin="10,0,0,0"
+													DSCTabIndex="3" />
+						<forms:ControlDesconEditBox DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+													DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.TopElDenominator}"
+													DSCCheckBoxValue="{Binding DSCCheckBoxValue, ElementName=ctrlTopEl}"
+													DSCLabel="/"
+													DSCShowComboBox="Collapsed"
+													DSCShowCheckBox="Collapsed"
+													DSCShowUnit="Collapsed"
+													Height="Auto"
+													DSCTabIndex="4" />
+					</StackPanel>
+					<CheckBox Content="Negative"
+							  Margin="3,0,0,0"
+							  IsChecked="{Binding SelectedMember.WinConnect.Beam.IsTopElNegative}"
+							  IsTabStop="False" />
+					<Label Content="{Binding SelectedMember.WinConnect.Beam.TopElPreview, Mode=OneWay}"
+						   VerticalContentAlignment="Center"
+						   FontWeight="Bold"
+						   Margin="10,0,0,0">
+						<Label.Foreground>
+							<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}" />
+						</Label.Foreground>
+					</Label>
+				</StackPanel>
+			</Canvas>
+		</GroupBox>
+		<GroupBox Header="Skewed or Inclined Beam"
+				  Height="128"
+				  IsEnabled="{Binding LicenseMinimumNext, Mode=OneWay}">
+			<Canvas>
+				<RadioButton Content="Beam is Skewed"
+							 IsChecked="{Binding SelectedMember.WinConnect.Beam.SkewOrIncline, ConverterParameter={x:Static data:EBeamSkewOrIncline.Skewed}, Converter={StaticResource EnumToBool}}"
+							 Canvas.Left="2"
+							 Canvas.Top="6"
+							 IsTabStop="False" />
+				<RadioButton Content="Beam is Inclined"
+							 IsChecked="{Binding SelectedMember.WinConnect.Beam.SkewOrIncline, ConverterParameter={x:Static data:EBeamSkewOrIncline.Inclined}, Converter={StaticResource EnumToBool}}"
+							 Canvas.Left="2"
+							 Canvas.Top="37"
+							 IsTabStop="False" />
+				<RadioButton Content="Beam is Perpendicular to Support"
+							 IsChecked="{Binding SelectedMember.WinConnect.Beam.SkewOrIncline, ConverterParameter={x:Static data:EBeamSkewOrIncline.PerpendicularToSupport}, Converter={StaticResource EnumToBool}}"
+							 Canvas.Top="67"
+							 Canvas.Left="2"
+							 IsTabStop="False" />
+				<forms:ControlDesconEditBox Canvas.Left="261"
+											Canvas.Top="1"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.SkewAngle_A}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.Beam.SkewAngle_A_User}"
+											DSCLabel="Skew Angle (H): a"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Three_Digits"
+											DSCShowUnit="Collapsed"
+											DSCTabIndex="20" />
+				<forms:ControlDesconEditBox Canvas.Left="458"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.SkewAngle_B}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.Beam.SkewAngle_B_User}"
+											DSCLabel="b"
+											DSCShowUnit="Collapsed"
+											DSCShowComboBox="Collapsed"
+											Canvas.Top="1"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCTabIndex="22" />
+				<forms:ControlDesconEditBox Canvas.Left="255"
+											Canvas.Top="32"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.InclinceAngle_A}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.Beam.InclinceAngle_A_User}"
+											DSCLabel="Incline Angle (V): a"
+											DSCShowUnit="Collapsed"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCTabIndex="21" />
+				<forms:ControlDesconEditBox Canvas.Left="458"
+											Canvas.Top="32"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.InclinceAngle_B}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.Beam.InclinceAngle_B_User}"
+											DSCLabel="b"
+											DSCShowUnit="Collapsed"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCTabIndex="23" />
+			</Canvas>
+		</GroupBox>
+	</StackPanel>
+</UserControl>

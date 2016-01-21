@@ -1,0 +1,103 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:Data="clr-namespace:Descon.Data;assembly=Descon.Data"
+			 xmlns:dataAccess="clr-namespace:Descon.UI.DataAccess;assembly=Descon.UI.DataAccess"
+			 xmlns:forms="clr-namespace:Descon.Forms"
+			 x:Class="Descon.Forms.ControlBCClawAngles"
+			 mc:Ignorable="d"
+			 Height="305"
+			 Width="285">
+	<UserControl.Resources>
+		<forms:EnumToBool x:Key="EnumToBool" />
+		<forms:InvertBool x:Key="InvertBool" />
+	</UserControl.Resources>
+	<Canvas d:DataContext="{d:DesignInstance {x:Type dataAccess:CommonData}, IsDesignTimeCreatable=True}">
+		<CheckBox Content="Do Not Connect Flanges"
+				  Canvas.Left="8"
+				  Canvas.Top="9"
+				  IsChecked="{Binding SelectedMember.BraceConnect.ClawAngles.DoNotConnectFlanges}"
+				  TabIndex="8" />
+		<GroupBox Header="Claw Angle Data"
+				  Canvas.Left="8"
+				  Margin="0"
+				  Canvas.Top="32"
+				  Height="262"
+				  Width="269">
+			<Canvas IsEnabled="{Binding SelectedMember.BraceConnect.ClawAngles.DoNotConnectFlanges, Converter={StaticResource InvertBool}}">
+				<Button Content="{Binding SelectedMember.BoltGusset.BoltName}"
+						Click="btnBolt_Click"
+						Height="20"
+						Canvas.Left="105"
+						Canvas.Top="71"
+						Width="130"
+						TabIndex="3" />
+				<Label Content="Bolt"
+					   HorizontalAlignment="Left"
+					   VerticalAlignment="Top"
+					   Canvas.Left="74"
+					   Canvas.Top="70" />
+				<Label Content="OSL"
+					   HorizontalAlignment="Left"
+					   VerticalAlignment="Top"
+					   Canvas.Left="75"
+					   Canvas.Top="101" />
+				<RadioButton IsChecked="{Binding SelectedMember.BraceConnect.ClawAngles.OSL, ConverterParameter={x:Static Data:EOSL.LongLeg}, Converter={StaticResource EnumToBool}}"
+							 Content="Long Leg"
+							 Canvas.Left="106"
+							 Canvas.Top="105"
+							 TabIndex="9"
+							 GroupName="OSL" />
+				<RadioButton IsChecked="{Binding SelectedMember.BraceConnect.ClawAngles.OSL, ConverterParameter={x:Static Data:EOSL.ShortLeg}, Converter={StaticResource EnumToBool}}"
+							 Content="Short leg"
+							 Canvas.Left="186"
+							 Canvas.Top="105"
+							 TabIndex="10"
+							 GroupName="OSL" />
+				<forms:ControlDesconEditBox Canvas.Left="53"
+												 Canvas.Top="37"
+												 DSCLabel="Material"
+												 DSCShowCheckBox="Collapsed"
+												 DSCShowUnit="Collapsed"
+												 DSCComboBoxValue="{Binding SelectedMember.BraceConnect.ClawAngles.MaterialName}"
+												 DSCComboBoxSource="{Binding MaterialDict}"
+												 DSCShowTextBox="Collapsed" />
+				<forms:ControlDesconEditBox Canvas.Left="51"
+												 DSCLabel="Size"
+												 DSCShowUnit="Collapsed"
+												 DSCComboBoxValue="{Binding SelectedMember.BraceConnect.ClawAngles.SizeName}"
+												 DSCComboBoxSource="{Binding ShapesSingleAngle}"
+												 DSCCheckBoxValue="{Binding SelectedMember.BraceConnect.ClawAngles.Size_User}"
+												 Canvas.Top="2"
+												 DSCShowTextBox="Collapsed" />
+				<forms:ControlDesconEditBox Canvas.Top="131"
+												 DSCLabel="Number of Bolts"
+												 DSCShowComboBox="Collapsed"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.ClawAngles.Bolt.NumberOfBolts}"
+												 DSCShowUnit="Collapsed"
+												 DSCShowCheckBox="Collapsed"
+												 Canvas.Left="7"
+												 IsEnabled="False" />
+				<forms:ControlDesconEditBox Canvas.Left="19"
+												 Canvas.Top="191"
+												 DSCLabel="Edge Distance"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.ClawAngles.Bolt.EdgeDistLongDir}"
+												 DSCShowCheckBox="Collapsed"
+												 IsEnabled="False"
+												 DSCTextBoxType="Decimal_Two_Digits" />
+				<forms:ControlDesconEditBox Canvas.Left="28"
+												 Canvas.Top="161"
+												 DSCLabel="Bolt Spacing"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.ClawAngles.Bolt.SpacingLongDir}"
+												 DSCShowCheckBox="Collapsed"
+												 IsEnabled="False"
+												 DSCTextBoxType="Decimal_Two_Digits" />
+			</Canvas>
+		</GroupBox>
+	</Canvas>
+</UserControl>

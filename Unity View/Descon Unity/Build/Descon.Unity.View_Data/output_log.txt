@@ -1,0 +1,32 @@
+Initialize engine version: 4.6.7f1 (bb67e21913cc)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvd3dum.dll 10.18.13.5582]
+    Renderer: NVIDIA GeForce GTX 980
+    Vendor:   NVIDIA
+    VRAM:     3072 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Descon8New\Unity View\Descon Unity\Build\Descon.Unity.View_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Descon8New\Unity View\Descon Unity\Build\Descon.Unity.View_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Descon8New\Unity View\Descon Unity\Build\Descon.Unity.View_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Descon8New\Unity View\Descon Unity\Build\Descon.Unity.View_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Descon8New\Unity View\Descon Unity\Build\Descon.Unity.View_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Descon8New\Unity View\Descon Unity\Build\Descon.Unity.View_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Descon8New\Unity View\Descon Unity\Build\Descon.Unity.View_Data\Managed\Descon.Data.dll (this message is harmless)
+Loading D:\Descon8New\Unity View\Descon Unity\Build\Descon.Unity.View_Data\Managed\Descon.Data.dll into Unity Child Domain
+Platform assembly: D:\Descon8New\Unity View\Descon Unity\Build\Descon.Unity.View_Data\Managed\Descon.Resources.dll (this message is harmless)
+Loading D:\Descon8New\Unity View\Descon Unity\Build\Descon.Unity.View_Data\Managed\Descon.Resources.dll into Unity Child Domain
+- Completed reload, in  0.031 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
+Platform assembly: D:\Descon8New\Unity View\Descon Unity\Build\Descon.Unity.View_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Descon8New\Unity View\Descon Unity\Build\Descon.Unity.View_Data\Managed\System.dll (this message is harmless)
+NullReferenceException: Object reference not set to an instance of an object
+  at DrawingMethods..ctor () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Platform assembly: D:\Descon8New\Unity View\Descon Unity\Build\Descon.Unity.View_Data\Managed\System.Xml.dll (this message is harmless)
+Platform assembly: D:\Descon8New\Unity View\Descon Unity\Build\Descon.Unity.View_Data\Managed\System.Configuration.dll (this message is harmless)

@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcPad.View", "CalcPad.View\CalcPad.View.csproj", "{AD0EC837-9191-4578-B27D-FF10949AEFDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcPad.ViewModel", "CalcPad.ViewModel\CalcPad.ViewModel.csproj", "{72AF2E5E-C4D9-40C9-9B71-F3F407B3060A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcPad.Model", "CalcPad.Model\CalcPad.Model.csproj", "{4847AD74-54C1-4454-8527-79A0FFF25DE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcPad.Resources", "CalcPad.Resources\CalcPad.Resources.csproj", "{3CBD8EA6-6AFF-4A59-B09C-CC3C536729CA}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://50.207.156.72:8080/tfs/desconplus
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CalcPad.View\\CalcPad.View.csproj
+		SccProjectName1 = CalcPad.View
+		SccLocalPath1 = CalcPad.View
+		SccProjectUniqueName2 = CalcPad.ViewModel\\CalcPad.ViewModel.csproj
+		SccProjectName2 = CalcPad.ViewModel
+		SccLocalPath2 = CalcPad.ViewModel
+		SccProjectUniqueName3 = CalcPad.Model\\CalcPad.Model.csproj
+		SccProjectName3 = CalcPad.Model
+		SccLocalPath3 = CalcPad.Model
+		SccProjectUniqueName4 = CalcPad.Resources\\CalcPad.Resources.csproj
+		SccProjectName4 = CalcPad.Resources
+		SccLocalPath4 = CalcPad.Resources
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD0EC837-9191-4578-B27D-FF10949AEFDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD0EC837-9191-4578-B27D-FF10949AEFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD0EC837-9191-4578-B27D-FF10949AEFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD0EC837-9191-4578-B27D-FF10949AEFDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72AF2E5E-C4D9-40C9-9B71-F3F407B3060A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72AF2E5E-C4D9-40C9-9B71-F3F407B3060A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72AF2E5E-C4D9-40C9-9B71-F3F407B3060A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72AF2E5E-C4D9-40C9-9B71-F3F407B3060A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4847AD74-54C1-4454-8527-79A0FFF25DE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4847AD74-54C1-4454-8527-79A0FFF25DE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4847AD74-54C1-4454-8527-79A0FFF25DE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4847AD74-54C1-4454-8527-79A0FFF25DE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CBD8EA6-6AFF-4A59-B09C-CC3C536729CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CBD8EA6-6AFF-4A59-B09C-CC3C536729CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CBD8EA6-6AFF-4A59-B09C-CC3C536729CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CBD8EA6-6AFF-4A59-B09C-CC3C536729CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

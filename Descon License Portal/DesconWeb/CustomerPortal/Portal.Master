@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Portal.master.cs" Inherits="DesconWeb.SiteMaster" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - Descon Plus</title>
+    <link href="~/Themes/Content/Site.css" rel="stylesheet" />
+    <link href="~/Themes/Metro/default.css" rel="stylesheet" />  
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:PlaceHolder runat="server">        
+        <script src="<%: ResolveUrl("~/Scripts/modernizr-2.6.2.js") %>"></script>       
+        <script src="<%: ResolveUrl("~/Scripts/classie.js") %>"></script>
+    </asp:PlaceHolder>
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="PortalHeadContent" />
+</head>
+<body>
+    <form runat="server">
+    <asp:ScriptManager runat="server">
+        <Scripts>
+            <asp:ScriptReference Name="jquery" />
+            <asp:ScriptReference Name="jquery.ui.combined" />
+        </Scripts>
+    </asp:ScriptManager>
+    <header >
+        <div class="content-wrapper2" style="width: 100% !important; max-width: 100% !important">
+            <div class="float-left">
+                <p class="site-title"><a runat="server" href="~/Default.aspx">
+                                          <img src="../Images/DesconLogo300dpi.png" style="height: 50px; ">
+                                      </a></p>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">                     
+                        <AnonymousTemplate>
+  <%--                          <ul>
+                                <li class="btnSmall btn-6 btn-6b"><a style="color:white; background: inherit" id="registerLink" runat="server" class="" href="~/Account/Register.aspx">Register</a></li>
+                                <li class="btnSmall btn-6 btn-6b"><a style="color:white; background: inherit" id="loginLink" runat="server" href="~/Account/Login.aspx">Home</a></li>
+                            </ul>--%>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <p>
+                                Hello, <a runat="server" class="username" href="~/Account/Manage.aspx" title="Manage your account">
+                                    <asp:LoginName runat="server" CssClass="username" />
+                                </a>!
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" />
+                            </p>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </section>
+                <nav>
+                    <ul id="menu" >
+                        <li><a runat="server" href="~/Default.aspx">Home</a></li>
+                        <li><a runat="server" href="~/Account/Login.aspx">Login</a></li>
+                        <li><a runat="server" href="~/Account/Register.aspx">Register</a></li>
+                        <li><a runat="server" href="~/Account/SupportLinks.aspx">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body" class="content-wrapper2">
+       <asp:ContentPlaceHolder runat="server" ID="PortalFeaturedContentHead" >       
+       </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder runat="server" ID="PortalFeaturedContent" >       
+        </asp:ContentPlaceHolder>
+        <section class="content-wrapper main-content clear-fix">
+            <link href="/Themes/Metro/Controls.css" rel="stylesheet" type="text/css" media="screen" runat="server" />
+            <link href="/Themes/Metro/component.css" rel="stylesheet" type="text/css" media="screen" runat="server" />
+            <link href="/Themes/Metro/default.css" rel="stylesheet" type="text/css" media="screen" runat="server" />
+            <asp:ContentPlaceHolder runat="server" ID="PortalMainContent">
+                      
+            </asp:ContentPlaceHolder>
+        </section>
+    </div>
+    </form>
+     <footer id="footer" style="position: fixed; bottom: 0">
+        <div class="content-wrapper footerShadow" >
+                <nav style="margin: 0; padding: 0">
+                    <ul id="footermenu" >
+                        <li><a runat="server" href="~/Default.aspx">Home</a></li>
+                        <li><a runat="server" href="~/Account/Login.aspx">Login</a></li>
+                        <li><a runat="server" href="~/Account/Register.aspx">Register</a></li>
+                        <li><a runat="server" href="~/Account/SupportLinks.aspx">Support</a></li>
+                    </ul>
+                </nav>
+            <div class="logoMenu" style="display: inline-block; margin: 0;">
+                <a class="logoFooter" runat="server" href="https://www.facebook.com/DesconPlus"><img src="../Images/FacebookLogo2.png"></a>
+                <a class="logoFooter" runat="server" href="http://www.twitter.com"><img src="../Images/TwitterLogo2.png"></a>
+                <a class="logoFooter" runat="server" href="https://www.linkedin.com/company/descon-plus"><img src="../Images/LinkedInLogo2.png"></a>
+            </div>
+            <p style="margin: 0; color:white; font-size: 10px; letter-spacing: 1px;">Copyright &copy; <%: DateTime.Now.Year %>  Descon Plus. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,251 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:Data="clr-namespace:Descon.Data;assembly=Descon.Data"
+			 xmlns:dataAccess="clr-namespace:Descon.UI.DataAccess;assembly=Descon.UI.DataAccess"
+			 xmlns:forms="clr-namespace:Descon.Forms"
+			 x:Class="Descon.Forms.ControlBCGussetPlate"
+			 mc:Ignorable="d"
+			 Height="526"
+			 Width="545"
+			 Background="White">
+	<Canvas d:DataContext="{d:DesignInstance {x:Type dataAccess:CommonData}, IsDesignTimeCreatable=True}">
+		<GroupBox Header="Dimensions"
+				  Height="400"
+				  Canvas.Left="8"
+				  Canvas.Top="8"
+				  Width="324"
+				  Margin="0">
+			<StackPanel>
+				<forms:ControlDesconEditBox DSCLabel="Material"
+												 DSCShowCheckBox="Collapsed"
+												 DSCShowUnit="Visible"
+												 DSCComboBoxValue="{Binding SelectedMember.BraceConnect.Gusset.MaterialName}"
+												 DSCComboBoxSource="{Binding MaterialDict}"
+												 DSCShowTextBox="Collapsed"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox DSCLabel="Beam Side Free Edge X (Lvfx)"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.BeamSideFreeEdgeX}"
+												 DSCCheckBoxValue="{Binding SelectedMember.BraceConnect.Gusset.BeamSideFreeEdgeX_User}"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox DSCLabel="Beam Side Free Edge Y (Lvfy)"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.BeamSideFreeEdgeY}"
+												 DSCCheckBoxValue="{Binding SelectedMember.BraceConnect.Gusset.BeamSideFreeEdgeY_User}"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox DSCLabel="Column Side Free Edge X (Lhfx)"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.ColumnSideFreeEdgeX}"
+												 DSCCheckBoxValue="{Binding SelectedMember.BraceConnect.Gusset.ColumnSideFreeEdgeX_User}"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox DSCLabel="Column Side Free Edge Y (Lhfy"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.ColumnSideFreeEdgeY}"
+												 DSCCheckBoxValue="{Binding SelectedMember.BraceConnect.Gusset.ColumnSideFreeEdgeY_User}"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox DSCLabel="Column Side (Lgb)"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.ColumnSide}"
+												 DSCCheckBoxValue="{Binding SelectedMember.BraceConnect.Gusset.ColumnSide_User}"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox DSCLabel="Beam Side (Lgc)"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.BeamSide}"
+												 DSCCheckBoxValue="{Binding SelectedMember.BraceConnect.Gusset.BeamSide_User}"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox DSCLabel="Thickness"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.Thickness}"
+												 DSCCheckBoxValue="{Binding SelectedMember.BraceConnect.Gusset.Thickness_User}"
+												 DSCTextBoxType="Decimal_Three_Digits"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox DSCLabel="Column Side Setback"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.ColumnSideSetback}"
+												 DSCCheckBoxValue="{Binding SelectedMember.BraceConnect.Gusset.ColumnSideSetBack_User}"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox DSCLabel="Edge Distance"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.EdgeDistance}"
+												 DSCCheckBoxValue="{Binding SelectedMember.BraceConnect.Gusset.EdgeDistance_User}"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox x:Name="ctrlBeamWeld"
+												 DSCLabel="Beam Weld"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.SmallLength, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.BeamWeldSize}"
+												 DSCCheckBoxValue="{Binding SelectedMember.BraceConnect.Gusset.BeamWeldSize_User}"
+												 DSCTextBoxType="Fraction_Over_16"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox x:Name="ctrlColumnWeld"
+												 DSCLabel="Column Weld"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.SmallLength, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.ColumnWeldSize}"
+												 IsEnabled="False"
+												 DSCCheckBoxValue="{Binding SelectedMember.BraceConnect.Gusset.ColumnWeldSize_User}"
+												 DSCTextBoxType="Fraction_Over_16"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Edge Forces and Moments"
+				  Height="289"
+				  Canvas.Left="337"
+				  Canvas.Top="8"
+				  Width="199"
+				  Margin="0">
+			<StackPanel>
+				<forms:ControlDesconEditBox DSCLabel="Hb"
+												 DSCShowCheckBox="Collapsed"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Force, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.Hb}"
+												 IsEnabled="False"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox DSCLabel="Mc"
+												 DSCShowCheckBox="Collapsed"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Force, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.Mc}"
+												 IsEnabled="False"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox DSCLabel="Vc"
+												 DSCShowCheckBox="Collapsed"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Force, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.VerticalForceColumn}"
+												 IsEnabled="False"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox DSCLabel="Hc"
+												 DSCShowCheckBox="Collapsed"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Force, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.Hc}"
+												 IsEnabled="False"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox DSCLabel="Mb"
+												 DSCShowCheckBox="Collapsed"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Force, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.Mb}"
+												 IsEnabled="False"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox DSCLabel="Vb"
+												 DSCShowCheckBox="Collapsed"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Force, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.VerticalForceBeam}"
+												 IsEnabled="False"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Moment for Equilibrium Provided by"
+				  Height="107"
+				  Canvas.Left="8"
+				  Canvas.Top="413"
+				  Width="324"
+				  Margin="0">
+			<GroupBox.Resources>
+				<forms:EnumToBool x:Key="EnumToBool" />
+				<Style>
+					<Setter Property="forms:MarginSetterPanel.Margin"
+							Value="2" />
+					<Style.TargetType>
+						<x:Type TypeName="StackPanel" />
+					</Style.TargetType>
+				</Style>
+			</GroupBox.Resources>
+			<StackPanel>
+				<RadioButton IsChecked="{Binding SelectedMember.BraceConnect.Gusset.Moment, ConverterParameter={x:Static Data:EMomentForEquilibrium.GussetToBeam}, Converter={StaticResource EnumToBool}}"
+							 Content="Gusset to Beam Connection"
+							 TabIndex="17" />
+				<RadioButton IsChecked="{Binding SelectedMember.BraceConnect.Gusset.Moment, ConverterParameter={x:Static Data:EMomentForEquilibrium.GussetToColumn}, Converter={StaticResource EnumToBool}}"
+							 Content="Gusset to Column Connection"
+							 TabIndex="18" />
+				<RadioButton IsChecked="{Binding SelectedMember.BraceConnect.Gusset.Moment, ConverterParameter={x:Static Data:EMomentForEquilibrium.Both}, Converter={StaticResource EnumToBool}}"
+							 Content="Both Interfaces"
+							 TabIndex="19" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Vertical Force Distributed as"
+				  Height="106"
+				  Canvas.Left="337"
+				  Canvas.Top="302"
+				  Width="199"
+				  Margin="0">
+			<StackPanel>
+				<forms:ControlDesconEditBox DSCLabel="Column"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Force, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.VerticalForceColumn}"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 DSCCheckBoxValue="{Binding SelectedMember.BraceConnect.Gusset.VerticalForce_User}"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+				<forms:ControlDesconEditBox DSCLabel="Beam"
+												 DSCShowComboBox="Collapsed"
+												 DSCUnit="{Binding ConstUnit.Force, Mode=OneWay}"
+												 DSCTextBoxValue="{Binding SelectedMember.BraceConnect.Gusset.VerticalForceBeam}"
+												 DSCTextBoxType="Decimal_Two_Digits"
+												 DSCCheckBoxValue="{Binding SelectedMember.BraceConnect.Gusset.VerticalForce_User}"
+												 HorizontalAlignment="Right"
+												 DSCUnitWidth="50" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Do Not Connect"
+				  Height="107"
+				  Canvas.Left="337"
+				  Canvas.Top="413"
+				  Width="199"
+				  Margin="0">
+			<StackPanel>
+				<CheckBox Content="Gusset to Column"
+						  IsChecked="{Binding SelectedMember.BraceConnect.Gusset.DontConnectColumn}"
+						  TabIndex="21" />
+			</StackPanel>
+		</GroupBox>
+	</Canvas>
+</UserControl>

@@ -1,0 +1,284 @@
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\AzureStartup\Startup.ps1
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\AzureStartup\Startup.cmd
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Site.dll.config
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Site.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Site.pdb
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Adxstudio.Xrm.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Adxstudio.Xrm.Files.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Adxstudio.Xrm.GlobalSearch.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Adxstudio.Xrm.GlobalSearch.Services.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\AjaxControlToolkit.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\AntiXSSLibrary.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Antlr3.Runtime.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\AuthorizeNet.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\AuthorizeNet.Helpers.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\DevTrends.MvcDonutCaching.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\DocumentFormat.OpenXml.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\DotLiquid.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.Core.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth.Common.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth2.Client.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth2.ClientAuthorization.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth2.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\HtmlAgilityPack.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\ITfoxtec.Saml2.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Kentor.OwinCookieSaver.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Lucene.Net.Contrib.Highlighter.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Lucene.Net.Contrib.Memory.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Lucene.Net.Contrib.Snowball.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Lucene.Net.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Crm.Sdk.Proxy.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Data.Edm.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Data.OData.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.IdentityModel.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.IdentityModel.Extensions.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.OpenIdConnect.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.WsFederation.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.SharePoint.Client.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.SharePoint.Client.Runtime.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.WindowsAzure.Storage.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.WindowsAzure.StorageClient.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Xrm.Client.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Xrm.Portal.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Xrm.Portal.Files.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Xrm.Sdk.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Newtonsoft.Json.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Owin.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Owin.Security.Providers.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Recaptcha.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\System.Net.Http.Formatting.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\System.Spatial.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\System.Threading.Tasks.Dataflow.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\System.Web.Helpers.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\System.Web.Http.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\System.Web.Http.OData.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\System.Web.Http.WebHost.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\System.Web.Mvc.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\System.Web.Optimization.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\System.Web.Razor.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\System.Web.WebPages.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\System.Web.WebPages.Razor.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Validation.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\WebGrease.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.TransientFaultHandling.Core.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\ParatureSDK.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.WindowsAzure.CloudDrive.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Xrm.Sdk.Deployment.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.Unity.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\obj\Debug\MasterPortal.csprojResolveAssemblyReference.cache
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\obj\Debug\Site.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\obj\Debug\Site.pdb
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\AutoMapper.dll
+C:\Users\s.otolorin\Desktop\7.0.0020\Samples\MasterPortal\bin\AutoMapper.xml
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\AzureStartup\Startup.ps1
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\AzureStartup\Startup.cmd
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Site.dll.config
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Site.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Site.pdb
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Adxstudio.Xrm.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Adxstudio.Xrm.Files.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Adxstudio.Xrm.GlobalSearch.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Adxstudio.Xrm.GlobalSearch.Services.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\AjaxControlToolkit.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\AntiXSSLibrary.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Antlr3.Runtime.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\AuthorizeNet.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\AuthorizeNet.Helpers.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\AutoMapper.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\DevTrends.MvcDonutCaching.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\DocumentFormat.OpenXml.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\DotLiquid.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.Core.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth.Common.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth2.Client.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth2.ClientAuthorization.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth2.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\HtmlAgilityPack.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\ITfoxtec.Saml2.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Kentor.OwinCookieSaver.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Lucene.Net.Contrib.Highlighter.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Lucene.Net.Contrib.Memory.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Lucene.Net.Contrib.Snowball.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Lucene.Net.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Crm.Sdk.Proxy.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Data.Edm.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Data.OData.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.IdentityModel.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.IdentityModel.Extensions.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.OpenIdConnect.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.WsFederation.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.SharePoint.Client.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.SharePoint.Client.Runtime.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.WindowsAzure.Storage.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.WindowsAzure.StorageClient.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Xrm.Client.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Xrm.Portal.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Xrm.Portal.Files.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Xrm.Sdk.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Newtonsoft.Json.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Owin.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Owin.Security.Providers.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Recaptcha.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\System.Net.Http.Formatting.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\System.Spatial.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\System.Threading.Tasks.Dataflow.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\System.Web.Helpers.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\System.Web.Http.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\System.Web.Http.OData.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\System.Web.Http.WebHost.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\System.Web.Mvc.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\System.Web.Optimization.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\System.Web.Razor.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\System.Web.WebPages.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\System.Web.WebPages.Razor.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Validation.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\WebGrease.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.TransientFaultHandling.Core.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\ParatureSDK.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.WindowsAzure.CloudDrive.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Xrm.Sdk.Deployment.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.Unity.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\bin\AutoMapper.xml
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\obj\Debug\MasterPortal.csprojResolveAssemblyReference.cache
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\obj\Debug\Site.dll
+C:\Users\Shayla\Desktop\Descon\CustomerPortal2\7.0.0020\Samples\MasterPortal\obj\Debug\Site.pdb
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\AzureStartup\Startup.ps1
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\AzureStartup\Startup.cmd
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Site.dll.config
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Site.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Site.pdb
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Adxstudio.Xrm.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Adxstudio.Xrm.Files.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Adxstudio.Xrm.GlobalSearch.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Adxstudio.Xrm.GlobalSearch.Services.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\AjaxControlToolkit.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\AntiXSSLibrary.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Antlr3.Runtime.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\AuthorizeNet.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\AuthorizeNet.Helpers.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\DevTrends.MvcDonutCaching.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\DocumentFormat.OpenXml.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\DotLiquid.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.Core.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth.Common.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth2.Client.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth2.ClientAuthorization.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OAuth2.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\HtmlAgilityPack.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\ITfoxtec.Saml2.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Kentor.OwinCookieSaver.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Lucene.Net.Contrib.Highlighter.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Lucene.Net.Contrib.Memory.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Lucene.Net.Contrib.Snowball.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Lucene.Net.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Crm.Sdk.Proxy.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Data.Edm.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Data.OData.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.IdentityModel.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.IdentityModel.Extensions.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.OpenIdConnect.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Owin.Security.WsFederation.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.SharePoint.Client.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.SharePoint.Client.Runtime.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.WindowsAzure.Storage.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.WindowsAzure.StorageClient.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Xrm.Client.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Xrm.Portal.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Xrm.Portal.Files.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Xrm.Sdk.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Newtonsoft.Json.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Owin.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Owin.Security.Providers.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Recaptcha.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\System.Net.Http.Formatting.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\System.Spatial.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\System.Threading.Tasks.Dataflow.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\System.Web.Helpers.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\System.Web.Http.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\System.Web.Http.OData.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\System.Web.Http.WebHost.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\System.Web.Mvc.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\System.Web.Optimization.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\System.Web.Razor.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\System.Web.WebPages.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\System.Web.WebPages.Razor.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Validation.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\WebGrease.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.TransientFaultHandling.Core.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\ParatureSDK.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.WindowsAzure.CloudDrive.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Xrm.Sdk.Deployment.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.Unity.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\bin\AutoMapper.xml
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\obj\Debug\MasterPortal.csprojResolveAssemblyReference.cache
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\obj\Debug\Site.dll
+C:\Users\Shayla\Desktop\Descon\Descon8\Descon License Portal\7.0.0020\Samples\MasterPortal\obj\Debug\Site.pdb

@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style TargetType="Button">
+		<Setter Property="Focusable"
+				Value="false" />
+		<Setter Property="Background"
+				Value="{x:Null}" />
+		<Setter Property="BorderThickness"
+				Value="0" />
+	</Style>
+	<Style TargetType="ComboBox">
+		<Setter Property="Background"
+				Value="White" />
+		<!--<Control.Resources>
+			<SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}"
+							 Color="Yellow" />
+			<SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+							 Color="Red" />
+		</Control.Resources>-->
+	</Style>
+</ResourceDictionary>

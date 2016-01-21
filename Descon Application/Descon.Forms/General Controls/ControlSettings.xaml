@@ -1,0 +1,519 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:Data="clr-namespace:Descon.Data;assembly=Descon.Data"
+			 xmlns:dataAccess="clr-namespace:Descon.UI.DataAccess;assembly=Descon.UI.DataAccess"
+			 xmlns:forms="clr-namespace:Descon.Forms"
+			 mc:Ignorable="d"
+			 x:Class="Descon.Forms.ControlSettings"
+			 Padding="5"
+			 d:DataContext="{d:DesignInstance {x:Type dataAccess:CommonData}, IsDesignTimeCreatable=True}"
+			 Width="878"
+			 Height="612.1">
+	<UserControl.Resources>
+		<forms:EnumToBool x:Key="EnumToBool" />
+		<forms:InvertBool x:Key="InvertBool" />
+		<Style>
+			<Setter Property="forms:MarginSetterPanel.Margin"
+					Value="2" />
+			<Style.TargetType>
+				<x:Type TypeName="StackPanel" />
+			</Style.TargetType>
+		</Style>
+	</UserControl.Resources>
+	<Canvas>
+		<GroupBox Header="General Preferences"
+				  VerticalAlignment="Top"
+				  Margin="0"
+				  Canvas.Left="2"
+				  Width="316">
+			<StackPanel>
+				<forms:ControlDesconEditBox DSCLabel="Number of Recent Files"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding CommonLists.NumberOfRecentFiles}"
+											DSCComboBoxValue="{Binding Preferences.NumberOfRecentlyOpenFiles}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowTextBox="Collapsed"
+											DSCDisplayValuePath=""
+											DSCSelectedValuePath="" />
+				<CheckBox Content="Automatically Check for Updates on Startup"
+						  IsChecked="{Binding Preferences.AutomaticallyCheckForUpdates}"
+						  IsTabStop="False"
+						  Margin="2,5,2,2" />
+				<CheckBox Content="Enable Ratio Gauges"
+						  IsChecked="{Binding Preferences.EnableGauges}"
+						  IsTabStop="False" />
+				<CheckBox Content="Use Continuous Clip Angles"
+						  IsChecked="{Binding Preferences.UseContinuousClipAngles}"
+						  IsEnabled="{Binding LicenseMinimumNext, Mode=OneWay}"
+						  IsTabStop="False" />
+				<CheckBox Content="Use Stiffened Gusset Plate for Chevron and  K-Brace"
+						  IsChecked="{Binding Preferences.UseStiffenedGussetPlate}"
+						  IsEnabled="{Binding LicenseMinimumNext, Mode=OneWay}"
+						  IsTabStop="False" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Default Values"
+				  VerticalAlignment="Top"
+				  Height="310"
+				  Margin="0"
+				  Canvas.Left="2"
+				  Canvas.Top="290"
+				  Width="502">
+			<Canvas>
+				<Button Content="{Binding Preferences.DefaultBolt.BoltName}"
+						Click="btnBolt_Click"
+						Height="20"
+						Canvas.Left="113"
+						Canvas.Top="154"
+						Width="130"
+						TabIndex="3"
+						IsTabStop="False" />
+				<Label Content="Bolt"
+					   HorizontalAlignment="Left"
+					   VerticalAlignment="Top"
+					   Canvas.Left="77"
+					   Canvas.Top="154" />
+				<forms:ControlDesconEditBox Canvas.Top="122"
+											DSCLabel="Welding Electrode"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding WeldDict}"
+											DSCComboBoxValue="{Binding Preferences.DefaultElectrodeName}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowTextBox="Collapsed"
+											DSCTabIndex="3"
+											Canvas.Left="1" />
+				<forms:ControlDesconEditBox Canvas.Left="296"
+											DSCLabel="Material"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding Preferences.DefaultMaterials.MaterialDict}"
+											DSCComboBoxValue="{Binding Preferences.DefaultMaterials.SelectedMaterial}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowTextBox="Collapsed"
+											Canvas.Top="3"
+											DSCTabIndex="2" />
+				<forms:ControlDesconEditBox Canvas.Left="21"
+											DSCLabel="Element Type"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding CommonLists.PrefsMaterialDefaultList}"
+											DSCComboBoxValue="{Binding Preferences.DefaultMaterials.SelectedElementType}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowTextBox="Collapsed"
+											Canvas.Top="3"
+											DSCDisplayValuePath="Value"
+											DSCTabIndex="1"
+											FontWeight="Bold" />
+				<forms:ControlDesconEditBox Canvas.Top="181"
+											DSCShowCheckBox="Collapsed"
+											DSCShowComboBox="Collapsed"
+											DSCShowUnit="Collapsed"
+											DSCLabel="Min Thickness Single Plate"
+											DSCTextBoxValue="{Binding Preferences.MinThicknessSinglePlate}"
+											DSCTextBoxType="Decimal_Four_Digits"
+											Canvas.Left="28"
+											DSCTabIndex="4" />
+				<forms:ControlDesconEditBox Canvas.Top="241"
+											DSCShowCheckBox="Collapsed"
+											DSCShowComboBox="Collapsed"
+											DSCShowUnit="Collapsed"
+											DSCLabel="Min Thickness Gusset Plate"
+											DSCTextBoxValue="{Binding Preferences.MinThicknessGussetPlate}"
+											DSCTextBoxType="Decimal_Four_Digits"
+											Canvas.Left="24"
+											DSCTabIndex="6"
+											IsEnabled="{Binding LicenseMinimumNext, Mode=OneWay}" />
+				<forms:ControlDesconEditBox Canvas.Top="211"
+											DSCShowCheckBox="Collapsed"
+											DSCShowComboBox="Collapsed"
+											DSCShowUnit="Collapsed"
+											DSCLabel="Min Thickness Angle"
+											DSCTextBoxValue="{Binding Preferences.MinThicknessAngle}"
+											DSCTextBoxType="Decimal_Four_Digits"
+											Canvas.Left="58"
+											DSCTabIndex="5" />
+				<Button Content="Reset Default Values"
+						Click="btnResetDefaults_Click"
+						Height="20"
+						Canvas.Left="354"
+						Canvas.Top="244"
+						Width="130"
+						TabIndex="3"
+						IsTabStop="False" />
+				<forms:ControlDesconEditBox DSCLabel="Config"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding Preferences.DefaultConnectionTypes.JointConfigDict}"
+											DSCComboBoxValue="{Binding Preferences.DefaultConnectionTypes.SelectedConfiguration}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowTextBox="Collapsed"
+											DSCTabIndex="3"
+											DSCDisplayValuePath="Value"
+											FontWeight="Bold"
+											Canvas.Left="59"
+											Canvas.Top="33"
+											IsEnabled="{Binding LicenseMinimumStandard, Mode=OneWay}" />
+				<forms:ControlDesconEditBox DSCLabel="Shear"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding Preferences.DefaultConnectionTypes.ShearDict}"
+											DSCComboBoxValue="{Binding Preferences.DefaultConnectionTypes.SelectedConnectionShear}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowTextBox="Collapsed"
+											DSCTabIndex="3"
+											DSCDisplayValuePath="Value"
+											Canvas.Left="309"
+											Canvas.Top="33"
+											IsEnabled="{Binding LicenseMinimumStandard, Mode=OneWay}" />
+				<forms:ControlDesconEditBox DSCLabel="Moment"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding Preferences.DefaultConnectionTypes.MomentDict}"
+											DSCComboBoxValue="{Binding Preferences.DefaultConnectionTypes.SelectedConnectionMoment}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowTextBox="Collapsed"
+											DSCTabIndex="3"
+											DSCDisplayValuePath="Value"
+											IsEnabled="{Binding LicenseMinimumStandard, Mode=OneWay}"
+											Canvas.Top="63"
+											Canvas.Left="294" />
+				<forms:ControlDesconEditBox Canvas.Left="48"
+											DSCLabel="Bolt Size"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding CommonLists.BoltSizes}"
+											DSCComboBoxValue="{Binding Preferences.DefaultMinimumEdgeDistances.SelectedBoltSize}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowTextBox="Collapsed"
+											Canvas.Top="92"
+											DSCDisplayValuePath=""
+											DSCSelectedValuePath=""
+											DSCTabIndex="1"
+											FontWeight="Bold"
+											IsEnabled="{Binding LicenseMinimumStandard, Mode=OneWay}" />
+				<forms:ControlDesconEditBox x:Name="tbxMinEdgeDistance"
+											Canvas.Top="93"
+											DSCLabel="Min Edge Distance"
+											DSCShowCheckBox="Collapsed"
+											DSCShowComboBox="Collapsed"
+											DSCShowUnit="Collapsed"
+											DSCTextBoxValue="{Binding Preferences.DefaultMinimumEdgeDistances.MinimumEdgeDistance}"
+											DSCTextBoxType="Decimal_Four_Digits"
+											Canvas.Left="240"
+											DSCTabIndex="4"
+											IsEnabled="{Binding LicenseMinimumStandard, Mode=OneWay}" />
+			</Canvas>
+		</GroupBox>
+		<GroupBox Header="Distance to Brace Axis"
+				  VerticalAlignment="Top"
+				  Height="119"
+				  Margin="0"
+				  Canvas.Left="2"
+				  Canvas.Top="166"
+				  Width="316"
+				  IsEnabled="{Binding LicenseMinimumNext, Mode=OneWay}">
+			<Canvas>
+				<Canvas Height="57"
+						Canvas.Top="24"
+						Width="310"
+						IsEnabled="{Binding Preferences.EndOfBracePulledBack}"
+						Canvas.Left="-2">
+					<RadioButton x:Name="rbSelectTransferForce"
+								 Content="Select Transfer Force"
+								 IsChecked="{Binding Preferences.TransferForceSelection, ConverterParameter={x:Static Data:EPrefsTransferForceSelection.Select}, Converter={StaticResource EnumToBool}}"
+								 Canvas.Top="4"
+								 IsTabStop="False"
+								 Canvas.Left="6" />
+					<ComboBox Height="21"
+							  TabIndex="99"
+							  ItemsSource="{Binding CommonLists.PrefsDistanceToBraceAxis}"
+							  SelectedValue="{Binding Preferences.TransferForceWithT}"
+							  DisplayMemberPath="Value"
+							  SelectedValuePath="Key"
+							  Canvas.Left="142"
+							  Width="145"
+							  IsEnabled="{Binding IsChecked, ElementName=rbSelectTransferForce}"
+							  IsTabStop="False" />
+					<RadioButton Content="Enter Transfer Force"
+								 IsChecked="{Binding Preferences.TransferForceSelection, ConverterParameter={x:Static Data:EPrefsTransferForceSelection.Enter}, Converter={StaticResource EnumToBool}}"
+								 Canvas.Top="34"
+								 IsTabStop="False"
+								 Canvas.Left="6" />
+					<forms:ControlDesconEditBox DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												DSCTextBoxValue="{Binding Preferences.TransferForce}"
+												DSCShowCheckBox="Collapsed"
+												DSCShowComboBox="Collapsed"
+												DSCTextBoxType="Decimal_Two_Digits"
+												Canvas.Left="140"
+												Canvas.Top="27"
+												DSCShowLabel="Collapsed" />
+				</Canvas>
+				<CheckBox Content="Allow for Gusset Bending"
+						  IsChecked="{Binding Preferences.EndOfBracePulledBack}"
+						  Canvas.Left="4"
+						  Canvas.Top="4"
+						  IsTabStop="False"
+						  ToolTip="End of Brace Pulled Back to Allow for Gusset Bending If Brace Buckles" />
+				<Image x:Name="imageTransferForce"
+					   ToolTipService.ShowDuration="30000"
+					   ToolTipService.InitialShowDelay="0"
+					   Source="/Descon.Resources;component/Images/Icons/QuestionMark.png"
+					   Canvas.Left="249"
+					   Canvas.Top="49" />
+			</Canvas>
+		</GroupBox>
+		<GroupBox Header="Drawing Colors"
+				  HorizontalAlignment="Left"
+				  Margin="0"
+				  VerticalAlignment="Top"
+				  Height="434"
+				  Width="355"
+				  Canvas.Left="509"
+				  Canvas.Top="166">
+			<Canvas>
+				<Label Content="Columns"
+					   VerticalAlignment="Top"
+					   HorizontalAlignment="Center"
+					   Canvas.Left="66"
+					   Canvas.Top="40" />
+				<Label Content="Beams/Braces"
+					   VerticalAlignment="Top"
+					   HorizontalAlignment="Center"
+					   Canvas.Top="75"
+					   Canvas.Left="39" />
+				<Label Content="Bolts"
+					   VerticalAlignment="Top"
+					   HorizontalAlignment="Center"
+					   Canvas.Left="86"
+					   Canvas.Top="110" />
+				<Label Content="Dim. Lines/Leaders"
+					   VerticalAlignment="Top"
+					   HorizontalAlignment="Center"
+					   Canvas.Top="145"
+					   Canvas.Left="12" />
+				<Label Content="Text"
+					   VerticalAlignment="Top"
+					   HorizontalAlignment="Center"
+					   Canvas.Left="267"
+					   Canvas.Top="75" />
+				<Label Content="Weld Symbols"
+					   VerticalAlignment="Top"
+					   HorizontalAlignment="Center"
+					   Canvas.Top="40"
+					   Canvas.Left="213" />
+				<Label Content="Conn. Elements"
+					   VerticalAlignment="Top"
+					   HorizontalAlignment="Center"
+					   Canvas.Top="110"
+					   Canvas.Left="206" />
+				<Label Content="Highlight"
+					   VerticalAlignment="Top"
+					   HorizontalAlignment="Center"
+					   Canvas.Top="145"
+					   Canvas.Left="239" />
+				<forms:ControlDesconEditBox DSCLabel="Drawing Color Theme"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding CommonLists.DrawingThemeList}"
+											DSCComboBoxValue="{Binding Preferences.ColorSettings.DrawingTheme}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowTextBox="Collapsed"
+											DSCTabIndex="1"
+											DataChanged="cbxDrawingTheme_Changed"
+											DSCDisplayValuePath="Value"
+											Canvas.Top="2"
+											Canvas.Left="-5" />
+				<Ellipse Fill="{Binding ColorDrawingHighlight, Mode=TwoWay}"
+						 MouseDown="colorIcon_Click"
+						 Height="30"
+						 Canvas.Left="302"
+						 Canvas.Top="143"
+						 Width="30" />
+				<Ellipse Fill="{Binding ColorDrawingConnectionElements, Mode=TwoWay}"
+						 MouseDown="colorIcon_Click"
+						 Height="30"
+						 Canvas.Left="302"
+						 Canvas.Top="108"
+						 Width="30" />
+				<Ellipse Fill="{Binding ColorDrawingText, Mode=TwoWay}"
+						 MouseDown="colorIcon_Click"
+						 Height="30"
+						 Canvas.Left="302"
+						 Canvas.Top="73"
+						 Width="30" />
+				<Ellipse Fill="{Binding ColorDrawingWeldSymbols, Mode=TwoWay}"
+						 MouseDown="colorIcon_Click"
+						 Height="30"
+						 Canvas.Left="302"
+						 Canvas.Top="38"
+						 Width="30" />
+				<Ellipse Fill="{Binding ColorDrawingBolts, Mode=TwoWay}"
+						 MouseDown="colorIcon_Click"
+						 Height="30"
+						 Canvas.Left="126"
+						 Canvas.Top="108"
+						 Width="30" />
+				<Ellipse Fill="{Binding ColorDrawingDimensionLinesLeaders, Mode=TwoWay}"
+						 MouseDown="colorIcon_Click"
+						 Height="30"
+						 Canvas.Left="126"
+						 Canvas.Top="143"
+						 Width="30" />
+				<Ellipse Fill="{Binding ColorDrawingBeamsBraces, Mode=TwoWay}"
+						 MouseDown="colorIcon_Click"
+						 Height="30"
+						 Canvas.Left="126"
+						 Canvas.Top="73"
+						 Width="30" />
+				<Ellipse Fill="{Binding ColorDrawingColumns, Mode=TwoWay}"
+						 MouseDown="colorIcon_Click"
+						 Height="30"
+						 Canvas.Left="126"
+						 Canvas.Top="38"
+						 Width="30" />
+				<Ellipse Fill="{Binding ColorDrawingBackground, Mode=TwoWay}"
+						 MouseDown="colorIcon_Click"
+						 Height="30"
+						 Canvas.Left="302"
+						 Canvas.Top="178"
+						 Width="30"
+						 Stroke="Black"
+						 StrokeThickness="1" />
+				<Label Content="Background Presets"
+					   VerticalAlignment="Top"
+					   HorizontalAlignment="Center"
+					   Canvas.Top="180"
+					   Canvas.Left="8" />
+				<Ellipse MouseDown="btnSetBlackBackground_Click"
+						 Height="30"
+						 Canvas.Left="126"
+						 Canvas.Top="178"
+						 Width="30"
+						 Fill="Black"
+						 StrokeThickness="2" />
+				<Ellipse MouseDown="btnSetWhiteBackground_Click"
+						 Height="30"
+						 Canvas.Left="161"
+						 Canvas.Top="178"
+						 Width="30"
+						 Fill="White"
+						 Stroke="Black"
+						 StrokeThickness="1" />
+				<Label Content="Background"
+					   VerticalAlignment="Top"
+					   HorizontalAlignment="Center"
+					   Canvas.Top="180"
+					   Canvas.Left="225" />
+			</Canvas>
+		</GroupBox>
+		<GroupBox Header="Input Force Bracing"
+				  Canvas.Left="323"
+				  Margin="0"
+				  Canvas.Top="166"
+				  IsEnabled="{Binding LicenseMinimumNext, Mode=OneWay}"
+				  Height="119"
+				  Width="181">
+			<StackPanel Orientation="Vertical"
+						Visibility="{Binding LicenseMinimumNext, Mode=OneWay}">
+				<RadioButton Content="Input Axial Force"
+							 IsChecked="{Binding Preferences.InputForceType, ConverterParameter={x:Static Data:EPrefsInputForce.AxialForce}, Converter={StaticResource EnumToBool}}"
+							 IsTabStop="False" />
+				<RadioButton Content="Input Transfer Force"
+							 IsChecked="{Binding Preferences.InputForceType, ConverterParameter={x:Static Data:EPrefsInputForce.TransferForce}, Converter={StaticResource EnumToBool}}"
+							 IsTabStop="False" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="UI Theme"
+				  Canvas.Left="323"
+				  Margin="0"
+				  Height="161"
+				  Width="181">
+			<Canvas>
+				<Menu Width="113"
+					  Canvas.Left="382"
+					  Canvas.Top="48" />
+				<Ellipse Fill="{Binding ThemeAccent}"
+						 Height="35"
+						 Canvas.Left="68"
+						 StrokeThickness="0"
+						 Width="34" />
+				<TextBlock Text="Click color to change theme"
+						   FontSize="10"
+						   TextWrapping="Wrap"
+						   TextAlignment="Center"
+						   Canvas.Top="44"
+						   Width="168"
+						   Foreground="#FF6E6E6E"
+						   Canvas.Left="1" />
+				<WrapPanel Canvas.Top="63"
+						   Width="146"
+						   Canvas.Left="12">
+					<WrapPanel.Resources>
+						<Style>
+							<Style.TargetType>
+								<x:Type TypeName="Ellipse" />
+							</Style.TargetType>
+							<Setter Property="Height"
+									Value="25" />
+							<Setter Property="Width"
+									Value="25" />
+							<Setter Property="StrokeThickness"
+									Value="0" />
+							<Setter Property="Margin"
+									Value="2" />
+						</Style>
+					</WrapPanel.Resources>
+					<Ellipse Fill="{Binding Path=ThemeList[0]}"
+							 MouseDown="ellipseThemeSelect_Click"
+							 Uid="Theme 01" />
+					<Ellipse Fill="{Binding Path=ThemeList[1]}"
+							 MouseDown="ellipseThemeSelect_Click"
+							 Uid="Theme 02" />
+					<Ellipse Fill="{Binding Path=ThemeList[2]}"
+							 MouseDown="ellipseThemeSelect_Click"
+							 Uid="Theme 03" />
+					<Ellipse Fill="{Binding Path=ThemeList[3]}"
+							 MouseDown="ellipseThemeSelect_Click"
+							 Uid="Theme 04" />
+					<Ellipse Fill="{Binding Path=ThemeList[4]}"
+							 MouseDown="ellipseThemeSelect_Click"
+							 Uid="Theme 05" />
+					<Ellipse Fill="{Binding Path=ThemeList[5]}"
+							 MouseDown="ellipseThemeSelect_Click"
+							 Uid="Theme 06" />
+					<Ellipse Fill="{Binding Path=ThemeList[6]}"
+							 MouseDown="ellipseThemeSelect_Click"
+							 Uid="Theme 07" />
+					<Ellipse Fill="{Binding Path=ThemeList[7]}"
+							 MouseDown="ellipseThemeSelect_Click"
+							 Uid="Theme 08" />
+					<Ellipse Fill="{Binding Path=ThemeList[8]}"
+							 MouseDown="ellipseThemeSelect_Click"
+							 Uid="Theme 09" />
+					<Ellipse Fill="{Binding Path=ThemeList[9]}"
+							 MouseDown="ellipseThemeSelect_Click"
+							 Uid="Theme 10" />
+				</WrapPanel>
+			</Canvas>
+		</GroupBox>
+		<GroupBox Header="Drawing Settings"
+				  Canvas.Left="509"
+				  Margin="0"
+				  Height="161"
+				  Width="355">
+			<StackPanel Orientation="Vertical">
+				<CheckBox Content="Show 3D View As Wireframe"
+						  IsChecked="{Binding Preferences.ViewSettings.Show3DWireframe}"
+						  IsTabStop="False"
+						  Visibility="Collapsed" />
+				<CheckBox Content="Show Dimensions"
+						  IsChecked="{Binding Preferences.ViewSettings.Dimensions}"
+						  IsTabStop="False" />
+				<CheckBox Content="Show Callouts"
+						  IsChecked="{Binding Preferences.ViewSettings.Callouts}"
+						  IsTabStop="False" />
+				<CheckBox Content="Show Welds"
+						  IsChecked="{Binding Preferences.ViewSettings.Welds}"
+						  IsTabStop="False" />
+				<CheckBox Content="Thicker Lines"
+						  IsChecked="{Binding Preferences.ViewSettings.ThinLines, Converter={StaticResource InvertBool}}"
+						  IsTabStop="False" />
+			</StackPanel>
+		</GroupBox>
+	</Canvas>
+</UserControl>

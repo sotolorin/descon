@@ -1,0 +1,81 @@
+﻿.btn {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btnSmall {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 2px;
+	display: inline-block;
+	margin: 2px;
+	letter-spacing: 1px;
+	font-weight: bold;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+    margin: auto;
+    text-align: center
+}
+
+.btnSmall:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.ddl
+{
+    width: 150px;
+    font-size: 16px;
+    border:2px solid #D2DFE8;
+    border-radius:0px;
+    padding:10px 0px;
+    background-image:url('Images/Arrowhead-Down-01.png');
+    background-position:88px;
+    background-repeat:no-repeat
+    -webkit-appearance: none; 
+    text-indent: 0.01px;/*In Firefox*/
+    text-overflow: '';/*In Firefox*/
+}
+
+
+
+
+
+
+
+

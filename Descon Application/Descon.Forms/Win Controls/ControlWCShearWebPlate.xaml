@@ -1,0 +1,308 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:Data="clr-namespace:Descon.Data;assembly=Descon.Data"
+			 xmlns:dataAccess="clr-namespace:Descon.UI.DataAccess;assembly=Descon.UI.DataAccess"
+			 xmlns:forms="clr-namespace:Descon.Forms"
+			 mc:Ignorable="d"
+			 x:Class="Descon.Forms.ControlWCShearWebPlate"
+			 Height="534.881"
+			 Width="725"
+			 d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type dataAccess:CommonData}}">
+	<UserControl.Resources>
+		<forms:EnumToBool x:Key="EnumToBool" />
+		<forms:InvertBool x:Key="InvertBool" />
+	</UserControl.Resources>
+	<Canvas>
+		<Border BorderBrush="Black"
+				BorderThickness="1"
+				Canvas.Left="368"
+				Canvas.Top="432"
+				Width="351"
+				Background="White">
+			<Image Source="/Descon.Resources;component/Images/Drawing_Examples/Attachments.SinglePlate.png"
+				   Stretch="None" />
+		</Border>
+		<GroupBox Header="Stiffeners"
+				  Width="173"
+				  IsEnabled="{Binding IsChecked, ElementName=chxExtendedConfig}"
+				  Margin="0"
+				  Canvas.Top="344"
+				  Canvas.Left="546"
+				  ToolTip="Column Web Stiffeners or Connection to Girder Web">
+			<StackPanel>
+				<RadioButton x:Name="rbWith"
+							 IsChecked="{Binding SelectedMember.WinConnect.ShearWebPlate.WebPlateStiffener, ConverterParameter={x:Static Data:EWebPlateStiffener.With}, Converter={StaticResource EnumToBool}}"
+							 Content="With"
+							 TabIndex="50"
+							 Margin="2"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding SelectedMember.WinConnect.ShearWebPlate.WebPlateStiffener, ConverterParameter={x:Static Data:EWebPlateStiffener.Without}, Converter={StaticResource EnumToBool}}"
+							 Content="Without"
+							 TabIndex="51"
+							 Margin="2"
+							 IsTabStop="False" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Eccentricity"
+				  Width="173"
+				  Margin="0"
+				  Canvas.Top="259"
+				  Canvas.Left="546">
+			<StackPanel>
+				<RadioButton IsChecked="{Binding SelectedMember.WinConnect.ShearWebPlate.Eccentricity, ConverterParameter={x:Static Data:EWebEccentricity.Descon}, Converter={StaticResource EnumToBool}}"
+							 Content="Descon"
+							 TabIndex="40"
+							 Margin="2"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding SelectedMember.WinConnect.ShearWebPlate.Eccentricity, ConverterParameter={x:Static Data:EWebEccentricity.AISC}, Converter={StaticResource EnumToBool}}"
+							 Content="AISC"
+							 TabIndex="41"
+							 Margin="2"
+							 IsTabStop="False" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Web Plate Data"
+				  Canvas.Left="7"
+				  Canvas.Top="10"
+				  Height="519"
+				  Width="356"
+				  Margin="0">
+			<StackPanel>
+				<forms:ControlDesconEditBox DSCLabel="Material"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding MaterialDict}"
+											DSCComboBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.MaterialName}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowTextBox="Collapsed"
+											HorizontalAlignment="Right"
+											DSCTabIndex="1" />
+				<forms:ControlDesconEditBox DSCLabel="Welding Electrode"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding WeldDict}"
+											DSCComboBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.WeldName}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowTextBox="Collapsed"
+											HorizontalAlignment="Right"
+											DSCTabIndex="2" />
+				<RadioButton IsChecked="{Binding SelectedMember.WinConnect.ShearWebPlate.NumberOfPlatesEnum, ConverterParameter={x:Static Data:ENumbers.One}, Converter={StaticResource EnumToBool}}"
+							 Content="Number of Plates: 1"
+							 FlowDirection="RightToLeft"
+							 Margin="0,4,112,0"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding SelectedMember.WinConnect.ShearWebPlate.NumberOfPlatesEnum, ConverterParameter={x:Static Data:ENumbers.Two}, Converter={StaticResource EnumToBool}}"
+							 Content="2"
+							 FlowDirection="RightToLeft"
+							 Margin="0,4,112,4"
+							 IsTabStop="False"
+							 IsEnabled="{Binding IsBeamSpliceConfig}"/>
+				<forms:ControlDesconEditBox DSCLabel="Support Weld Size"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.SupportWeldSize}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.SupportWeldSize_User}"
+											DSCShowComboBox="Collapsed"
+											DSCUnit="{Binding ConstUnit.SmallLength, Mode=OneWay}"
+											DSCTextBoxType="Fraction_Over_16"
+											HorizontalAlignment="Right"
+											DSCUnitWidth="70"
+											DSCTabIndex="3" />
+				<forms:ControlDesconEditBox DSCLabel="Beam Weld Size"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.BeamWeldSize}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowComboBox="Collapsed"
+											DSCUnit="{Binding ConstUnit.SmallLength, Mode=OneWay}"
+											IsEnabled="False"
+											DSCTextBoxType="Fraction_Over_16"
+											HorizontalAlignment="Right"
+											DSCUnitWidth="70" />
+				<forms:ControlDesconEditBox DSCLabel="Horizontal Dimension"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Width}"
+											DSCShowComboBox="Collapsed"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxType="Decimal_Four_Digits"
+											HorizontalAlignment="Right"
+											DSCUnitWidth="70"
+											DSCShowCheckBox="Collapsed"
+											IsEnabled="False" />
+				<forms:ControlDesconEditBox DSCLabel="Vertical Dimension (h1)"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Length}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowComboBox="Collapsed"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxType="Decimal_Four_Digits"
+											HorizontalAlignment="Right"
+											DSCUnitWidth="70"
+											IsEnabled="False" />
+				<forms:ControlDesconEditBox DSCLabel="Thickness"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Thickness}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Thickness_User}"
+											DSCShowComboBox="Collapsed"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxType="Decimal_Four_Digits"
+											HorizontalAlignment="Right"
+											DSCUnitWidth="70"
+											DSCTabIndex="4" />
+				<StackPanel IsEnabled="{Binding IsChecked, ElementName=rbWith}">
+					<forms:ControlDesconEditBox DSCLabel="Stiffener Thickness"
+												DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.StiffenerThickness}"
+												DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.StiffenerThickness_User}"
+												DSCShowComboBox="Collapsed"
+												DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												DSCTextBoxType="Decimal_Four_Digits"
+												HorizontalAlignment="Right"
+												DSCUnitWidth="70"
+												DSCTabIndex="5" />
+					<forms:ControlDesconEditBox DSCLabel="Clear Spacing of Stiffener (H)"
+												DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Height}"
+												DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Height_User}"
+												DSCShowComboBox="Collapsed"
+												DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												DSCTextBoxType="Decimal_Four_Digits"
+												HorizontalAlignment="Right"
+												DSCUnitWidth="70"
+												DSCTabIndex="6" />
+					<forms:ControlDesconEditBox DSCLabel="Top of Beam to Stiffener (h)"
+												DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.TopOffset}"
+												DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.TopOffset_User}"
+												DSCShowComboBox="Collapsed"
+												DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												DSCTextBoxType="Decimal_Four_Digits"
+												HorizontalAlignment="Right"
+												DSCUnitWidth="70"
+												DSCAllowNegatives="True"
+												DSCTabIndex="7" />
+					<forms:ControlDesconEditBox DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												DSCLabel="{Binding SelectedMember.WinConnect.ShearWebPlate.OSLBoltDistanceLabel, Mode=OneWay}"
+												DSCTextBoxValue="{Binding SelectedMember.WinConnect.Beam.DistanceToFirstBoltDisplay}"
+												DSCShowComboBox="Collapsed"
+												DSCCheckBoxValue="{Binding SelectedMember.WinConnect.DistanceToFirstBolt_User}"
+												DSCTextBoxType="Decimal_Four_Digits"
+												HorizontalContentAlignment="Right"
+												DSCUnitWidth="70"
+												DSCTabIndex="8" />
+				</StackPanel>
+				<CheckBox IsChecked="{Binding SelectedMember.WinConnect.ShearWebPlate.BeamIsLaterallySupported}"
+						  Content="Beam is Laterally Supported"
+						  Margin="0,4,112,0"
+						  FlowDirection="RightToLeft"
+						  IsTabStop="False" />
+				<CheckBox IsChecked="{Binding SelectedMember.WinConnect.ShearWebPlate.ExtendedConfiguration}"
+						  x:Name="chxExtendedConfig"
+						  Content="Extended Configuration"
+						  Margin="0,8,112,0"
+						  FlowDirection="RightToLeft"
+						  IsTabStop="False"
+						  IsEnabled="{Binding IsBeamSpliceConfig, Converter={StaticResource InvertBool}, Mode=OneWay}" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Bolt Data"
+				  Canvas.Left="368"
+				  Margin="0"
+				  Canvas.Top="10"
+				  Height="244"
+				  Width="351">
+			<Canvas>
+				<Button Content="{Binding SelectedMember.WinConnect.ShearWebPlate.Bolt.BoltName}"
+						Canvas.Left="206"
+						Width="120"
+						Height="20"
+						Click="btnBolts_Click"
+						IsTabStop="False" />
+				<forms:ControlDesconEditBox Canvas.Top="117"
+											DSCLabel="Bolt Distance to Vertical Edge"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Bolt.EdgeDistTransvDir}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Bolt.EdgeDistTransvDir_User}"
+											DSCShowComboBox="Collapsed"
+											Canvas.Left="17"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxType="Decimal_Four_Digits"
+											DSCTabIndex="13" />
+				<forms:ControlDesconEditBox Canvas.Top="27"
+											DSCLabel="Vertical Lines of Bolts"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.BoltNumberOfLines}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.BoltNumberOfLines_User}"
+											DSCShowComboBox="Collapsed"
+											Canvas.Left="60"
+											DSCShowUnit="Collapsed"
+											DSCTabIndex="10" />
+				<forms:ControlDesconEditBox Canvas.Top="57"
+											DSCLabel="Number of Rows of Bolts"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Bolt.NumberOfRows}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Bolt.NumberOfRows_User}"
+											DSCShowComboBox="Collapsed"
+											Canvas.Left="40"
+											DSCShowUnit="Collapsed"
+											DSCTabIndex="11" />
+				<forms:ControlDesconEditBox Canvas.Top="87"
+											DSCLabel="Horizontal Bolt Spacing"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Bolt.SpacingTransvDir}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Bolt.SpacingTransvDir_User}"
+											DSCShowComboBox="Collapsed"
+											Canvas.Left="48"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxType="Decimal_Four_Digits"
+											DSCTabIndex="12" />
+				<forms:ControlDesconEditBox Canvas.Top="178"
+											DSCLabel="Bolt Distance to Horizontal Edge"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Bolt.EdgeDistLongDir}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Bolt.EdgeDistLongDir_User}"
+											DSCShowComboBox="Collapsed"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxType="Decimal_Four_Digits"
+											DSCTabIndex="15"
+											Canvas.Left="-1" />
+				<forms:ControlDesconEditBox Canvas.Top="148"
+											DSCLabel="Vertical Bolt Spacing"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Bolt.SpacingLongDir}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearWebPlate.Bolt.SpacingLongDir_User}"
+											DSCShowComboBox="Collapsed"
+											Canvas.Left="63"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxType="Decimal_Four_Digits"
+											DSCTabIndex="14" />
+				<Label Content="Bolts"
+					   HorizontalAlignment="Left"
+					   VerticalAlignment="Top"
+					   Canvas.Left="170"
+					   Canvas.Top="1" />
+			</Canvas>
+		</GroupBox>
+		<GroupBox Header="Position"
+				  Canvas.Left="368"
+				  Canvas.Top="259"
+				  Width="173"
+				  Margin="0"
+				  Height="168">
+			<StackPanel>
+				<CheckBox Content="Override"
+						  IsChecked="{Binding SelectedMember.WinConnect.ShearWebPlate.Position_User}"
+						  Margin="2"
+						  IsTabStop="False" />
+				<RadioButton IsChecked="{Binding SelectedMember.WinConnect.ShearWebPlate.Position, ConverterParameter={x:Static Data:EPosition.Top}, Converter={StaticResource EnumToBool}}"
+							 Content="Top"
+							 Margin="2"
+							 TabIndex="30"
+							 IsEnabled="{Binding SelectedMember.WinConnect.ShearWebPlate.Position_User}"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding SelectedMember.WinConnect.ShearWebPlate.Position, ConverterParameter={x:Static Data:EPosition.Center}, Converter={StaticResource EnumToBool}}"
+							 Content="Center"
+							 TabIndex="31"
+							 IsEnabled="{Binding SelectedMember.WinConnect.ShearWebPlate.Position_User}"
+							 Margin="2"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding SelectedMember.WinConnect.ShearWebPlate.Position, ConverterParameter={x:Static Data:EPosition.Bottom}, Converter={StaticResource EnumToBool}}"
+							 IsEnabled="{Binding SelectedMember.WinConnect.ShearWebPlate.Position_User}"
+							 Content="Bottom"
+							 TabIndex="32"
+							 Margin="2"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding SelectedMember.WinConnect.ShearWebPlate.Position, ConverterParameter={x:Static Data:EPosition.MatchOtherSideBolts}, Converter={StaticResource EnumToBool}}"
+							 IsEnabled="{Binding SelectedMember.WinConnect.ShearWebPlate.IsMatchOtherSidesBoltsEnabled}"
+							 Content="Match Other Side's Bolts"
+							 TabIndex="33"
+							 Margin="2"
+							 IsTabStop="False" />
+			</StackPanel>
+		</GroupBox>
+	</Canvas>
+</UserControl>

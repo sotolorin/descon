@@ -1,0 +1,135 @@
+﻿<controls:MetroWindow xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					  xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+					  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+					  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+					  xmlns:DataAccess="clr-namespace:Descon.UI.DataAccess;assembly=Descon.UI.DataAccess"
+					  mc:Ignorable="d"
+					  x:Class="Descon.Forms.FormUserShapes"
+					  WindowStartupLocation="CenterOwner"
+					  VerticalContentAlignment="Stretch"
+					  HorizontalContentAlignment="Stretch"
+					  GlowBrush="{DynamicResource AccentColorBrush}"
+					  ShowCloseButton="True"
+					  Loaded="Window_Loaded"
+					  ShowMaxRestoreButton="False"
+					  ShowMinButton="False"
+					  ShowTitleBar="False"
+					  ResizeMode="NoResize"
+					  Height="565"
+					  Width="1018"
+					  d:DataContext="{d:DesignInstance {x:Type DataAccess:CommonData}, IsDesignTimeCreatable=True}">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<StackPanel Orientation="Horizontal"
+					Grid.Row="2"
+					FlowDirection="RightToLeft">
+			<Button Content="Save and Close"
+					Height="26"
+					Width="120"
+					TabIndex="4"
+					HorizontalAlignment="Right"
+					VerticalAlignment="Bottom"
+					IsCancel="True"
+					Click="btnSaveAndClose_Click"
+					Margin="5" />
+			<Button Content="Cancel"
+					Height="26"
+					Width="120"
+					TabIndex="4"
+					HorizontalAlignment="Right"
+					VerticalAlignment="Bottom"
+					IsCancel="True"
+					Click="btnCancel_Click"
+					Margin="5,0,5,5" />
+		</StackPanel>
+		<Canvas Grid.Row="1">
+			<GroupBox Header="User Shapes"
+					  Margin="0"
+					  Height="446"
+					  Canvas.Left="10"
+					  Canvas.Top="44"
+					  Width="992">
+				<Canvas>
+					<DataGrid x:Name="gridData"
+							  CanUserReorderColumns="False"
+							  CanUserResizeColumns="False"
+							  CanUserResizeRows="False"
+							  ItemsSource="{Binding ShapesUser}"
+							  GridLinesVisibility="All"
+							  AutoGenerateColumns="False"
+							  BorderThickness="1"
+							  CanUserSortColumns="False"
+							  SelectionMode="Single"
+							  CanUserAddRows="False"
+							  CanUserDeleteRows="False"
+							  Height="407"
+							  Width="949">
+						<DataGrid.Columns>
+							<DataGridTextColumn Binding="{Binding Name}"
+												Header="Shape Name" />
+							<DataGridTextColumn Binding="{Binding a}"
+												Header="Area" />
+							<DataGridTextColumn Binding="{Binding d}"
+												Header="Depth" />
+							<DataGridTextColumn Binding="{Binding tw}"
+												Header="Web Thickness" />
+							<DataGridTextColumn Binding="{Binding bf}"
+												Header="Flange Width" />
+							<DataGridTextColumn Binding="{Binding tf}"
+												Header="Flange Thickness" />
+							<DataGridTextColumn Binding="{Binding kdes}"
+												Header="K Design" />
+							<DataGridTextColumn Binding="{Binding kdet}"
+												Header="K Detail" />
+							<DataGridTextColumn Binding="{Binding k1}"
+												Header="K1" />
+							<DataGridTextColumn Binding="{Binding t}"
+												Header="T" />
+							<DataGridTextColumn Binding="{Binding sx}"
+												Header="Sect. Modulus" />
+							<DataGridTextColumn Binding="{Binding zx}"
+												Header="Plastic Modulus" />
+						</DataGrid.Columns>
+					</DataGrid>
+					<Button BorderThickness="1"
+							Background="White"
+							ToolTip="Add new shape"
+							TabIndex="8"
+							Click="btnAddShape_Click"
+							Canvas.Left="954"
+							Canvas.Top="5">
+						<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_File_New.png"
+							   Stretch="Fill"
+							   Width="20"
+							   Height="20" />
+					</Button>
+					<Button BorderThickness="1"
+							Background="White"
+							ToolTip="Delete the selected shape"
+							TabIndex="9"
+							Click="btnRemoveShape_Click"
+							Canvas.Left="954"
+							Canvas.Top="38">
+						<Image Source="/Descon.Resources;component/Images/Icons/exit.png"
+							   Height="20"
+							   Width="20"
+							   Stretch="Fill" />
+					</Button>
+				</Canvas>
+			</GroupBox>
+			<Label Content="User Shapes"
+				   HorizontalAlignment="Left"
+				   VerticalAlignment="Top"
+				   FontSize="14"
+				   FontWeight="Bold"
+				   Foreground="{DynamicResource AccentColorBrush}"
+				   Canvas.Left="10"
+				   Canvas.Top="10" />
+		</Canvas>
+	</Grid>
+</controls:MetroWindow>

@@ -1,0 +1,301 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:local="clr-namespace:Descon.Data;assembly=Descon.Data"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:dataAccess="clr-namespace:Descon.UI.DataAccess;assembly=Descon.UI.DataAccess"
+			 xmlns:forms="clr-namespace:Descon.Forms"
+			 mc:Ignorable="d"
+			 x:Class="Descon.Forms.ControlBoltSelection"
+			 Height="453"
+			 Width="653"
+			 d:DataContext="{d:DesignInstance {x:Type dataAccess:CommonData}, IsDesignTimeCreatable=True}">
+	<UserControl.Resources>
+		<forms:BoolToVisibilityHidden x:Key="BoolToVisibilityHidden" />
+		<forms:EnumToBool x:Key="EnumToBool" />
+		<Style>
+			<Setter Property="forms:MarginSetterPanel.Margin"
+					Value="2" />
+			<Style.TargetType>
+				<x:Type TypeName="StackPanel" />
+			</Style.TargetType>
+		</Style>
+	</UserControl.Resources>
+	<Canvas>
+		<GroupBox Header="ASTM Designation"
+				  HorizontalAlignment="Right"
+				  Margin="0"
+				  VerticalAlignment="Top"
+				  Height="172"
+				  Width="312"
+				  Canvas.Left="334"
+				  Canvas.Top="142">
+			<Canvas>
+				<RadioButton IsChecked="{Binding CurrentBolt.ASTMType, ConverterParameter={x:Static local:EBoltASTM.A325}, Converter={StaticResource EnumToBool}}"
+							 Content="A325 (Class A)"
+							 TabIndex="10"
+							 Canvas.Left="2"
+							 Canvas.Top="2" />
+				<RadioButton IsChecked="{Binding CurrentBolt.ASTMType, ConverterParameter={x:Static local:EBoltASTM.A490}, Converter={StaticResource EnumToBool}}"
+							 Content="A490 (Class B)"
+							 TabIndex="11"
+							 Canvas.Left="2"
+							 Canvas.Top="24" />
+				<RadioButton IsChecked="{Binding CurrentBolt.ASTMType, ConverterParameter={x:Static local:EBoltASTM.NonASTM}, Converter={StaticResource EnumToBool}}"
+							 Content="Non-ASTM"
+							 TabIndex="12"
+							 Canvas.Left="2"
+							 Canvas.Top="46" />
+				<ComboBox x:Name="cbxSelectedASTM"
+						  ItemsSource="{Binding NonASTMValues}"
+						  SelectedValue="{Binding CurrentBolt.ASTM.Name}"
+						  Width="130"
+						  HorizontalAlignment="Left"
+						  IsEnabled="{Binding CurrentBolt.ASTMType, ConverterParameter={x:Static local:EBoltASTM.NonASTM}, Converter={StaticResource EnumToBool}}"
+						  TabIndex="13"
+						  Canvas.Left="91"
+						  Canvas.Top="43">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock>
+								<TextBlock.Text>
+									<MultiBinding StringFormat="{}{0} - ({1})">
+										<Binding Path="Name" />
+										<Binding Path="Fu" />
+									</MultiBinding>
+								</TextBlock.Text>
+							</TextBlock>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+				</ComboBox>
+				<Button Content="Delete"
+						Click="btnDeleteASTM_Click"
+						Width="75"
+						HorizontalAlignment="Left"
+						Height="26"
+						TabIndex="23"
+						Canvas.Top="43"
+						Canvas.Left="225" />
+				<forms:ControlDesconEditBox x:Name="ctrlASTMFu"
+											DSCLabel="Fu"
+											DSCShowComboBox="Collapsed"
+											DSCShowCheckBox="Collapsed"
+											HorizontalAlignment="Right"
+											Canvas.Left="62"
+											Canvas.Top="103"
+											DSCShowUnit="Collapsed"
+											DSCTextBoxType="Text"
+											DSCTextBoxValue=""
+											TabIndex="22" />
+				<Button Content="Save New"
+						Click="btnAddASTM_Click"
+						Width="75"
+						HorizontalAlignment="Left"
+						Canvas.Left="225"
+						Canvas.Top="74"
+						Height="26"
+						TabIndex="24" />
+				<TextBox x:Name="ctrlASTMName"
+						 Canvas.Left="91"
+						 TextWrapping="Wrap"
+						 Canvas.Top="74"
+						 Width="130"
+						 MaxLines="1"
+						 MaxLength="16"
+						 TabIndex="21" />
+				<Label Content="Name"
+					   Canvas.Left="46"
+					   Canvas.Top="74" />
+			</Canvas>
+		</GroupBox>
+		<GroupBox Header="Bolt Type"
+				  HorizontalAlignment="Right"
+				  Margin="0"
+				  VerticalAlignment="Top"
+				  Width="156"
+				  Canvas.Left="11"
+				  Canvas.Top="142"
+				  Height="171">
+			<StackPanel>
+				<RadioButton IsChecked="{Binding CurrentBolt.BoltType, ConverterParameter={x:Static local:EBoltType.N}, Converter={StaticResource EnumToBool}}"
+							 Content="N"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding CurrentBolt.BoltType, ConverterParameter={x:Static local:EBoltType.SC}, Converter={StaticResource EnumToBool}}"
+							 Content="SC"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding CurrentBolt.BoltType, ConverterParameter={x:Static local:EBoltType.X}, Converter={StaticResource EnumToBool}}"
+							 Content="X"
+							 IsTabStop="False" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Surface Class"
+				  HorizontalAlignment="Right"
+				  Margin="0"
+				  VerticalAlignment="Top"
+				  Width="155"
+				  Canvas.Left="12"
+				  Canvas.Top="318"
+				  IsEnabled="{Binding CurrentBolt.BoltType, ConverterParameter={x:Static local:EBoltType.SC}, Converter={StaticResource EnumToBool}}"
+				  Height="127">
+			<StackPanel>
+				<RadioButton IsChecked="{Binding CurrentBolt.SurfaceClass, ConverterParameter={x:Static local:EBoltSurfaceClass.A}, Converter={StaticResource EnumToBool}}"
+							 Content="A"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding CurrentBolt.SurfaceClass, ConverterParameter={x:Static local:EBoltSurfaceClass.B}, Converter={StaticResource EnumToBool}}"
+							 Content="B"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding CurrentBolt.SurfaceClass, ConverterParameter={x:Static local:EBoltSurfaceClass.C}, Converter={StaticResource EnumToBool}}"
+							 Content="C"
+							 IsTabStop="False" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Hole Type"
+				  HorizontalAlignment="Right"
+				  Margin="0"
+				  VerticalAlignment="Top"
+				  Width="157"
+				  Canvas.Left="172"
+				  Canvas.Top="142">
+			<StackPanel>
+				<RadioButton IsChecked="{Binding CurrentBolt.HoleType, ConverterParameter={x:Static local:EBoltHoleType.STD}, Converter={StaticResource EnumToBool}}"
+							 Content="STD"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding CurrentBolt.HoleType, ConverterParameter={x:Static local:EBoltHoleType.OVS}, Converter={StaticResource EnumToBool}}"
+							 Content="OVS"
+							 IsEnabled="{Binding CurrentBolt.isOVSEnabled}"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding CurrentBolt.HoleType, ConverterParameter={x:Static local:EBoltHoleType.SSLN}, Converter={StaticResource EnumToBool}}"
+							 Content="SSLN"
+							 IsEnabled="{Binding CurrentBolt.isSSLNEnabled}"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding CurrentBolt.HoleType, ConverterParameter={x:Static local:EBoltHoleType.SSLP}, Converter={StaticResource EnumToBool}}"
+							 Content="SSLP"
+							 IsEnabled="{Binding CurrentBolt.isSSLPEnabled}"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding CurrentBolt.HoleType, ConverterParameter={x:Static local:EBoltHoleType.LSLN}, Converter={StaticResource EnumToBool}}"
+							 Content="LSLN"
+							 IsEnabled="{Binding CurrentBolt.isLSLNEnabled}"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding CurrentBolt.HoleType, ConverterParameter={x:Static local:EBoltHoleType.LSLP}, Converter={StaticResource EnumToBool}}"
+							 Content="LSLP"
+							 IsEnabled="{Binding CurrentBolt.isLSLPEnabled}"
+							 IsTabStop="False" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Slotted / Oversize Holes"
+				  HorizontalAlignment="Right"
+				  Margin="0"
+				  VerticalAlignment="Top"
+				  Width="312"
+				  Canvas.Left="334"
+				  Canvas.Top="10">
+			<StackPanel>
+				<CheckBox Content="{Binding CurrentBolt.Slot0Name}"
+						  IsChecked="{Binding CurrentBolt.Slot0}"
+						  IsEnabled="{Binding CurrentBolt.Slot0Enabled}"
+						  IsTabStop="False"
+						  Visibility="{Binding CurrentBolt.Slot0Visibility, Converter={StaticResource BoolToVisibilityHidden}, Mode=OneWay}" />
+				<CheckBox Content="{Binding CurrentBolt.Slot1Name}"
+						  IsChecked="{Binding CurrentBolt.Slot1}"
+						  IsEnabled="{Binding CurrentBolt.Slot1Enabled}"
+						  IsTabStop="False"
+						  Visibility="{Binding CurrentBolt.Slot1Visibility, Converter={StaticResource BoolToVisibilityHidden}, Mode=OneWay}"/>
+				<CheckBox Content="{Binding CurrentBolt.Slot2Name}"
+						  IsChecked="{Binding CurrentBolt.Slot2}"
+						  IsEnabled="{Binding CurrentBolt.Slot2Enabled}"
+						  IsTabStop="False"
+						  Visibility="{Binding CurrentBolt.Slot2Visibility, Converter={StaticResource BoolToVisibilityHidden}, Mode=OneWay}"/>
+				<CheckBox Content="{Binding CurrentBolt.Slot3Name}"
+						  IsChecked="{Binding CurrentBolt.Slot3}"
+						  IsEnabled="{Binding CurrentBolt.Slot3Enabled}"
+						  IsTabStop="False"
+						  Visibility="{Binding CurrentBolt.Slot3Visibility, Converter={StaticResource BoolToVisibilityHidden}, Mode=OneWay}"/>
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="SC Limit State"
+				  HorizontalAlignment="Right"
+				  Margin="0"
+				  VerticalAlignment="Top"
+				  Width="312"
+				  Canvas.Left="334"
+				  Canvas.Top="319"
+				  IsEnabled="{Binding CurrentBolt.BoltType, ConverterParameter={x:Static local:EBoltType.SC}, Converter={StaticResource EnumToBool}}">
+			<StackPanel>
+				<CheckBox Content="Override"
+						  IsChecked="{Binding CurrentBolt.OverrideLimitState}"
+						  IsEnabled="{Binding Preferences.SteelCode, ConverterParameter={x:Static local:ESteelCode.AISC13}, Converter={StaticResource EnumToBool}}"
+						  IsTabStop="False" />
+				<RadioButton IsChecked="{Binding CurrentBolt.LimitState, ConverterParameter={x:Static local:EBoltLimitState.Serviceability}, Converter={StaticResource EnumToBool}}"
+							 Content="Serviceability (13th)"
+							 IsEnabled="{Binding CurrentBolt.OverrideLimitState}"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding CurrentBolt.LimitState, ConverterParameter={x:Static local:EBoltLimitState.Strength}, Converter={StaticResource EnumToBool}}"
+							 Content="Strength (13th)"
+							 IsEnabled="{Binding CurrentBolt.OverrideLimitState}"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding CurrentBolt.LimitState, ConverterParameter={x:Static local:EBoltLimitState.Slip}, Converter={StaticResource EnumToBool}}"
+							 Content="Slip (14th)"
+							 IsEnabled="False"
+							 IsTabStop="False" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Bolt Data"
+				  Canvas.Left="10"
+				  Margin="0"
+				  Canvas.Top="10"
+				  Height="127"
+				  Width="319">
+			<Canvas>
+				<forms:ControlDesconEditBox Canvas.Left="51"
+											DSCComboBoxSource="{Binding CommonLists.BoltSizes}"
+											DSCComboBoxValue="{Binding CurrentBolt.BoltSize}"
+											DSCLabel="Bolt Size"
+											DSCShowTextBox="Collapsed"
+											DSCShowCheckBox="Collapsed"
+											DSCSelectedValuePath=""
+											DSCDisplayValuePath=""
+											DSCShowUnit="Collapsed"
+											TabIndex="1" />
+				<forms:ControlDesconEditBox Canvas.Top="30"
+											DSCComboBoxSource="{Binding CommonLists.BoltMinSpacing}"
+											DSCComboBoxValue="{Binding CurrentBolt.MinSpacingType}"
+											DSCLabel="Minimum Spacing"
+											DSCShowTextBox="Collapsed"
+											DSCShowCheckBox="Collapsed"
+											DSCDisplayValuePath="Value"
+											DSCShowUnit="Collapsed"
+											TabIndex="2" />
+				<forms:ControlDesconEditBox DSCShowComboBox="Collapsed"
+											DSCShowCheckBox="Collapsed"
+											DSCTextBoxValue="{Binding CurrentBolt.MinSpacing}"
+											HorizontalContentAlignment="Left"
+											HorizontalAlignment="Right"
+											Canvas.Left="244"
+											Canvas.Top="30"
+											DSCShowUnit="Collapsed"
+											DSCShowLabel="Collapsed"
+											DSCTextBoxType="Decimal_Four_Digits"
+											IsEnabled="{Binding CurrentBolt.MinSpacingCustom}"
+											TabIndex="3" />
+			</Canvas>
+		</GroupBox>
+		<GroupBox Header="Filler Factor hf"
+				  HorizontalAlignment="Right"
+				  Margin="0"
+				  VerticalAlignment="Top"
+				  Width="156"
+				  Canvas.Left="172"
+				  Canvas.Top="319"
+				  Height="126"
+				  IsEnabled="{Binding CurrentBolt.IsFillerFactorEnabled, Mode=OneWay}">
+			<StackPanel>
+				<RadioButton IsChecked="{Binding CurrentBolt.FillerFactorEnum, ConverterParameter={x:Static local:EBoltFillerFactor.One}, Converter={StaticResource EnumToBool}}"
+							 Content="1.0"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding CurrentBolt.FillerFactorEnum, ConverterParameter={x:Static local:EBoltFillerFactor.PointEightFive}, Converter={StaticResource EnumToBool}}"
+							 Content="0.85"
+							 IsTabStop="False" />
+			</StackPanel>
+		</GroupBox>
+	</Canvas>
+</UserControl>

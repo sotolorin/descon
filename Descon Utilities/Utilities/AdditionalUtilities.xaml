@@ -1,0 +1,22 @@
+﻿<Window x:Class="Utilities.AdditionalUtilities"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Title="AdditionalUtilities"
+		Height="382"
+		Width="512">
+	<Grid>
+		<Button Content="Convert Coeffs to XML"
+				HorizontalAlignment="Left"
+				Margin="10,242,0,0"
+				VerticalAlignment="Top"
+				Width="150"
+				Click="convertCoeffsToXML_Click" />
+		<ComboBox HorizontalAlignment="Left"
+				  Margin="243,146,0,0"
+				  VerticalAlignment="Top"
+				  Width="120"
+				  IsDropDownOpen="True"
+				  Background="White" />
+
+	</Grid>
+</Window>

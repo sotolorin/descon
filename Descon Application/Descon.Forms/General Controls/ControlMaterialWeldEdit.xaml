@@ -1,0 +1,251 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:dataAccess="clr-namespace:Descon.UI.DataAccess;assembly=Descon.UI.DataAccess"
+			 xmlns:forms="clr-namespace:Descon.Forms"
+			 xmlns:System="clr-namespace:System;assembly=mscorlib"
+			 mc:Ignorable="d"
+			 x:Class="Descon.Forms.ControlMaterialWeldEdit"
+			 Height="487"
+			 Width="822"
+			 d:DataContext="{d:DesignInstance {x:Type dataAccess:CommonData}, IsDesignTimeCreatable=True}">
+	<Canvas>
+		<GroupBox Header="Materials"
+				  HorizontalAlignment="Left"
+				  VerticalAlignment="Top"
+				  Height="467"
+				  Width="400"
+				  Canvas.Left="10"
+				  Canvas.Top="10"
+				  Margin="0">
+			<Canvas>
+				<Button BorderThickness="1"
+						Background="White"
+						ToolTip="Deletes the currently select material if user material"
+						TabIndex="9"
+						Click="btnDeleteMaterial_Click"
+						Canvas.Left="236"
+						Canvas.Top="340"
+						Height="30"
+						Width="30">
+					<Image Source="/Descon.Resources;component/Images/Icons/exit.png"
+						   Height="16"
+						   Width="16"
+						   Stretch="Fill" />
+				</Button>
+				<Label Content="Name"
+					   Canvas.Top="340"
+					   HorizontalContentAlignment="Right" />
+				<TextBox x:Name="tbxMaterialName"
+						 Height="23"
+						 TextWrapping="Wrap"
+						 Width="154"
+						 Canvas.Top="340"
+						 Canvas.Left="42"
+						 MaxLength="25"
+						 TabIndex="2" />
+				<forms:ControlDesconEditBox x:Name="ctrlFu"
+											Canvas.Top="368"
+											DSCLabel="Fu"
+											Canvas.Left="113"
+											DSCShowCheckBox="Collapsed"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCTabIndex="3"
+											DSCUnit="{Binding ConstUnit.StressMaterials, Mode=OneWay}">
+					<forms:ControlDesconEditBox.DSCTextBoxValue>
+						<System:Int32>0</System:Int32>
+					</forms:ControlDesconEditBox.DSCTextBoxValue>
+				</forms:ControlDesconEditBox>
+				<forms:ControlDesconEditBox x:Name="ctrlRt"
+											Canvas.Top="398"
+											DSCLabel="Rt"
+											Canvas.Left="115"
+											DSCShowCheckBox="Collapsed"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCShowUnit="Collapsed"
+											DSCTabIndex="5">
+					<forms:ControlDesconEditBox.DSCTextBoxValue>
+						<System:Int32>0</System:Int32>
+					</forms:ControlDesconEditBox.DSCTextBoxValue>
+				</forms:ControlDesconEditBox>
+				<forms:ControlDesconEditBox x:Name="ctrlFy"
+											Canvas.Top="368"
+											DSCLabel="Fy"
+											Canvas.Left="20"
+											DSCShowCheckBox="Collapsed"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCTabIndex="4">
+					<forms:ControlDesconEditBox.DSCTextBoxValue>
+						<System:Int32>0</System:Int32>
+					</forms:ControlDesconEditBox.DSCTextBoxValue>
+				</forms:ControlDesconEditBox>
+				<forms:ControlDesconEditBox x:Name="ctrlRy"
+											Canvas.Top="398"
+											DSCLabel="Ry"
+											Canvas.Left="19"
+											DSCShowCheckBox="Collapsed"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCShowUnit="Collapsed"
+											DSCTabIndex="6">
+					<forms:ControlDesconEditBox.DSCTextBoxValue>
+						<System:Int32>0</System:Int32>
+					</forms:ControlDesconEditBox.DSCTextBoxValue>
+				</forms:ControlDesconEditBox>
+				<DataGrid x:Name="dataGridMaterials"
+						  CanUserReorderColumns="False"
+						  CanUserResizeColumns="False"
+						  CanUserResizeRows="False"
+						  ItemsSource="{Binding MaterialDict}"
+						  GridLinesVisibility="All"
+						  AutoGenerateColumns="False"
+						  BorderThickness="1"
+						  CanUserSortColumns="False"
+						  SelectionMode="Single"
+						  CanUserAddRows="False"
+						  CanUserDeleteRows="False"
+						  Height="335"
+						  Width="388"
+						  IsReadOnly="True">
+					<DataGrid.Columns>
+						<DataGridTextColumn Binding="{Binding Value.Name}"
+											Header="Material Name"
+											Width="*" />
+						<DataGridTextColumn Binding="{Binding Value.Fy}">
+							<DataGridTextColumn.HeaderTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding DataContext.ConstUnit.StressMaterials, RelativeSource={RelativeSource AncestorType=DataGrid}, StringFormat=FY (\{0\})}"
+											   FontWeight="Bold" />
+								</DataTemplate>
+							</DataGridTextColumn.HeaderTemplate>
+						</DataGridTextColumn>
+						<DataGridTextColumn Binding="{Binding Value.Fu}">
+							<DataGridTextColumn.HeaderTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding DataContext.ConstUnit.StressMaterials, RelativeSource={RelativeSource AncestorType=DataGrid}, StringFormat=FU (\{0\})}"
+											   FontWeight="Bold" />
+								</DataTemplate>
+							</DataGridTextColumn.HeaderTemplate>
+						</DataGridTextColumn>
+						<DataGridTextColumn Binding="{Binding Value.Ry}"
+											Header="Ry" />
+						<DataGridTextColumn Binding="{Binding Value.Rt}"
+											Header="Rt" />
+						<DataGridCheckBoxColumn Binding="{Binding Value.UserDefined}"
+												Header="User" />
+					</DataGrid.Columns>
+				</DataGrid>
+				<Button BorderThickness="1"
+						Background="White"
+						ToolTip="Adds a new material using the specified values"
+						TabIndex="9"
+						Click="btnAddNewMaterial_Click"
+						Canvas.Left="201"
+						Canvas.Top="340"
+						Height="30">
+					<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_File_New.png"
+						   Height="20"
+						   Width="20"
+						   Stretch="Fill" />
+				</Button>
+			</Canvas>
+		</GroupBox>
+		<GroupBox Header="Welds"
+				  HorizontalAlignment="Left"
+				  VerticalAlignment="Top"
+				  Height="467"
+				  Width="400"
+				  Canvas.Left="415"
+				  Canvas.Top="10"
+				  Margin="0">
+			<Canvas>
+				<Label Content="Name"
+					   Canvas.Top="340"
+					   HorizontalContentAlignment="Right"
+					   Canvas.Left="1" />
+				<TextBox x:Name="tbxWeldName"
+						 Height="23"
+						 TextWrapping="Wrap"
+						 Width="141"
+						 Canvas.Top="340"
+						 Canvas.Left="43"
+						 TabIndex="11" />
+				<forms:ControlDesconEditBox x:Name="ctrlFexx"
+											Canvas.Top="368"
+											DSCLabel="Fexx"
+											Canvas.Left="10"
+											DSCShowCheckBox="Collapsed"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Decimal_Two_Digits"
+											DSCUnit="{Binding ConstUnit.StressMaterials, Mode=OneWay}"
+											DSCTabIndex="12">
+					<forms:ControlDesconEditBox.DSCTextBoxValue>
+						<System:Int32>0</System:Int32>
+					</forms:ControlDesconEditBox.DSCTextBoxValue>
+				</forms:ControlDesconEditBox>
+				<DataGrid x:Name="dataGridWelds"
+						  CanUserReorderColumns="False"
+						  CanUserResizeColumns="False"
+						  CanUserResizeRows="False"
+						  ItemsSource="{Binding WeldDict}"
+						  GridLinesVisibility="All"
+						  AutoGenerateColumns="False"
+						  BorderThickness="1"
+						  CanUserSortColumns="False"
+						  SelectionMode="Single"
+						  CanUserAddRows="False"
+						  CanUserDeleteRows="False"
+						  Height="335"
+						  Width="388"
+						  IsReadOnly="True">
+					<DataGrid.Columns>
+						<DataGridTextColumn Binding="{Binding Value.Name}"
+											Header="Weld Name"
+											Width="*" />
+						<DataGridTextColumn Binding="{Binding Value.Fexx}">
+							<DataGridTextColumn.HeaderTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding DataContext.ConstUnit.StressMaterials, RelativeSource={RelativeSource AncestorType=DataGrid}, StringFormat=FEXX (\{0\})}"
+											   FontWeight="Bold" />
+								</DataTemplate>
+							</DataGridTextColumn.HeaderTemplate>
+						</DataGridTextColumn>
+						<DataGridCheckBoxColumn Binding="{Binding Value.UserDefined}"
+												Header="User" />
+					</DataGrid.Columns>
+				</DataGrid>
+				<Button BorderThickness="1"
+						Background="White"
+						ToolTip="Adds a new material using the specified values"
+						TabIndex="9"
+						Click="btnAddNewWeld_Click"
+						Canvas.Left="189"
+						Canvas.Top="340"
+						Height="30">
+					<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_File_New.png"
+						   Height="20"
+						   Width="20"
+						   Stretch="Fill" />
+				</Button>
+				<Button BorderThickness="1"
+						Background="White"
+						ToolTip="Deletes the currently select material if user material"
+						TabIndex="9"
+						Click="btnDeleteWeld_Click"
+						Canvas.Left="224"
+						Canvas.Top="340"
+						Height="30"
+						Width="30">
+					<Image Source="/Descon.Resources;component/Images/Icons/Exit.png"
+						   Height="16"
+						   Width="16"
+						   Stretch="Fill" />
+				</Button>
+			</Canvas>
+		</GroupBox>
+	</Canvas>
+</UserControl>

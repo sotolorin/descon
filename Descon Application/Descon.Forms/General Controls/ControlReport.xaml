@@ -1,0 +1,188 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:dataAccess="clr-namespace:Descon.UI.DataAccess;assembly=Descon.UI.DataAccess"
+			 xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+			 mc:Ignorable="d"
+			 x:Class="Descon.Forms.ControlReport"
+			 d:DataContext="{d:DesignInstance Type=dataAccess:CommonData, IsDesignTimeCreatable=True}"
+			 Loaded="controlReportHTML_Loaded">
+	<UserControl.Resources>
+		<Style>
+			<Style.TargetType>
+				<x:Type TypeName="Button" />
+			</Style.TargetType>
+			<Setter Property="FrameworkElement.Width"
+					Value="30" />
+			<Setter Property="FrameworkElement.Height"
+					Value="30" />
+			<Setter Property="Control.BorderBrush"
+					Value="White" />
+			<Setter Property="Control.BorderThickness"
+					Value="0" />
+			<Setter Property="Control.Background"
+					Value="White" />
+			<Setter Property="Margin"
+					Value="2" />
+		</Style>
+		<Style>
+			<Style.TargetType>
+				<x:Type TypeName="Rectangle" />
+			</Style.TargetType>
+			<Setter Property="Shape.Stroke"
+					Value="#FFE1E1E1" />
+			<Setter Property="VerticalAlignment"
+					Value="Stretch" />
+			<Setter Property="Width"
+					Value="1" />
+			<Setter Property="Margin"
+					Value="2" />
+		</Style>
+		<Style>
+			<Style.TargetType>
+				<x:Type TypeName="Image" />
+			</Style.TargetType>
+			<Setter Property="Width"
+					Value="20" />
+			<Setter Property="Height"
+					Value="20" />
+			<Setter Property="Stretch"
+					Value="Fill" />
+		</Style>
+	</UserControl.Resources>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition MinHeight="250" />
+		</Grid.RowDefinitions>
+		<StackPanel Orientation="Horizontal">
+			<Button Click="btnColumns_Click"
+					ToolTip="Toggle between limited horizontal view and standard HTML"
+					IsTabStop="False">
+				<Image Source="/Descon.Resources;component/Images/Icons/Columns.png" />
+			</Button>
+			<Button Click="btnEditReportSettings_Click"
+					ToolTip="Edit Report Settings"
+					IsTabStop="False">
+				<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Report2_ReportSettings.png" />
+			</Button>
+			<Rectangle />
+			<StackPanel x:Name="stackPanelHTMLControls"
+						Orientation="Horizontal"
+						IsEnabled="{Binding IsNotDemo, Mode=OneWay}"
+						Height="34">
+				<Button Click="btnHome_Click"
+						ToolTip="Go to top of report"
+						IsTabStop="False">
+					<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Report2_PageUp.png" />
+				</Button>
+				<Button Click="btnSearch_Click"
+						ToolTip="Search"
+						IsTabStop="False">
+					<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Report2_Search.png" />
+				</Button>
+				<Rectangle />
+				<Button Click="btnPageSetup_Click"
+						ToolTip="Page Setup"
+						IsTabStop="False">
+					<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Report2_PageSetup.png" />
+				</Button>
+				<Button Click="btnPrintPreview_Click"
+						ToolTip="Print Preview"
+						IsTabStop="False">
+					<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Report2_PrintPreview.png" />
+				</Button>
+				<Button Click="btnPrint_Click"
+						ToolTip="Print"
+						IsTabStop="False">
+					<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Report2_Print.png" />
+				</Button>
+				<Button Click="btnSaveReport_Click"
+						ToolTip="Save Report"
+						IsTabStop="False">
+					<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Report2_Save.png"
+						   Height="20"
+						   Width="20" />
+				</Button>
+				<Rectangle />
+				<Button Click="btnBookmarkPrevious_Click"
+						ToolTip="Go To Previous Bookmark"
+						IsTabStop="False">
+					<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Report2_BookmarkLeft.png"
+						   RenderTransformOrigin="0.5,0.5">
+						<Image.RenderTransform>
+							<TransformGroup>
+								<ScaleTransform ScaleY="1"
+												ScaleX="1" />
+								<SkewTransform AngleY="0"
+											   AngleX="0" />
+								<RotateTransform Angle="0" />
+								<TranslateTransform />
+							</TransformGroup>
+						</Image.RenderTransform>
+					</Image>
+				</Button>
+				<Button Click="btnBookmarkNext_Click"
+						ToolTip="Go To Next Bookmark"
+						IsTabStop="False">
+					<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Report2_BookmarkRight.png" />
+				</Button>
+				<Rectangle />
+				<Button Click="btnPreviousNoGood_Click"
+						ToolTip="Go To Previous NG"
+						IsTabStop="False">
+					<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Report2_NGLeft.png" />
+				</Button>
+				<Button Click="btnNextNoGood_Click"
+						ToolTip="Go To Next NG"
+						IsTabStop="False">
+					<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Report2_NGRight.png" />
+				</Button>
+				<Rectangle />
+				<ComboBox x:Name="cbxGoTo"
+						  ItemsSource="{Binding ReportGoToList}"
+						  SelectionChanged="cbxGoTo_SelectionChanged"
+						  Height="30"
+						  Width="200"
+						  Margin="3,0,10,0"
+						  HorizontalAlignment="Right"
+						  IsTabStop="False"
+						  DisplayMemberPath="Value"
+						  SelectedValuePath="Key" />
+				<Image Source="/Descon.Resources;component/Images/Icons/Descon_UI_Icons_Report2_QuestionHover.png"
+					   ToolTip="Right Click in report to Bookmark, Highlight, and Add Note" />
+			</StackPanel>
+		</StackPanel>
+		<Border x:Name="borderFlowDocReader"
+				Grid.Row="1"
+				Grid.Column="0"
+				Margin="0,5,0,0"
+				BorderBrush="{Binding ThemeAccent}">
+			<FlowDocumentReader IsTabStop="False"
+								Document="{Binding ReportDocument}"
+								ViewingMode="TwoPage"
+								IsPrintEnabled="False" />
+		</Border>
+		<Border x:Name="borderWebBrowser"
+				Grid.Row="1"
+				Grid.Column="0"
+				Margin="0,5,0,0"
+				BorderBrush="{Binding ThemeAccent}"
+				BorderThickness="1,1,1,1">
+			<WindowsFormsHost>
+				<forms:WebBrowser x:Name="webBrowser"
+								  DocumentCompleted="webBrowser_DocumentCompleted"
+								  FileDownload="webBrowser_FileDownload"
+								  AllowWebBrowserDrop="False"
+								  ScriptErrorsSuppressed="True"
+								  IsWebBrowserContextMenuEnabled="False"
+								  WebBrowserShortcutsEnabled="False"
+								  PreviewKeyDown="webBrowser_PreviewKeyDown" />
+			</WindowsFormsHost>
+		</Border>
+	</Grid>
+</UserControl>

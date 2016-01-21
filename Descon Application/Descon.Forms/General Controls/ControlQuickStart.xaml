@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Descon.Forms.ControlQuickStart"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 mc:Ignorable="d"
+			 Height="530"
+			 Width="410">
+	<Grid>
+		<RichTextBox FontFamily="Segoe UI"
+					 IsReadOnly="True"
+					 IsTabStop="False"
+					 FontSize="13"
+					 Margin="10">
+			<FlowDocument>
+				<Paragraph>
+					<Run Text="1. Choose connection configuration &quot;Beam to Column&quot; from pull-down menu at upper left." />
+				</Paragraph>
+				<Paragraph>
+					<Run Text="2. Type in a column size, or choose one from the pull-down list." />
+				</Paragraph>
+				<Paragraph>
+					<Run Text="3. Change Member to &quot;Right Side Beam&quot; using the pull-down menu or the down arrow." />
+				</Paragraph>
+				<Paragraph>
+					<Run Text="4. Enter a size for the right side beam by either typing directly or choosing from the pull-down list." />
+				</Paragraph>
+				<Paragraph>
+					<Run Text="5. Choose shear and moment connection types for the beam from the pull-down menus and enter loads." />
+				</Paragraph>
+				<Paragraph>
+					<Run Text="6. Use icons at the top of the Drawing view to turn choose individual views or zoom them to fit." />
+				</Paragraph>
+				<Paragraph>
+					<Run Text="7. Within the Drawing view, use left mouse button to drag and stretch dimensions and callouts, use right mouse button to pan, use mouse wheel to zoom." />
+				</Paragraph>
+				<Paragraph>
+					<Run Text="8. Click arrow above &quot;Ratios&quot; at upper right to expand the Ratios panel that displays the individual limit states." />
+				</Paragraph>
+				<Paragraph>
+					<Run Text="9. Click on a gauge to switch to the Report view and go directly to that limit state's corresponding calculation." />
+				</Paragraph>
+				<Paragraph>
+					<Run Text="10. Use icons at the top of the Report view to configure report settings, scan through any NG's and print or save the report." />
+				</Paragraph>
+			</FlowDocument>
+		</RichTextBox>
+
+	</Grid>
+</UserControl>

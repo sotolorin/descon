@@ -1,0 +1,351 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:data="clr-namespace:Descon.Data;assembly=Descon.Data"
+			 xmlns:dataAccess="clr-namespace:Descon.UI.DataAccess;assembly=Descon.UI.DataAccess"
+			 xmlns:forms="clr-namespace:Descon.Forms"
+			 mc:Ignorable="d"
+			 x:Class="Descon.Forms.ControlWCShearSeat"
+			 Height="412"
+			 Width="787"
+			 d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type dataAccess:CommonData}}">
+	<UserControl.Resources>
+		<forms:EnumToBool x:Key="EnumToBool" />
+		<Style>
+			<Setter Property="forms:MarginSetterPanel.Margin"
+					Value="2" />
+			<Style.TargetType>
+				<x:Type TypeName="StackPanel" />
+			</Style.TargetType>
+		</Style>
+	</UserControl.Resources>
+	<Canvas>
+		<Border BorderBrush="Black"
+				BorderThickness="1"
+				Height="94"
+				Canvas.Left="359"
+				Canvas.Top="8"
+				Width="94">
+			<Image x:Name="imageConnectionExample"
+				   Stretch="None"
+				   Margin="1" />
+		</Border>
+		<GroupBox Header="Connection"
+				  HorizontalAlignment="Left"
+				  VerticalAlignment="Top"
+				  Width="232"
+				  Canvas.Left="7"
+				  Canvas.Top="8"
+				  Margin="0"
+				  Height="126">
+			<StackPanel>
+				<RadioButton IsChecked="{Binding SelectedMember.WinConnect.ShearSeat.Connection, ConverterParameter={x:Static data:ESeatConnection.Bolted}, Converter={StaticResource EnumToBool}}"
+							 Content="Bolted"
+							 Checked="rbConnection_Changed"
+							 GroupName="ConnectionType"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding SelectedMember.WinConnect.ShearSeat.Connection, ConverterParameter={x:Static data:ESeatConnection.BoltedStiffenedPlate}, Converter={StaticResource EnumToBool}}"
+							 Content="Bolted Stiffened (Seat Plate)"
+							 Checked="rbConnection_Changed"
+							 GroupName="ConnectionType"
+							 Margin="2,0"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding SelectedMember.WinConnect.ShearSeat.Connection, ConverterParameter={x:Static data:ESeatConnection.Welded}, Converter={StaticResource EnumToBool}}"
+							 Content="Welded"
+							 Checked="rbConnection_Changed"
+							 GroupName="ConnectionType"
+							 IsTabStop="False" />
+				<RadioButton IsChecked="{Binding SelectedMember.WinConnect.ShearSeat.Connection, ConverterParameter={x:Static data:ESeatConnection.WeldedStiffened}, Converter={StaticResource EnumToBool}}"
+							 Content="Welded Stiffened"
+							 Checked="rbConnection_Changed"
+							 GroupName="ConnectionType"
+							 IsTabStop="False" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Stiffener"
+				  HorizontalAlignment="Left"
+				  VerticalAlignment="Top"
+				  Height="126"
+				  Width="110"
+				  Canvas.Left="244"
+				  Canvas.Top="8"
+				  Margin="0">
+			<StackPanel>
+				<RadioButton x:Name="rbStiff2L"
+							 IsChecked="{Binding SelectedMember.WinConnect.ShearSeat.Stiffener, ConverterParameter={x:Static data:ESeatStiffener.L2}, Converter={StaticResource EnumToBool}}"
+							 Content="2L"
+							 IsTabStop="False" />
+				<RadioButton x:Name="rbStiffTee"
+							 IsChecked="{Binding SelectedMember.WinConnect.ShearSeat.Stiffener, ConverterParameter={x:Static data:ESeatStiffener.Tee}, Converter={StaticResource EnumToBool}}"
+							 Content="Tee"
+							 IsTabStop="False" />
+				<RadioButton x:Name="rbStiffPlate"
+							 IsChecked="{Binding SelectedMember.WinConnect.ShearSeat.Stiffener, ConverterParameter={x:Static data:ESeatStiffener.Plate}, Converter={StaticResource EnumToBool}}"
+							 Content="Plate"
+							 IsTabStop="False" />
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Seat"
+				  HorizontalAlignment="Left"
+				  VerticalAlignment="Top"
+				  Height="132"
+				  Width="446"
+				  Canvas.Left="7"
+				  Canvas.Top="139"
+				  Margin="0">
+			<Canvas>
+				<Canvas x:Name="canvasShortLeg"
+						Height="26"
+						Canvas.Top="34"
+						Width="248"
+						Canvas.Left="-4">
+					<Label Content="Short Leg:"
+						   Canvas.Top="1" />
+					<RadioButton IsChecked="{Binding SelectedMember.WinConnect.ShearSeat.ShortLegOn, ConverterParameter={x:Static data:EShortLegOn.BeamSide}, Converter={StaticResource EnumToBool}}"
+								 Content="Beam Side"
+								 Canvas.Left="68"
+								 Canvas.Top="5"
+								 IsTabStop="False" />
+					<RadioButton IsChecked="{Binding SelectedMember.WinConnect.ShearSeat.ShortLegOn, ConverterParameter={x:Static data:EShortLegOn.SupportSide}, Converter={StaticResource EnumToBool}}"
+								 Content="Support Side"
+								 Canvas.Left="153"
+								 Canvas.Top="5"
+								 IsTabStop="False" />
+				</Canvas>
+				<forms:ControlDesconEditBox x:Name="ctrlAngle"
+											DSCLabel="Angle"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding ShapesSingleAngleNoNone}"
+											DSCComboBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.AngleName}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.Angle_User}"
+											Canvas.Top="2"
+											DSCShowTextBox="Collapsed"
+											Canvas.Left="17"
+											DSCTabIndex="1" />
+				<forms:ControlDesconEditBox DSCLabel="Length"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.AngleLength}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.AngleLength_User}"
+											DSCShowComboBox="Collapsed"
+											Canvas.Left="237"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											Canvas.Top="2"
+											DSCTextBoxType="Decimal_Four_Digits"
+											DSCTabIndex="2" />
+				<Canvas x:Name="canvasSeatPlate"
+						Height="30"
+						Canvas.Left="22"
+						Canvas.Top="64"
+						Width="383">
+					<forms:ControlDesconEditBox DSCLabel="Plate"
+												DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.PlateLength}"
+												DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.PlateLength_User}"
+												DSCShowComboBox="Collapsed"
+												DSCShowUnit="Collapsed"
+												DSCTextBoxType="Decimal_Four_Digits"
+												DSCTabIndex="3" />
+					<forms:ControlDesconEditBox DSCLabel="X"
+												DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.PlateThickness}"
+												DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.PlateThickness_User}"
+												DSCShowComboBox="Collapsed"
+												Canvas.Left="245"
+												DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												DSCTextBoxType="Decimal_Four_Digits"
+												DSCTabIndex="5" />
+					<forms:ControlDesconEditBox DSCLabel="X"
+												DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.PlateWidth}"
+												DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.PlateWidth_User}"
+												DSCShowComboBox="Collapsed"
+												Canvas.Left="132"
+												DSCShowUnit="Collapsed"
+												DSCTextBoxType="Decimal_Four_Digits"
+												DSCTabIndex="4" />
+				</Canvas>
+			</Canvas>
+		</GroupBox>
+		<GroupBox x:Name="gbxStiffener"
+				  Header="Stiffener"
+				  HorizontalAlignment="Left"
+				  VerticalAlignment="Top"
+				  Height="130"
+				  Width="446"
+				  Canvas.Left="7"
+				  Canvas.Top="276"
+				  Margin="0">
+			<Canvas>
+				<forms:ControlDesconEditBox x:Name="ctrl2L"
+											Canvas.Left="38"
+											DSCLabel="2L"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding ShapesDoubleAngle}"
+											DSCComboBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.StiffenerAngleName}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowTextBox="Collapsed"
+											DSCTabIndex="10" />
+				<Canvas x:Name="canvasStiffenerPlate"
+						Height="30"
+						Canvas.Left="-3"
+						Canvas.Top="62"
+						Width="383">
+					<forms:ControlDesconEditBox DSCLabel="X"
+												DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.StiffenerThickness}"
+												DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.StiffenerThickness_User}"
+												DSCShowComboBox="Collapsed"
+												Canvas.Left="245"
+												DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+												DSCTextBoxType="Decimal_Four_Digits"
+												DSCTabIndex="16" />
+					<forms:ControlDesconEditBox DSCLabel="X"
+												DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.StiffenerWidth}"
+												DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.StiffenerWidth_User}"
+												DSCShowComboBox="Collapsed"
+												Canvas.Left="132"
+												DSCShowUnit="Collapsed"
+												DSCTextBoxType="Decimal_Four_Digits"
+												DSCTabIndex="15" />
+					<forms:ControlDesconEditBox DSCLabel="Plate"
+												DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.StiffenerLength}"
+												DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.StiffenerLength_User}"
+												DSCShowComboBox="Collapsed"
+												DSCShowUnit="Collapsed"
+												DSCTextBoxType="Decimal_Four_Digits"
+												DSCTabIndex="14" />
+				</Canvas>
+				<forms:ControlDesconEditBox Canvas.Top="31"
+											DSCLabel="Length"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.StiffenerWidth}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.TeeLength_User}"
+											DSCShowComboBox="Collapsed"
+											Canvas.Left="212"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxType="Decimal_Four_Digits"
+											DSCTabIndex="13" />
+				<forms:ControlDesconEditBox DSCLabel="Length"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.StiffenerWidth}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.L2Length_User}"
+											DSCShowComboBox="Collapsed"
+											Canvas.Left="212"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxType="Decimal_Four_Digits"
+											DSCTabIndex="11" />
+				<forms:ControlDesconEditBox x:Name="ctrlTee"
+											Canvas.Left="32"
+											DSCLabel="Tee"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding ShapesTee}"
+											DSCComboBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.StiffenerTeeName}"
+											Canvas.Top="30"
+											DSCShowCheckBox="Collapsed"
+											DSCShowTextBox="Collapsed"
+											DSCTabIndex="12" />
+			</Canvas>
+		</GroupBox>
+
+		<GroupBox Header="Seat Data"
+				  Canvas.Left="458"
+				  Margin="0"
+				  Height="398"
+				  Width="323"
+				  Canvas.Top="8">
+			<Canvas>
+				<Button x:Name="btnBolt"
+						Content="{Binding SelectedMember.WinConnect.ShearSeat.Bolt.BoltName}"
+						Click="btnBolt_Click"
+						Height="20"
+						Width="130"
+						Canvas.Top="63"
+						Canvas.Left="176"
+						IsTabStop="False" />
+				<Label Content="Bolts"
+					   HorizontalAlignment="Left"
+					   VerticalAlignment="Top"
+					   Canvas.Top="63"
+					   Canvas.Left="136" />
+				<forms:ControlDesconEditBox DSCLabel="Angle &amp; Plate Material"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding MaterialDict}"
+											DSCComboBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.MaterialName}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowTextBox="Collapsed"
+											Canvas.Top="30"
+											Canvas.Left="40"
+											DSCTabIndex="21" />
+				<forms:ControlDesconEditBox x:Name="ctrlWeld"
+											DSCLabel="Welding Electrode"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding WeldDict}"
+											DSCComboBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.WeldName}"
+											DSCShowCheckBox="Collapsed"
+											DSCShowTextBox="Collapsed"
+											Canvas.Top="91"
+											Canvas.Left="64"
+											DSCTabIndex="22" />
+				<forms:ControlDesconEditBox DSCLabel="Top Angle"
+											DSCShowUnit="Collapsed"
+											DSCComboBoxSource="{Binding ShapesSingleAngle}"
+											DSCComboBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.TopAngleName}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.TopAngle_User}"
+											DSCShowTextBox="Collapsed"
+											Canvas.Left="78"
+											DSCTabIndex="20" />
+				<forms:ControlDesconEditBox x:Name="ctrlSupportSideWeld"
+											DSCUnit="{Binding ConstUnit.SmallLength, Mode=OneWay}"
+											DSCLabel="Support Side Weld Size"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.WeldSizeSupport}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.WeldSizeSupport_User}"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Fraction_Over_16"
+											Canvas.Top="121"
+											Canvas.Left="9"
+											DSCTabIndex="23" />
+				<forms:ControlDesconEditBox x:Name="ctrlBeamSideWeld"
+											DSCUnit="{Binding ConstUnit.SmallLength, Mode=OneWay}"
+											DSCLabel="Beam Side Weld Size"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.WeldSizeBeam}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.WeldSizeBeam_User}"
+											DSCShowComboBox="Collapsed"
+											DSCTextBoxType="Fraction_Over_16"
+											Canvas.Top="151"
+											Canvas.Left="22"
+											DSCTabIndex="24" />
+				<forms:ControlDesconEditBox x:Name="ctrlNumberOfRowsOfBolts"
+											DSCLabel="Number of Rows of Bolts"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.Bolt.NumberOfRows}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.Bolt.NumberOfRows_User}"
+											DSCShowComboBox="Collapsed"
+											DSCShowUnit="Collapsed"
+											Canvas.Top="181"
+											DSCTabIndex="25" />
+				<forms:ControlDesconEditBox x:Name="ctrlNumberBoltsOnEachRow"
+											DSCLabel="Vertical Lines of Bolts"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.Bolt.NumberOfLines}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.Bolt.NumberOfLines_User}"
+											DSCShowComboBox="Collapsed"
+											DSCShowUnit="Collapsed"
+											Canvas.Top="211"
+											Canvas.Left="20"
+											DSCTabIndex="26" />
+				<forms:ControlDesconEditBox x:Name="ctrlBoltHorizontal"
+											DSCLabel="Bolt Horizontal Spacing"
+											DSCTextBoxValue="{Binding SelectedMember.GageOnColumn}"
+											DSCCheckBoxValue="{Binding SelectedMember.GageOnColumn_User}"
+											DSCShowComboBox="Collapsed"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxType="Decimal_Four_Digits"
+											Canvas.Top="271"
+											Canvas.Left="8"
+											DSCTabIndex="28" />
+				<forms:ControlDesconEditBox x:Name="ctrlBoltVertical"
+											DSCLabel="Bolt Vertical Spacing"
+											DSCTextBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.Bolt.SpacingTransvDir}"
+											DSCCheckBoxValue="{Binding SelectedMember.WinConnect.ShearSeat.Bolt.SpacingTransvDir_User}"
+											DSCShowComboBox="Collapsed"
+											DSCUnit="{Binding ConstUnit.Length, Mode=OneWay}"
+											DSCTextBoxType="Decimal_Four_Digits"
+											Canvas.Top="241"
+											Canvas.Left="24"
+											DSCTabIndex="27" />
+			</Canvas>
+		</GroupBox>
+	</Canvas>
+</UserControl>
